@@ -4,7 +4,6 @@ import { APIResource } from '../../core/resource';
 import * as BatchAPI from './batch';
 import { Batch, BatchRunParams, BatchRunResponse } from './batch';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
 export class Agent extends APIResource {
@@ -13,13 +12,8 @@ export class Agent extends APIResource {
   /**
    * Run an agent with the specified task.
    */
-  run(params: AgentRunParams, options?: RequestOptions): APIPromise<AgentRunResponse> {
-    const { 'x-api-key': xAPIKey, ...body } = params;
-    return this._client.post('/v1/agent/completions', {
-      body,
-      ...options,
-      headers: buildHeaders([{ 'x-api-key': xAPIKey }, options?.headers]),
-    });
+  run(body: AgentRunParams, options?: RequestOptions): APIPromise<AgentRunResponse> {
+    return this._client.post('/v1/agent/completions', { body, ...options });
   }
 }
 
@@ -128,35 +122,30 @@ export type AgentRunResponse = { [key: string]: unknown };
 
 export interface AgentRunParams {
   /**
-   * Header param:
-   */
-  'x-api-key': string;
-
-  /**
-   * Body param: The configuration of the agent to be completed.
+   * The configuration of the agent to be completed.
    */
   agent_config?: AgentSpec | null;
 
   /**
-   * Body param: The history of the agent's previous tasks and responses. Can be
-   * either a dictionary or a list of message objects.
+   * The history of the agent's previous tasks and responses. Can be either a
+   * dictionary or a list of message objects.
    */
   history?: { [key: string]: unknown } | Array<{ [key: string]: string }> | null;
 
   /**
-   * Body param: An optional image URL that may be associated with the agent's task
-   * or representation.
+   * An optional image URL that may be associated with the agent's task or
+   * representation.
    */
   img?: string | null;
 
   /**
-   * Body param: A list of image URLs that may be associated with the agent's task or
+   * A list of image URLs that may be associated with the agent's task or
    * representation.
    */
   imgs?: Array<string> | null;
 
   /**
-   * Body param: The task to be completed by the agent.
+   * The task to be completed by the agent.
    */
   task?: string | null;
 }

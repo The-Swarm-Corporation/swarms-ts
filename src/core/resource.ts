@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import type { Swarms } from '../client';
+import type { SwarmsClient } from '../client';
 
 export abstract class APIResource {
-  protected _client: Swarms;
+  protected _client: SwarmsClient;
 
-  constructor(client: Swarms) {
+  constructor(client: SwarmsClient) {
     this._client = client;
   }
 }

@@ -2,12 +2,10 @@
 
 export { Batch, type BatchRunResponse, type BatchRunParams } from './batch';
 export {
-  SwarmsResource,
+  Swarms,
   type SwarmSpec,
   type SwarmCheckAvailableResponse,
   type SwarmGetLogsResponse,
   type SwarmRunResponse,
-  type SwarmCheckAvailableParams,
-  type SwarmGetLogsParams,
   type SwarmRunParams,
 } from './swarms';

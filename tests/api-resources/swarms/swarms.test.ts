@@ -1,16 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms';
 
-const client = new Swarms({
+const client = new SwarmsClient({
   apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource swarms', () => {
   // skipped: tests are disabled for the time being
-  test.skip('checkAvailable: only required params', async () => {
-    const responsePromise = client.swarms.checkAvailable({ 'x-api-key': 'x-api-key' });
+  test.skip('checkAvailable', async () => {
+    const responsePromise = client.swarms.checkAvailable();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,13 +21,8 @@ describe('resource swarms', () => {
   });
 
   // skipped: tests are disabled for the time being
-  test.skip('checkAvailable: required and optional params', async () => {
-    const response = await client.swarms.checkAvailable({ 'x-api-key': 'x-api-key' });
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('getLogs: only required params', async () => {
-    const responsePromise = client.swarms.getLogs({ 'x-api-key': 'x-api-key' });
+  test.skip('getLogs', async () => {
+    const responsePromise = client.swarms.getLogs();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -38,13 +33,8 @@ describe('resource swarms', () => {
   });
 
   // skipped: tests are disabled for the time being
-  test.skip('getLogs: required and optional params', async () => {
-    const response = await client.swarms.getLogs({ 'x-api-key': 'x-api-key' });
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('run: only required params', async () => {
-    const responsePromise = client.swarms.run({ 'x-api-key': 'x-api-key' });
+  test.skip('run', async () => {
+    const responsePromise = client.swarms.run({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -52,41 +42,5 @@ describe('resource swarms', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('run: required and optional params', async () => {
-    const response = await client.swarms.run({
-      'x-api-key': 'x-api-key',
-      agents: [
-        {
-          agent_name: 'agent_name',
-          auto_generate_prompt: true,
-          description: 'description',
-          max_loops: 0,
-          max_tokens: 0,
-          mcp_url: 'mcp_url',
-          model_name: 'model_name',
-          role: 'role',
-          streaming_on: true,
-          system_prompt: 'system_prompt',
-          temperature: 0,
-          tools_list_dictionary: [{ foo: 'bar' }],
-        },
-      ],
-      description: 'description',
-      img: 'img',
-      max_loops: 0,
-      messages: [{ foo: 'bar' }],
-      name: 'name',
-      rearrange_flow: 'rearrange_flow',
-      return_history: true,
-      rules: 'rules',
-      service_tier: 'service_tier',
-      stream: true,
-      swarm_type: 'AgentRearrange',
-      task: 'task',
-      tasks: ['string'],
-    });
   });
 });

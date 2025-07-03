@@ -4,7 +4,7 @@ import { asTextContentResult } from 'swarms-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms';
 
 export const metadata: Metadata = {
   resource: 'health',
@@ -24,7 +24,7 @@ export const tool: Tool = {
   },
 };
 
-export const handler = async (client: Swarms, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
   return asTextContentResult((await client.health.check()) as object);
 };
 
