@@ -1,5 +1,5 @@
 {
-  "name": "swarms",
+  "name": "swarms-ts",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Swarms Client API",
   "author": "Swarms Client <kye@swarms.world>",
@@ -47,8 +47,8 @@
     "typescript": "5.8.3"
   },
   "imports": {
-    "swarms": ".",
-    "swarms/*": "./src/*"
+    "swarms-ts": ".",
+    "swarms-ts/*": "./src/*"
   },
   "exports": {
     ".": {

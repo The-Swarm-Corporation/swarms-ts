@@ -4,8 +4,8 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { Endpoint, endpoints, HandlerFunction, query } from './tools';
 import { CallToolRequestSchema, ListToolsRequestSchema, Tool } from '@modelcontextprotocol/sdk/types.js';
-import { ClientOptions } from 'swarms';
-import SwarmsClient from 'swarms';
+import { ClientOptions } from 'swarms-ts';
+import SwarmsClient from 'swarms-ts';
 import {
   applyCompatibilityTransformations,
   ClientCapabilities,
@@ -19,13 +19,13 @@ import { McpOptions } from './options';
 export { McpOptions } from './options';
 export { ClientType } from './compat';
 export { Filter } from './tools';
-export { ClientOptions } from 'swarms';
+export { ClientOptions } from 'swarms-ts';
 export { endpoints } from './tools';
 
 // Create server instance
 export const server = new McpServer(
   {
-    name: 'swarms_api',
+    name: 'swarms_ts_api',
     version: '0.0.1-alpha.0',
   },
   {

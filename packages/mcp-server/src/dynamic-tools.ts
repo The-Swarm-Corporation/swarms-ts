@@ -1,4 +1,4 @@
-import SwarmsClient from 'swarms';
+import SwarmsClient from 'swarms-ts';
 import { Endpoint, asTextContentResult, ToolCallResult } from './tools/types';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { z } from 'zod';
