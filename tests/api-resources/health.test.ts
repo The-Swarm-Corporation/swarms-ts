@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import SwarmsClient from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
 const client = new SwarmsClient({
   apiKey: 'My API Key',

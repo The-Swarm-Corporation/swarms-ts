@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'swarms/internal/uploads';
-import { toFile } from 'swarms/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'swarms-ts/internal/uploads';
+import { toFile } from 'swarms-ts/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

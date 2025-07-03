@@ -4,7 +4,7 @@ import { asTextContentResult } from 'swarms-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import SwarmsClient from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
 export const metadata: Metadata = {
   resource: 'health',

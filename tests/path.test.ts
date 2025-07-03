@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'swarms/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from 'swarms-ts/internal/utils/path';
 import { inspect } from 'node:util';
 import { runInNewContext } from 'node:vm';
 
