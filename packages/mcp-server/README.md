@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 Because it's not published yet, clone the repo and build it:
 
 ```sh
-git clone git@github.com:stainless-sdks/swarms-typescript.git
-cd swarms-typescript
+git clone git@github.com:The-Swarm-Corporation/swarms-ts.git
+cd swarms-ts
 ./scripts/bootstrap
 ./scripts/build
 ```
@@ -40,7 +40,7 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "swarms_api": {
       "command": "node",
-      "args": ["/path/to/local/swarms-typescript/packages/mcp-server", "--client=claude", "--tools=all"],
+      "args": ["/path/to/local/swarms-ts/packages/mcp-server", "--client=claude", "--tools=all"],
       "env": {
         "SWARMS_API_KEY": "My API Key"
       }
