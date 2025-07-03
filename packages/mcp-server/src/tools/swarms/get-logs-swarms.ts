@@ -4,7 +4,7 @@ import { asTextContentResult } from 'swarms-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
 export const metadata: Metadata = {
   resource: 'swarms',
@@ -21,18 +21,12 @@ export const tool: Tool = {
     'Get all API request logs for the user associated with the provided API key,\nexcluding any logs that contain a client_ip field in their data.',
   inputSchema: {
     type: 'object',
-    properties: {
-      'x-api-key': {
-        type: 'string',
-        title: 'X-Api-Key',
-      },
-    },
+    properties: {},
   },
 };
 
-export const handler = async (client: Swarms, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await client.swarms.getLogs(body));
+export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
+  return asTextContentResult(await client.swarms.getLogs());
 };
 
 export default { metadata, tool, handler };

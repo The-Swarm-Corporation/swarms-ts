@@ -4,8 +4,8 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { Endpoint, endpoints, HandlerFunction, query } from './tools';
 import { CallToolRequestSchema, ListToolsRequestSchema, Tool } from '@modelcontextprotocol/sdk/types.js';
-import { ClientOptions } from 'swarms';
-import Swarms from 'swarms';
+import { ClientOptions } from 'swarms-ts';
+import SwarmsClient from 'swarms-ts';
 import {
   applyCompatibilityTransformations,
   ClientCapabilities,
@@ -19,14 +19,14 @@ import { McpOptions } from './options';
 export { McpOptions } from './options';
 export { ClientType } from './compat';
 export { Filter } from './tools';
-export { ClientOptions } from 'swarms';
+export { ClientOptions } from 'swarms-ts';
 export { endpoints } from './tools';
 
 // Create server instance
 export const server = new McpServer(
   {
-    name: 'swarms_api',
-    version: '0.0.1-alpha.0',
+    name: 'swarms_ts_api',
+    version: '0.1.0-alpha.1',
   },
   {
     capabilities: {
@@ -46,7 +46,7 @@ export function initMcpServer(params: {
   endpoints?: { tool: Tool; handler: HandlerFunction }[];
 }) {
   const transformedEndpoints = selectTools(endpoints, params.mcpOptions);
-  const client = new Swarms(params.clientOptions);
+  const client = new SwarmsClient(params.clientOptions);
   const capabilities = {
     ...defaultClientCapabilities,
     ...(params.mcpOptions.client ? knownClients[params.mcpOptions.client] : params.mcpOptions.capabilities),
@@ -56,7 +56,7 @@ export function initMcpServer(params: {
 
 export function init(params: {
   server: Server | McpServer;
-  client?: Swarms;
+  client?: SwarmsClient;
   endpoints?: { tool: Tool; handler: HandlerFunction }[];
   capabilities?: Partial<ClientCapabilities>;
 }) {
@@ -65,7 +65,7 @@ export function init(params: {
 
   const endpointMap = Object.fromEntries(providedEndpoints.map((endpoint) => [endpoint.tool.name, endpoint]));
 
-  const client = params.client || new Swarms({ defaultHeaders: { 'X-Stainless-MCP': 'true' } });
+  const client = params.client || new SwarmsClient({ defaultHeaders: { 'X-Stainless-MCP': 'true' } });
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
@@ -116,7 +116,7 @@ export function selectTools(endpoints: Endpoint[], options: McpOptions) {
 export async function executeHandler(
   tool: Tool,
   handler: HandlerFunction,
-  client: Swarms,
+  client: SwarmsClient,
   args: Record<string, unknown> | undefined,
   compatibilityOptions?: Partial<ClientCapabilities>,
 ) {

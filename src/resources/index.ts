@@ -8,15 +8,13 @@ export {
   type AgentRunParams,
 } from './agent/agent';
 export { Health, type HealthCheckResponse } from './health';
-export { Models, type ModelListAvailableResponse, type ModelListAvailableParams } from './models';
+export { Models, type ModelListAvailableResponse } from './models';
 export {
-  SwarmsResource,
+  Swarms,
   type SwarmSpec,
   type SwarmCheckAvailableResponse,
   type SwarmGetLogsResponse,
   type SwarmRunResponse,
-  type SwarmCheckAvailableParams,
-  type SwarmGetLogsParams,
   type SwarmRunParams,
 } from './swarms/swarms';
 export { type GetRootResponse } from './top-level';

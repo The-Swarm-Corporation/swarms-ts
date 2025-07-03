@@ -1,12 +1,12 @@
 {
-  "name": "swarms",
-  "version": "0.0.1-alpha.0",
-  "description": "The official TypeScript library for the Swarms API",
-  "author": "Swarms <>",
+  "name": "swarms-ts",
+  "version": "0.1.0-alpha.1",
+  "description": "The official TypeScript library for the Swarms Client API",
+  "author": "Swarms Client <kye@swarms.world>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:stainless-sdks/swarms-typescript",
+  "repository": "github:The-Swarm-Corporation/swarms-ts",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
@@ -47,8 +47,8 @@
     "typescript": "5.8.3"
   },
   "imports": {
-    "swarms": ".",
-    "swarms/*": "./src/*"
+    "swarms-ts": ".",
+    "swarms-ts/*": "./src/*"
   },
   "exports": {
     ".": {

@@ -1,4 +1,4 @@
-# Swarms
+# SwarmsClient
 
 Types:
 
@@ -48,7 +48,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/models/available">client.models.<a href="./src/resources/models.ts">listAvailable</a>({ ...params }) -> ModelListAvailableResponse</code>
+- <code title="get /v1/models/available">client.models.<a href="./src/resources/models.ts">listAvailable</a>() -> ModelListAvailableResponse</code>
 
 # Swarms
 
@@ -61,8 +61,8 @@ Types:
 
 Methods:
 
-- <code title="get /v1/swarms/available">client.swarms.<a href="./src/resources/swarms/swarms.ts">checkAvailable</a>({ ...params }) -> SwarmCheckAvailableResponse</code>
-- <code title="get /v1/swarm/logs">client.swarms.<a href="./src/resources/swarms/swarms.ts">getLogs</a>({ ...params }) -> SwarmGetLogsResponse</code>
+- <code title="get /v1/swarms/available">client.swarms.<a href="./src/resources/swarms/swarms.ts">checkAvailable</a>() -> SwarmCheckAvailableResponse</code>
+- <code title="get /v1/swarm/logs">client.swarms.<a href="./src/resources/swarms/swarms.ts">getLogs</a>() -> SwarmGetLogsResponse</code>
 - <code title="post /v1/swarm/completions">client.swarms.<a href="./src/resources/swarms/swarms.ts">run</a>({ ...params }) -> SwarmRunResponse</code>
 
 ## Batch

@@ -4,7 +4,7 @@ import { asTextContentResult } from 'swarms-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../';
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
 export const metadata: Metadata = {
   resource: 'agent.batch',
@@ -28,10 +28,6 @@ export const tool: Tool = {
         items: {
           $ref: '#/$defs/agent_completion',
         },
-      },
-      'x-api-key': {
-        type: 'string',
-        title: 'X-Api-Key',
       },
     },
     $defs: {
@@ -164,7 +160,7 @@ export const tool: Tool = {
   },
 };
 
-export const handler = async (client: Swarms, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
   const body = args as any;
   return asTextContentResult(await client.agent.batch.run(body));
 };

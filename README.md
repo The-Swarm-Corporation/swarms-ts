@@ -1,21 +1,18 @@
-# Swarms TypeScript API Library
+# Swarms Client TypeScript API Library
 
-[![NPM version](<https://img.shields.io/npm/v/swarms.svg?label=npm%20(stable)>)](https://npmjs.org/package/swarms) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/swarms)
+[![NPM version](<https://img.shields.io/npm/v/swarms-ts.svg?label=npm%20(stable)>)](https://npmjs.org/package/swarms-ts) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/swarms-ts)
 
-This library provides convenient access to the Swarms REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the Swarms Client REST API from server-side TypeScript or JavaScript.
 
-The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [docs.swarms.world](https://docs.swarms.world/en/latest/). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/swarms-typescript.git
+npm install swarms-ts
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install swarms`
 
 ## Usage
 
@@ -23,9 +20,9 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
-const client = new Swarms({
+const client = new SwarmsClient({
   apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted
 });
 
@@ -38,9 +35,9 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
-const client = new Swarms({
+const client = new SwarmsClient({
   apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted
 });
 
@@ -58,7 +55,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 const response = await client.getRoot().catch(async (err) => {
-  if (err instanceof Swarms.APIError) {
+  if (err instanceof SwarmsClient.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
     console.log(err.headers); // {server: 'nginx', ...}
@@ -92,7 +89,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const client = new Swarms({
+const client = new SwarmsClient({
   maxRetries: 0, // default is 2
 });
 
@@ -109,7 +106,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const client = new Swarms({
+const client = new SwarmsClient({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -135,7 +132,7 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 
 <!-- prettier-ignore -->
 ```ts
-const client = new Swarms();
+const client = new SwarmsClient();
 
 const response = await client.getRoot().asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -156,13 +153,13 @@ console.log(response);
 
 The log level can be configured in two ways:
 
-1. Via the `SWARMS_LOG` environment variable
+1. Via the `SWARMS_CLIENT_LOG` environment variable
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
-const client = new Swarms({
+const client = new SwarmsClient({
   logLevel: 'debug', // Show all log messages
 });
 ```
@@ -188,13 +185,13 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 import pino from 'pino';
 
 const logger = pino();
 
-const client = new Swarms({
-  logger: logger.child({ name: 'Swarms' }),
+const client = new SwarmsClient({
+  logger: logger.child({ name: 'SwarmsClient' }),
   logLevel: 'debug', // Send all messages to pino, allowing it to filter
 });
 ```
@@ -257,10 +254,10 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 import fetch from 'my-fetch';
 
-const client = new Swarms({ fetch });
+const client = new SwarmsClient({ fetch });
 ```
 
 ### Fetch options
@@ -268,9 +265,9 @@ const client = new Swarms({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
-const client = new Swarms({
+const client = new SwarmsClient({
   fetchOptions: {
     // `RequestInit` options
   },
@@ -285,11 +282,11 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
-const client = new Swarms({
+const client = new SwarmsClient({
   fetchOptions: {
     dispatcher: proxyAgent,
   },
@@ -299,9 +296,9 @@ const client = new Swarms({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
-const client = new Swarms({
+const client = new SwarmsClient({
   fetchOptions: {
     proxy: 'http://localhost:8888',
   },
@@ -311,10 +308,10 @@ const client = new Swarms({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import Swarms from 'npm:swarms';
+import SwarmsClient from 'npm:swarms-ts';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
-const client = new Swarms({
+const client = new SwarmsClient({
   fetchOptions: {
     client: httpClient,
   },
@@ -333,7 +330,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/swarms-typescript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/The-Swarm-Corporation/swarms-ts/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

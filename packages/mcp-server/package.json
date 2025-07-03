@@ -1,17 +1,17 @@
 {
   "name": "swarms-mcp",
-  "version": "0.0.1-alpha.0",
-  "description": "The official MCP Server for the Swarms API",
-  "author": "Swarms <>",
+  "version": "0.1.0-alpha.1",
+  "description": "The official MCP Server for the Swarms Client API",
+  "author": "Swarms Client <kye@swarms.world>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stainless-sdks/swarms-typescript.git",
+    "url": "git+https://github.com/The-Swarm-Corporation/swarms-ts.git",
     "directory": "packages/mcp-server"
   },
-  "homepage": "https://github.com/stainless-sdks/swarms-typescript/tree/main/packages/mcp-server#readme",
+  "homepage": "https://github.com/The-Swarm-Corporation/swarms-ts/tree/main/packages/mcp-server#readme",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "private": false,
@@ -27,7 +27,7 @@
     "fix": "eslint --fix --ext ts,js ."
   },
   "dependencies": {
-    "swarms": "file:../../dist/",
+    "swarms-ts": "file:../../dist/",
     "@modelcontextprotocol/sdk": "^1.11.5",
     "yargs": "^17.7.2",
     "@cloudflare/cabidela": "^0.2.4",

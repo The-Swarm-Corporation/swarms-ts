@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms-ts';
 
-const client = new Swarms({
+const client = new SwarmsClient({
   apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
@@ -10,7 +10,7 @@ const client = new Swarms({
 describe('resource batch', () => {
   // skipped: tests are disabled for the time being
   test.skip('run: only required params', async () => {
-    const responsePromise = client.agent.batch.run({ body: [{}], 'x-api-key': 'x-api-key' });
+    const responsePromise = client.agent.batch.run({ body: [{}] });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,7 +45,6 @@ describe('resource batch', () => {
           task: 'task',
         },
       ],
-      'x-api-key': 'x-api-key',
     });
   });
 });
