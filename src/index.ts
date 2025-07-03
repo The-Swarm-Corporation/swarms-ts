@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Swarms as default } from './client';
+export { SwarmsClient as default } from './client';
 
 export { type Uploadable, toFile } from './core/uploads';
 export { APIPromise } from './core/api-promise';
-export { Swarms, type ClientOptions } from './client';
+export { SwarmsClient, type ClientOptions } from './client';
 export {
-  SwarmsError,
+  SwarmsClientError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,

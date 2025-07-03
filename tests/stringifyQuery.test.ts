@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Swarms } from 'swarms';
+import { SwarmsClient } from 'swarms';
 
-const { stringifyQuery } = Swarms.prototype as any;
+const { stringifyQuery } = SwarmsClient.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [

@@ -4,7 +4,7 @@ import { asTextContentResult } from 'swarms-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import Swarms from 'swarms';
+import SwarmsClient from 'swarms';
 
 export const metadata: Metadata = {
   resource: 'swarms',
@@ -20,18 +20,12 @@ export const tool: Tool = {
   description: 'Check the available swarm types.',
   inputSchema: {
     type: 'object',
-    properties: {
-      'x-api-key': {
-        type: 'string',
-        title: 'X-Api-Key',
-      },
-    },
+    properties: {},
   },
 };
 
-export const handler = async (client: Swarms, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await client.swarms.checkAvailable(body));
+export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
+  return asTextContentResult(await client.swarms.checkAvailable());
 };
 
 export default { metadata, tool, handler };
