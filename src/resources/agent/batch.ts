@@ -8,13 +8,6 @@ import { RequestOptions } from '../../internal/request-options';
 export class Batch extends APIResource {
   /**
    * Run a batch of agents with the specified tasks using a thread pool.
-   *
-   * Args: agent_completions: List of agent completion tasks to process x_api_key:
-   * API key for authentication
-   *
-   * Returns: List[Dict[str, Any]]: List of results from completed agent tasks
-   *
-   * Raises: HTTPException: If there's an error processing the batch
    */
   run(params: BatchRunParams, options?: RequestOptions): APIPromise<BatchRunResponse> {
     const { body } = params;

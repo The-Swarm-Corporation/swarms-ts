@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'get_logs_swarms',
   description:
-    'Get all API request logs for the user associated with the provided API key,\nexcluding any logs that contain a client_ip field in their data.',
+    'Get all API request logs for the user associated with the provided API key, excluding any logs that contain a client_ip field in their data.',
   inputSchema: {
     type: 'object',
     properties: {},
