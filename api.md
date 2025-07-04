@@ -74,3 +74,15 @@ Types:
 Methods:
 
 - <code title="post /v1/swarm/batch/completions">client.swarms.batch.<a href="./src/resources/swarms/batch.ts">run</a>([ ...body ]) -> BatchRunResponse</code>
+
+# Client
+
+## Rate
+
+Types:
+
+- <code><a href="./src/resources/client/rate.ts">RateGetLimitsResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/rate/limits">client.client.rate.<a href="./src/resources/client/rate.ts">getLimits</a>() -> RateGetLimitsResponse</code>

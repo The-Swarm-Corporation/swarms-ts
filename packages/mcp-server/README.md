@@ -194,3 +194,7 @@ The following tools are available in this MCP server.
 ### Resource `swarms.batch`:
 
 - `run_swarms_batch` (`write`): Run a batch of swarms with the specified tasks using a thread pool.
+
+### Resource `client.rate`:
+
+- `get_limits_client_rate` (`read`): Get the rate limits and current usage for the user associated with the provided API key.
