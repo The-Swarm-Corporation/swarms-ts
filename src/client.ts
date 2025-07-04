@@ -40,6 +40,7 @@ import {
   parseLogLevel,
 } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
+import { Client } from './resources/client/client';
 
 export interface ClientOptions {
   /**
@@ -739,11 +740,13 @@ export class SwarmsClient {
   agent: API.Agent = new API.Agent(this);
   models: API.Models = new API.Models(this);
   swarms: API.Swarms = new API.Swarms(this);
+  client: API.Client = new API.Client(this);
 }
 SwarmsClient.Health = Health;
 SwarmsClient.Agent = Agent;
 SwarmsClient.Models = Models;
 SwarmsClient.Swarms = Swarms;
+SwarmsClient.Client = Client;
 export declare namespace SwarmsClient {
   export type RequestOptions = Opts.RequestOptions;
 
@@ -769,4 +772,6 @@ export declare namespace SwarmsClient {
     type SwarmRunResponse as SwarmRunResponse,
     type SwarmRunParams as SwarmRunParams,
   };
+
+  export { Client as Client };
 }
