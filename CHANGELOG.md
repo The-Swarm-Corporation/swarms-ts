@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-07-05)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Chores
+
+* configure new SDK language ([62776ed](https://github.com/The-Swarm-Corporation/swarms-ts/commit/62776ed936ecc03de7299cc1f5311dedeef5ff26))
+
 ## 0.1.0-alpha.2 (2025-07-04)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
