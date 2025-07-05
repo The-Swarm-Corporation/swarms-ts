@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "swarms-mcp/*": ["src/*"],
-      "swarms-mcp": ["src/index.ts"]
+      "swarms-ts-mcp/*": ["src/*"],
+      "swarms-ts-mcp": ["src/index.ts"]
     },
     "noEmit": true,
 
