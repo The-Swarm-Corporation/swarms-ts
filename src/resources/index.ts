@@ -7,6 +7,7 @@ export {
   type AgentRunResponse,
   type AgentRunParams,
 } from './agent/agent';
+export { Client } from './client/client';
 export { Health, type HealthCheckResponse } from './health';
 export { Models, type ModelListAvailableResponse } from './models';
 export {

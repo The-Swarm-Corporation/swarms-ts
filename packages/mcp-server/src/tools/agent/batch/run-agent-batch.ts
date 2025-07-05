@@ -17,8 +17,7 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'run_agent_batch',
-  description:
-    "Run a batch of agents with the specified tasks using a thread pool.\n\nArgs:\n    agent_completions: List of agent completion tasks to process\n    x_api_key: API key for authentication\n\nReturns:\n    List[Dict[str, Any]]: List of results from completed agent tasks\n\nRaises:\n    HTTPException: If there's an error processing the batch",
+  description: 'Run a batch of agents with the specified tasks using a thread pool.',
   inputSchema: {
     type: 'object',
     properties: {
