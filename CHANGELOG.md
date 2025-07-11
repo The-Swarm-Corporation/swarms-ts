@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-07-11)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* **mcp:** support filtering tool results by a jq expression ([923a99d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/923a99d07701aa4de781d705f9ac0dcf5690727f))
+
+
+### Bug Fixes
+
+* **mcp:** relax input type for asTextContextResult ([ab4e258](https://github.com/The-Swarm-Corporation/swarms-ts/commit/ab4e2588ede32268fd4a20f17ec2ce8d08066136))
+
+
+### Chores
+
+* configure new SDK language ([62776ed](https://github.com/The-Swarm-Corporation/swarms-ts/commit/62776ed936ecc03de7299cc1f5311dedeef5ff26))
+* make some internal functions async ([c67b3ac](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c67b3acb8de7db8d518b08cbba9b9dd6930f6f8a))
+
 ## 0.1.0-alpha.2 (2025-07-04)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
