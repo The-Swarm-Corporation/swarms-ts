@@ -1,6 +1,6 @@
 {
-  "name": "swarms-mcp",
-  "version": "0.1.0-alpha.2",
+  "name": "swarms-ts-mcp",
+  "version": "0.1.0-alpha.3",
   "description": "The official MCP Server for the Swarms Client API",
   "author": "Swarms Client <kye@swarms.world>",
   "types": "dist/index.d.ts",
@@ -29,6 +29,7 @@
   "dependencies": {
     "swarms-ts": "file:../../dist/",
     "@modelcontextprotocol/sdk": "^1.11.5",
+    "jq-web": "^0.6.2",
     "yargs": "^17.7.2",
     "@cloudflare/cabidela": "^0.2.4",
     "zod": "^3.25.20",
@@ -54,8 +55,8 @@
     "typescript": "5.8.3"
   },
   "imports": {
-    "swarms-mcp": ".",
-    "swarms-mcp/*": "./src/*"
+    "swarms-ts-mcp": ".",
+    "swarms-ts-mcp/*": "./src/*"
   },
   "exports": {
     ".": {

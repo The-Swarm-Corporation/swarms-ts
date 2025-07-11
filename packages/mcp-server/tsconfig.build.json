@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "swarms-mcp/*": ["dist/src/*"],
-      "swarms-mcp": ["dist/src/index.ts"]
+      "swarms-ts-mcp/*": ["dist/src/*"],
+      "swarms-ts-mcp": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

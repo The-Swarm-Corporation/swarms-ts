@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^swarms-mcp$': '<rootDir>/src/index.ts',
-    '^swarms-mcp/(.*)$': '<rootDir>/src/$1',
+    '^swarms-ts-mcp$': '<rootDir>/src/index.ts',
+    '^swarms-ts-mcp/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testPathIgnorePatterns: ['scripts'],
