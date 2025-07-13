@@ -10,7 +10,7 @@ You can run the MCP Server directly via `npx`:
 
 ```sh
 export SWARMS_API_KEY="My API Key"
-npx -y swarms-mcp@latest
+npx -y swarms-ts-mcp@latest
 ```
 
 ### Via MCP Client
@@ -25,7 +25,7 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "swarms_ts_api": {
       "command": "npx",
-      "args": ["-y", "swarms-mcp", "--client=claude", "--tools=all"],
+      "args": ["-y", "swarms-ts-mcp", "--client=claude", "--tools=all"],
       "env": {
         "SWARMS_API_KEY": "My API Key"
       }
@@ -130,10 +130,10 @@ over time, you can manually enable or disable certain capabilities:
 
 ```js
 // Import the server, generated endpoints, or the init function
-import { server, endpoints, init } from "swarms-mcp/server";
+import { server, endpoints, init } from "swarms-ts-mcp/server";
 
 // import a specific tool
-import getRootClient from "swarms-mcp/tools/top-level/get-root-client";
+import getRootClient from "swarms-ts-mcp/tools/top-level/get-root-client";
 
 // initialize the server and all endpoints
 init({ server, endpoints });

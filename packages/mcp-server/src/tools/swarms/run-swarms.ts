@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { asTextContentResult } from 'swarms-mcp/tools/types';
+import { maybeFilter } from 'swarms-ts-mcp/filtering';
+import { asTextContentResult } from 'swarms-ts-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'run_swarms',
-  description: 'Run a swarm with the specified task.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a swarm with the specified task.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'Response Run Swarm V1 Swarm Completions Post'\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -39,6 +41,14 @@ export const tool: Tool = {
         type: 'string',
         title: 'Img',
         description: "An optional image URL that may be associated with the swarm's task or representation.",
+      },
+      imgs: {
+        type: 'array',
+        title: 'Imgs',
+        description: "A list of image URLs that may be associated with the swarm's task or representation.",
+        items: {
+          type: 'string',
+        },
       },
       max_loops: {
         type: 'integer',
@@ -130,6 +140,12 @@ export const tool: Tool = {
           type: 'string',
         },
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
     $defs: {
       agent_spec: {
@@ -217,7 +233,7 @@ export const tool: Tool = {
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.swarms.run(body));
+  return asTextContentResult(await maybeFilter(args, await client.swarms.run(body)));
 };
 
 export default { metadata, tool, handler };
