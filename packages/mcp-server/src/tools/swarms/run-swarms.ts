@@ -42,6 +42,14 @@ export const tool: Tool = {
         title: 'Img',
         description: "An optional image URL that may be associated with the swarm's task or representation.",
       },
+      imgs: {
+        type: 'array',
+        title: 'Imgs',
+        description: "A list of image URLs that may be associated with the swarm's task or representation.",
+        items: {
+          type: 'string',
+        },
+      },
       max_loops: {
         type: 'integer',
         title: 'Max Loops',
