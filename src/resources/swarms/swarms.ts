@@ -53,12 +53,6 @@ export interface SwarmSpec {
   img?: string | null;
 
   /**
-   * A list of image URLs that may be associated with the swarm's task or
-   * representation.
-   */
-  imgs?: Array<string> | null;
-
-  /**
    * The maximum number of execution loops allowed for the swarm, enabling repeated
    * processing if needed.
    */
@@ -160,12 +154,6 @@ export interface SwarmRunParams {
    * representation.
    */
   img?: string | null;
-
-  /**
-   * A list of image URLs that may be associated with the swarm's task or
-   * representation.
-   */
-  imgs?: Array<string> | null;
 
   /**
    * The maximum number of execution loops allowed for the swarm, enabling repeated

@@ -43,7 +43,6 @@ describe('resource batch', () => {
           ],
           description: 'description',
           img: 'img',
-          imgs: ['string'],
           max_loops: 0,
           messages: [{ foo: 'bar' }],
           name: 'name',
