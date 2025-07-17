@@ -28,11 +28,7 @@ export const server = new McpServer(
     name: 'swarms_ts_api',
     version: '0.1.0-alpha.4',
   },
-  {
-    capabilities: {
-      tools: {},
-    },
-  },
+  { capabilities: { tools: {} } },
 );
 
 /**
