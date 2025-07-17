@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-07-17)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Bug Fixes
+
+* **mcp:** support jq filtering on cloudflare workers ([cc4b887](https://github.com/The-Swarm-Corporation/swarms-ts/commit/cc4b887bfc708f1e9cceba8e19d4832071eae54d))
+
+
+### Chores
+
+* **mcp:** rework imports in tools ([0ba5e12](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0ba5e12a2c80ed217d7c72d981c478ad38ed12dc))
+* **ts:** reorder package.json imports ([aa154ba](https://github.com/The-Swarm-Corporation/swarms-ts/commit/aa154ba7459134db42a61874292ff7f8219db9c1))
+
 ## 0.1.0-alpha.4 (2025-07-13)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
