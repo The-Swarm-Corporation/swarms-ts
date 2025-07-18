@@ -42,6 +42,11 @@ export interface AgentCompletion {
   imgs?: Array<string> | null;
 
   /**
+   * A flag indicating whether the agent should stream its output.
+   */
+  stream?: boolean | null;
+
+  /**
    * The task to be completed by the agent.
    */
   task?: string | null;
@@ -143,6 +148,11 @@ export interface AgentRunParams {
    * representation.
    */
   imgs?: Array<string> | null;
+
+  /**
+   * A flag indicating whether the agent should stream its output.
+   */
+  stream?: boolean | null;
 
   /**
    * The task to be completed by the agent.
