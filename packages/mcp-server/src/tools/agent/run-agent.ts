@@ -54,6 +54,11 @@ export const tool: Tool = {
           type: 'string',
         },
       },
+      stream: {
+        type: 'boolean',
+        title: 'Stream',
+        description: 'A flag indicating whether the agent should stream its output.',
+      },
       task: {
         type: 'string',
         title: 'Task',
