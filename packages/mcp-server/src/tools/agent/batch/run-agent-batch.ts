@@ -36,6 +36,7 @@ export const tool: Tool = {
           'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
+    required: ['body'],
     $defs: {
       agent_completion: {
         type: 'object',
@@ -81,7 +82,6 @@ export const tool: Tool = {
             description: 'The task to be completed by the agent.',
           },
         },
-        required: [],
       },
       agent_spec: {
         type: 'object',
