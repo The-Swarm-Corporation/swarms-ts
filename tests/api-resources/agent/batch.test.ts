@@ -42,6 +42,7 @@ describe('resource batch', () => {
           history: { foo: 'bar' },
           img: 'img',
           imgs: ['string'],
+          stream: true,
           task: 'task',
         },
       ],
