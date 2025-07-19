@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-07-19)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Features
+
+* **api:** api update ([e18ca03](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e18ca03d152d72a874a8a37db1e79de2b3603cd9))
+* **api:** api update ([e05e1df](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e05e1df0db53466e635175fc1e192dea85cbae84))
+
+
+### Bug Fixes
+
+* **mcp:** include required section for top-level properties and support naming transformations ([d42ad10](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d42ad10771ffe30d9e40dc745ff76a350272e5b1))
+
 ## 0.1.0-alpha.5 (2025-07-17)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
