@@ -116,6 +116,7 @@ export const tool: Tool = {
           'DeepResearchSwarm',
           'CouncilAsAJudge',
           'InteractiveGroupChat',
+          'HeavySwarm',
         ],
       },
       task: {

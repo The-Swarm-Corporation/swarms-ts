@@ -117,6 +117,7 @@ export interface SwarmSpec {
     | 'DeepResearchSwarm'
     | 'CouncilAsAJudge'
     | 'InteractiveGroupChat'
+    | 'HeavySwarm'
     | null;
 
   /**
@@ -220,6 +221,7 @@ export interface SwarmRunParams {
     | 'DeepResearchSwarm'
     | 'CouncilAsAJudge'
     | 'InteractiveGroupChat'
+    | 'HeavySwarm'
     | null;
 
   /**
