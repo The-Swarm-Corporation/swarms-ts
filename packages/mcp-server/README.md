@@ -195,6 +195,11 @@ The following tools are available in this MCP server.
 
 - `run_swarms_batch` (`write`): Run a batch of swarms with the specified tasks using a thread pool.
 
+### Resource `reasoning_agents`:
+
+- `create_completion_reasoning_agents` (`write`): Run a reasoning agent with the specified task.
+- `list_types_reasoning_agents` (`read`): Get the types of reasoning agents available.
+
 ### Resource `client.rate`:
 
 - `get_limits_client_rate` (`read`): Get the rate limits and current usage for the user associated with the provided API key.

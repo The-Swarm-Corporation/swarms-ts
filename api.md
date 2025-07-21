@@ -75,6 +75,18 @@ Methods:
 
 - <code title="post /v1/swarm/batch/completions">client.swarms.batch.<a href="./src/resources/swarms/batch.ts">run</a>([ ...body ]) -> BatchRunResponse</code>
 
+# ReasoningAgents
+
+Types:
+
+- <code><a href="./src/resources/reasoning-agents.ts">ReasoningAgentCreateCompletionResponse</a></code>
+- <code><a href="./src/resources/reasoning-agents.ts">ReasoningAgentListTypesResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/reasoning-agent/completions">client.reasoningAgents.<a href="./src/resources/reasoning-agents.ts">createCompletion</a>({ ...params }) -> ReasoningAgentCreateCompletionResponse</code>
+- <code title="get /v1/reasoning-agent/types">client.reasoningAgents.<a href="./src/resources/reasoning-agents.ts">listTypes</a>() -> ReasoningAgentListTypesResponse</code>
+
 # Client
 
 ## Rate
