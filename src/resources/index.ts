@@ -11,6 +11,12 @@ export { Client } from './client/client';
 export { Health, type HealthCheckResponse } from './health';
 export { Models, type ModelListAvailableResponse } from './models';
 export {
+  ReasoningAgents,
+  type ReasoningAgentCreateCompletionResponse,
+  type ReasoningAgentListTypesResponse,
+  type ReasoningAgentCreateCompletionParams,
+} from './reasoning-agents';
+export {
   Swarms,
   type SwarmSpec,
   type SwarmCheckAvailableResponse,
