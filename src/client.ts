@@ -18,6 +18,12 @@ import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import { Health, HealthCheckResponse } from './resources/health';
 import { ModelListAvailableResponse, Models } from './resources/models';
+import {
+  ReasoningAgentCreateCompletionParams,
+  ReasoningAgentCreateCompletionResponse,
+  ReasoningAgentListTypesResponse,
+  ReasoningAgents,
+} from './resources/reasoning-agents';
 import { GetRootResponse } from './resources/top-level';
 import { Agent, AgentCompletion, AgentRunParams, AgentRunResponse, AgentSpec } from './resources/agent/agent';
 import {
@@ -743,12 +749,14 @@ export class SwarmsClient {
   agent: API.Agent = new API.Agent(this);
   models: API.Models = new API.Models(this);
   swarms: API.Swarms = new API.Swarms(this);
+  reasoningAgents: API.ReasoningAgents = new API.ReasoningAgents(this);
   client: API.Client = new API.Client(this);
 }
 SwarmsClient.Health = Health;
 SwarmsClient.Agent = Agent;
 SwarmsClient.Models = Models;
 SwarmsClient.Swarms = Swarms;
+SwarmsClient.ReasoningAgents = ReasoningAgents;
 SwarmsClient.Client = Client;
 export declare namespace SwarmsClient {
   export type RequestOptions = Opts.RequestOptions;
@@ -774,6 +782,13 @@ export declare namespace SwarmsClient {
     type SwarmGetLogsResponse as SwarmGetLogsResponse,
     type SwarmRunResponse as SwarmRunResponse,
     type SwarmRunParams as SwarmRunParams,
+  };
+
+  export {
+    ReasoningAgents as ReasoningAgents,
+    type ReasoningAgentCreateCompletionResponse as ReasoningAgentCreateCompletionResponse,
+    type ReasoningAgentListTypesResponse as ReasoningAgentListTypesResponse,
+    type ReasoningAgentCreateCompletionParams as ReasoningAgentCreateCompletionParams,
   };
 
   export { Client as Client };

@@ -13,6 +13,8 @@ import check_available_swarms from './swarms/check-available-swarms';
 import get_logs_swarms from './swarms/get-logs-swarms';
 import run_swarms from './swarms/run-swarms';
 import run_swarms_batch from './swarms/batch/run-swarms-batch';
+import create_completion_reasoning_agents from './reasoning-agents/create-completion-reasoning-agents';
+import list_types_reasoning_agents from './reasoning-agents/list-types-reasoning-agents';
 import get_limits_client_rate from './client/rate/get-limits-client-rate';
 
 export const endpoints: Endpoint[] = [];
@@ -30,6 +32,8 @@ addEndpoint(check_available_swarms);
 addEndpoint(get_logs_swarms);
 addEndpoint(run_swarms);
 addEndpoint(run_swarms_batch);
+addEndpoint(create_completion_reasoning_agents);
+addEndpoint(list_types_reasoning_agents);
 addEndpoint(get_limits_client_rate);
 
 export type Filter = {
