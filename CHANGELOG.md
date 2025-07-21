@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-07-21)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **api:** add reasoning agent endpoints and gitbook docs ([c562a25](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c562a25cb94f029148c5c575dc87fa79d62da3c8))
+* **api:** add reasoning agent endpoints and gitbook docs ([c562a25](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c562a25cb94f029148c5c575dc87fa79d62da3c8))
+
 ## 0.1.0-alpha.6 (2025-07-19)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
