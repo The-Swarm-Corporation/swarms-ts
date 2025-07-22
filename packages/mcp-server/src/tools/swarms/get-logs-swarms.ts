@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'get_logs_swarms',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet all API request logs for the user associated with the provided API key, excluding any logs that contain a client_ip field in their data.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'SwarmLogsOutput',\n  properties: {\n    count: {\n      type: 'integer',\n      title: 'Count'\n    },\n    logs: {\n      type: 'object',\n      title: 'Logs'\n    },\n    status: {\n      type: 'string',\n      title: 'Status'\n    },\n    timestamp: {\n      type: 'string',\n      title: 'Timestamp'\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet all API request logs for the user associated with the provided API key, excluding any logs that contain a client_ip field in their data.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'Response Get Logs V1 Swarm Logs Get'\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
