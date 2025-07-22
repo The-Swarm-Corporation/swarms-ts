@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'swarms-ts-mcp/filtering';
 import { Metadata, asTextContentResult } from 'swarms-ts-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'check_health',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nHealth\n\n# Response Schema\n```json\n{\n  type: 'object'\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nHealth\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'HealthOutput',\n  properties: {\n    status: {\n      type: 'string',\n      title: 'Status'\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -33,7 +34,7 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
-  return asTextContentResult((await client.health.check()) as object);
+  return asTextContentResult(await maybeFilter(args, await client.health.check()));
 };
 
 export default { metadata, tool, handler };
