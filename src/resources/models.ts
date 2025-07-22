@@ -13,11 +13,7 @@ export class Models extends APIResource {
   }
 }
 
-export interface ModelListAvailableResponse {
-  models?: unknown;
-
-  success?: boolean | null;
-}
+export type ModelListAvailableResponse = { [key: string]: unknown };
 
 export declare namespace Models {
   export { type ModelListAvailableResponse as ModelListAvailableResponse };

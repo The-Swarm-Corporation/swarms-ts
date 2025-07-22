@@ -8,14 +8,12 @@ export class Health extends APIResource {
   /**
    * Health
    */
-  check(options?: RequestOptions): APIPromise<HealthCheckResponse> {
+  check(options?: RequestOptions): APIPromise<unknown> {
     return this._client.get('/health', options);
   }
 }
 
-export interface HealthCheckResponse {
-  status?: string;
-}
+export type HealthCheckResponse = unknown;
 
 export declare namespace Health {
   export { type HealthCheckResponse as HealthCheckResponse };
