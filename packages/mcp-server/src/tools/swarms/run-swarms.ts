@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'run_swarms',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a swarm with the specified task.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'Response Run Swarm V1 Swarm Completions Post'\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a swarm with the specified task.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'SwarmCompletion',\n  properties: {\n    description: {\n      type: 'string',\n      title: 'Description',\n      description: 'The description of the swarm.'\n    },\n    execution_time: {\n      type: 'number',\n      title: 'Execution Time',\n      description: 'The execution time of the swarm.'\n    },\n    job_id: {\n      type: 'string',\n      title: 'Job Id',\n      description: 'The unique identifier for the swarm completion.'\n    },\n    number_of_agents: {\n      type: 'integer',\n      title: 'Number Of Agents',\n      description: 'The number of agents in the swarm.'\n    },\n    output: {\n      type: 'object',\n      title: 'Output',\n      description: 'The output of the swarm.'\n    },\n    service_tier: {\n      type: 'string',\n      title: 'Service Tier',\n      description: 'The service tier of the swarm.'\n    },\n    status: {\n      type: 'string',\n      title: 'Status',\n      description: 'The status of the swarm completion.'\n    },\n    swarm_name: {\n      type: 'string',\n      title: 'Swarm Name',\n      description: 'The name of the swarm.'\n    },\n    swarm_type: {\n      type: 'string',\n      title: 'Swarm Type',\n      description: 'The type of the swarm.'\n    },\n    usage: {\n      type: 'object',\n      title: 'Usage',\n      description: 'The usage of the swarm.'\n    }\n  },\n  required: [    'description',\n    'execution_time',\n    'job_id',\n    'number_of_agents',\n    'output',\n    'service_tier',\n    'status',\n    'swarm_name',\n    'swarm_type',\n    'usage'\n  ]\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -35,6 +35,21 @@ export const tool: Tool = {
         title: 'Description',
         description:
           "A comprehensive description of the swarm's objectives, capabilities, and intended outcomes.",
+      },
+      heavy_swarm_loops_per_agent: {
+        type: 'integer',
+        title: 'Heavy Swarm Loops Per Agent',
+        description: 'The number of loops to run per agent in the heavy swarm.',
+      },
+      heavy_swarm_question_agent_model_name: {
+        type: 'string',
+        title: 'Heavy Swarm Question Agent Model Name',
+        description: 'The model name to use for the question agent in the heavy swarm.',
+      },
+      heavy_swarm_worker_model_name: {
+        type: 'string',
+        title: 'Heavy Swarm Worker Model Name',
+        description: 'The model name to use for the worker agent in the heavy swarm.',
       },
       img: {
         type: 'string',
