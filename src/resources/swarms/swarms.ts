@@ -47,6 +47,21 @@ export interface SwarmSpec {
   description?: string | null;
 
   /**
+   * The number of loops to run per agent in the heavy swarm.
+   */
+  heavy_swarm_loops_per_agent?: number | null;
+
+  /**
+   * The model name to use for the question agent in the heavy swarm.
+   */
+  heavy_swarm_question_agent_model_name?: string | null;
+
+  /**
+   * The model name to use for the worker agent in the heavy swarm.
+   */
+  heavy_swarm_worker_model_name?: string | null;
+
+  /**
    * An optional image URL that may be associated with the swarm's task or
    * representation.
    */
@@ -131,11 +146,73 @@ export interface SwarmSpec {
   tasks?: Array<string> | null;
 }
 
-export type SwarmCheckAvailableResponse = { [key: string]: unknown };
+export interface SwarmCheckAvailableResponse {
+  success?: boolean | null;
 
-export type SwarmGetLogsResponse = { [key: string]: unknown };
+  swarm_types?: unknown;
+}
 
-export type SwarmRunResponse = { [key: string]: unknown };
+export interface SwarmGetLogsResponse {
+  count?: number | null;
+
+  logs?: unknown;
+
+  status?: string | null;
+
+  timestamp?: string | null;
+}
+
+export interface SwarmRunResponse {
+  /**
+   * The description of the swarm.
+   */
+  description: string | null;
+
+  /**
+   * The execution time of the swarm.
+   */
+  execution_time: number | null;
+
+  /**
+   * The unique identifier for the swarm completion.
+   */
+  job_id: string | null;
+
+  /**
+   * The number of agents in the swarm.
+   */
+  number_of_agents: number | null;
+
+  /**
+   * The output of the swarm.
+   */
+  output: unknown;
+
+  /**
+   * The service tier of the swarm.
+   */
+  service_tier: string | null;
+
+  /**
+   * The status of the swarm completion.
+   */
+  status: string | null;
+
+  /**
+   * The name of the swarm.
+   */
+  swarm_name: string | null;
+
+  /**
+   * The type of the swarm.
+   */
+  swarm_type: string | null;
+
+  /**
+   * The usage of the swarm.
+   */
+  usage: { [key: string]: unknown } | null;
+}
 
 export interface SwarmRunParams {
   /**
@@ -149,6 +226,21 @@ export interface SwarmRunParams {
    * intended outcomes.
    */
   description?: string | null;
+
+  /**
+   * The number of loops to run per agent in the heavy swarm.
+   */
+  heavy_swarm_loops_per_agent?: number | null;
+
+  /**
+   * The model name to use for the question agent in the heavy swarm.
+   */
+  heavy_swarm_question_agent_model_name?: string | null;
+
+  /**
+   * The model name to use for the worker agent in the heavy swarm.
+   */
+  heavy_swarm_worker_model_name?: string | null;
 
   /**
    * An optional image URL that may be associated with the swarm's task or
