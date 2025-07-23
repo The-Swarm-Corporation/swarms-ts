@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2025-07-22)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Features
+
+* **api:** api update ([f76eb8e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f76eb8ed355c392df4c0b4e1d02f424a868734bd))
+* **api:** api update ([0cd265f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0cd265f96b218a1cfbfacf974b4c938bcd2ab87a))
+
 ## 0.1.0-alpha.8 (2025-07-22)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)

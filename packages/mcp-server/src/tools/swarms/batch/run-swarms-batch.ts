@@ -57,6 +57,21 @@ export const tool: Tool = {
             description:
               "A comprehensive description of the swarm's objectives, capabilities, and intended outcomes.",
           },
+          heavy_swarm_loops_per_agent: {
+            type: 'integer',
+            title: 'Heavy Swarm Loops Per Agent',
+            description: 'The number of loops to run per agent in the heavy swarm.',
+          },
+          heavy_swarm_question_agent_model_name: {
+            type: 'string',
+            title: 'Heavy Swarm Question Agent Model Name',
+            description: 'The model name to use for the question agent in the heavy swarm.',
+          },
+          heavy_swarm_worker_model_name: {
+            type: 'string',
+            title: 'Heavy Swarm Worker Model Name',
+            description: 'The model name to use for the worker agent in the heavy swarm.',
+          },
           img: {
             type: 'string',
             title: 'Img',

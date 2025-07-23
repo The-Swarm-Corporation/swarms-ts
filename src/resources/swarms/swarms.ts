@@ -47,6 +47,21 @@ export interface SwarmSpec {
   description?: string | null;
 
   /**
+   * The number of loops to run per agent in the heavy swarm.
+   */
+  heavy_swarm_loops_per_agent?: number | null;
+
+  /**
+   * The model name to use for the question agent in the heavy swarm.
+   */
+  heavy_swarm_question_agent_model_name?: string | null;
+
+  /**
+   * The model name to use for the worker agent in the heavy swarm.
+   */
+  heavy_swarm_worker_model_name?: string | null;
+
+  /**
    * An optional image URL that may be associated with the swarm's task or
    * representation.
    */
@@ -149,11 +164,6 @@ export interface SwarmGetLogsResponse {
 
 export interface SwarmRunResponse {
   /**
-   * The unique identifier for the swarm completion.
-   */
-  id: string | null;
-
-  /**
    * The description of the swarm.
    */
   description: string | null;
@@ -162,6 +172,11 @@ export interface SwarmRunResponse {
    * The execution time of the swarm.
    */
   execution_time: number | null;
+
+  /**
+   * The unique identifier for the swarm completion.
+   */
+  job_id: string | null;
 
   /**
    * The number of agents in the swarm.
@@ -211,6 +226,21 @@ export interface SwarmRunParams {
    * intended outcomes.
    */
   description?: string | null;
+
+  /**
+   * The number of loops to run per agent in the heavy swarm.
+   */
+  heavy_swarm_loops_per_agent?: number | null;
+
+  /**
+   * The model name to use for the question agent in the heavy swarm.
+   */
+  heavy_swarm_question_agent_model_name?: string | null;
+
+  /**
+   * The model name to use for the worker agent in the heavy swarm.
+   */
+  heavy_swarm_worker_model_name?: string | null;
 
   /**
    * An optional image URL that may be associated with the swarm's task or
