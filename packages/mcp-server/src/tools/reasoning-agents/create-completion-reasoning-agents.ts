@@ -115,6 +115,7 @@ export const tool: Tool = {
     },
     required: [],
   },
+  annotations: {},
 };
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {

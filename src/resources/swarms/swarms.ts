@@ -18,8 +18,9 @@ export class Swarms extends APIResource {
   }
 
   /**
-   * Get all API request logs for the user associated with the provided API key,
-   * excluding any logs that contain a client_ip field in their data.
+   * Get all API request logs for all API keys associated with the user identified by
+   * the provided API key, excluding any logs that contain a client_ip field in their
+   * data.
    */
   getLogs(options?: RequestOptions): APIPromise<SwarmGetLogsResponse> {
     return this._client.get('/v1/swarm/logs', options);

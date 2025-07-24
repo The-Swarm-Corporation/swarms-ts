@@ -188,7 +188,7 @@ The following tools are available in this MCP server.
 ### Resource `swarms`:
 
 - `check_available_swarms` (`read`): Check the available swarm types.
-- `get_logs_swarms` (`read`): Get all API request logs for the user associated with the provided API key, excluding any logs that contain a client_ip field in their data.
+- `get_logs_swarms` (`read`): Get all API request logs for all API keys associated with the user identified by the provided API key, excluding any logs that contain a client_ip field in their data.
 - `run_swarms` (`write`): Run a swarm with the specified task.
 
 ### Resource `swarms.batch`:
