@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-07-30)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Features
+
+* **api:** api update ([ff8e98a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/ff8e98aa73376d09fd892b9bfe2f7b29a2de19c5))
+
+
+### Chores
+
+* **internal:** codegen related update ([e7de2c6](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e7de2c6bdaa9578d3470e806b334dd86130f94f7))
+* **internal:** remove redundant imports config ([ee4d808](https://github.com/The-Swarm-Corporation/swarms-ts/commit/ee4d8085908e9760be213a08d9147b00e689c1b4))
+
 ## 0.1.0-alpha.9 (2025-07-22)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
