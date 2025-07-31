@@ -1,6 +1,6 @@
 {
   "name": "swarms-ts",
-  "version": "0.1.0-alpha.9",
+  "version": "0.1.0-alpha.10",
   "description": "The official TypeScript library for the Swarms Client API",
   "author": "Swarms Client <kye@swarms.world>",
   "types": "dist/index.d.ts",
@@ -45,10 +45,6 @@
     "tsconfig-paths": "^4.0.0",
     "typescript": "5.8.3",
     "typescript-eslint": "8.31.1"
-  },
-  "imports": {
-    "swarms-ts": ".",
-    "swarms-ts/*": "./src/*"
   },
   "exports": {
     ".": {
