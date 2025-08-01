@@ -37,7 +37,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
-  return asTextContentResult(await maybeFilter(args, await client.reasoningAgents.listTypes()));
+  const { jq_filter } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.reasoningAgents.listTypes()));
 };
 
 export default { metadata, tool, handler };
