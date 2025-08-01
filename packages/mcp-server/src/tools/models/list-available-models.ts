@@ -37,7 +37,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
-  return asTextContentResult(await maybeFilter(args, await client.models.listAvailable()));
+  const { jq_filter } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.models.listAvailable()));
 };
 
 export default { metadata, tool, handler };
