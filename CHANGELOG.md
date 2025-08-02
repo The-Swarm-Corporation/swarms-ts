@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2025-08-02)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Features
+
+* **mcp:** add logging when environment variable is set ([d179735](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d179735c0a127f21f36405c48084edb5c9663738))
+
+
+### Bug Fixes
+
+* **mcp:** avoid sending `jq_filter` to base API ([6171ff7](https://github.com/The-Swarm-Corporation/swarms-ts/commit/6171ff7b4b19c59b22a6ae49ca3c7c72c1c860e1))
+* **mcp:** reverse validJson capability option and limit scope ([dc46938](https://github.com/The-Swarm-Corporation/swarms-ts/commit/dc469388055f43f8ce7cb5649797977db4efb5cd))
+
 ## 0.1.0-alpha.10 (2025-07-31)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
