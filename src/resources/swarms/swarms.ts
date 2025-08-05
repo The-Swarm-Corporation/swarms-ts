@@ -91,12 +91,6 @@ export interface SwarmSpec {
   rearrange_flow?: string | null;
 
   /**
-   * A flag indicating whether the swarm should return its execution history along
-   * with the final output.
-   */
-  return_history?: boolean | null;
-
-  /**
    * Guidelines or constraints that govern the behavior and interactions of the
    * agents within the swarm.
    */
@@ -270,12 +264,6 @@ export interface SwarmRunParams {
    * Instructions on how to rearrange the flow of tasks among agents, if applicable.
    */
   rearrange_flow?: string | null;
-
-  /**
-   * A flag indicating whether the swarm should return its execution history along
-   * with the final output.
-   */
-  return_history?: boolean | null;
 
   /**
    * Guidelines or constraints that govern the behavior and interactions of the

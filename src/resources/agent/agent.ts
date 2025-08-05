@@ -72,6 +72,18 @@ export interface AgentSpec {
   description?: string | null;
 
   /**
+   * A flag indicating whether the agent should dynamically adjust its temperature
+   * based on the task.
+   */
+  dynamic_temperature_enabled?: boolean | null;
+
+  /**
+   * Additional arguments to pass to the LLM such as top_p, frequency_penalty,
+   * presence_penalty, etc.
+   */
+  llm_args?: { [key: string]: unknown } | null;
+
+  /**
    * The maximum number of times the agent is allowed to repeat its task, enabling
    * iterative processing if necessary.
    */
