@@ -29,6 +29,8 @@ describe('resource batch', () => {
             agent_name: 'agent_name',
             auto_generate_prompt: true,
             description: 'description',
+            dynamic_temperature_enabled: true,
+            llm_args: { foo: 'bar' },
             max_loops: 0,
             max_tokens: 0,
             mcp_url: 'mcp_url',
