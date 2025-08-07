@@ -88,12 +88,6 @@ export const tool: Tool = {
         title: 'Rearrange Flow',
         description: 'Instructions on how to rearrange the flow of tasks among agents, if applicable.',
       },
-      return_history: {
-        type: 'boolean',
-        title: 'Return History',
-        description:
-          'A flag indicating whether the swarm should return its execution history along with the final output.',
-      },
       rules: {
         type: 'string',
         title: 'Rules',
@@ -178,6 +172,18 @@ export const tool: Tool = {
             description:
               "A detailed explanation of the agent's purpose, capabilities, and any specific tasks it is designed to perform.",
           },
+          dynamic_temperature_enabled: {
+            type: 'boolean',
+            title: 'Dynamic Temperature Enabled',
+            description:
+              'A flag indicating whether the agent should dynamically adjust its temperature based on the task.',
+          },
+          llm_args: {
+            type: 'object',
+            title: 'Llm Args',
+            description:
+              'Additional arguments to pass to the LLM such as top_p, frequency_penalty, presence_penalty, etc.',
+          },
           max_loops: {
             type: 'integer',
             title: 'Max Loops',
@@ -241,8 +247,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.swarms.run(body)));
+  const { jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.swarms.run(body)));
 };
 
 export default { metadata, tool, handler };

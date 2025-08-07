@@ -110,6 +110,18 @@ export const tool: Tool = {
             description:
               "A detailed explanation of the agent's purpose, capabilities, and any specific tasks it is designed to perform.",
           },
+          dynamic_temperature_enabled: {
+            type: 'boolean',
+            title: 'Dynamic Temperature Enabled',
+            description:
+              'A flag indicating whether the agent should dynamically adjust its temperature based on the task.',
+          },
+          llm_args: {
+            type: 'object',
+            title: 'Llm Args',
+            description:
+              'Additional arguments to pass to the LLM such as top_p, frequency_penalty, presence_penalty, etc.',
+          },
           max_loops: {
             type: 'integer',
             title: 'Max Loops',
@@ -173,8 +185,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.agent.batch.run(body)));
+  const { jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.agent.batch.run(body)));
 };
 
 export default { metadata, tool, handler };

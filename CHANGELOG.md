@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2025-08-07)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Features
+
+* **api:** api update ([1417d70](https://github.com/The-Swarm-Corporation/swarms-ts/commit/1417d709e2fa836a2aba31446ccd8c389f4bb6de))
+* **mcp:** add logging when environment variable is set ([d179735](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d179735c0a127f21f36405c48084edb5c9663738))
+* **mcp:** remote server with passthru auth ([333179b](https://github.com/The-Swarm-Corporation/swarms-ts/commit/333179b3aef774a13c3be3d45f52cb783823065c))
+
+
+### Bug Fixes
+
+* **mcp:** avoid sending `jq_filter` to base API ([6171ff7](https://github.com/The-Swarm-Corporation/swarms-ts/commit/6171ff7b4b19c59b22a6ae49ca3c7c72c1c860e1))
+* **mcp:** reverse validJson capability option and limit scope ([dc46938](https://github.com/The-Swarm-Corporation/swarms-ts/commit/dc469388055f43f8ce7cb5649797977db4efb5cd))
+
 ## 0.1.0-alpha.10 (2025-07-31)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
