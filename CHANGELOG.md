@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-08-07)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Features
+
+* **mcp:** add unix socket option for remote MCP ([8cd0005](https://github.com/The-Swarm-Corporation/swarms-ts/commit/8cd00054e8b97bcc9ffc589194100bf306f3ff6e))
+
+
+### Chores
+
+* **internal:** move publish config ([12185ea](https://github.com/The-Swarm-Corporation/swarms-ts/commit/12185eaf9b42ac61c5ede965ec6c9667ee04b4c5))
+* **mcp:** refactor streamable http transport ([5f419b2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5f419b2958428a7a1567f592f3612e394d311e5d))
+
 ## 0.1.0-alpha.11 (2025-08-07)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)

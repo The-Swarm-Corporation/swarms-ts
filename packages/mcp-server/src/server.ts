@@ -26,7 +26,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'swarms_ts_api',
-      version: '0.1.0-alpha.11',
+      version: '0.1.0-alpha.12',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
@@ -67,7 +67,6 @@ export function init(params: {
   const logAtLevel =
     (level: 'debug' | 'info' | 'warning' | 'error') =>
     (message: string, ...rest: unknown[]) => {
-      console.error(message, ...rest);
       void server.sendLoggingMessage({
         level,
         data: { message, rest },
