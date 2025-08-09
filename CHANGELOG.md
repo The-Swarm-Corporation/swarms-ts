@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-08-09)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Chores
+
+* **internal:** update comment in script ([f19ae0a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f19ae0a2094d02d60fd719bcb4ecf520ea14cff1))
+* update @stainless-api/prism-cli to v5.15.0 ([c17ec1b](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c17ec1b64ce80e09e065ad0ad601aeaf5fb1f5af))
+
 ## 0.1.0-alpha.12 (2025-08-07)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
