@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource models', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listAvailable', async () => {
     const responsePromise = client.models.listAvailable();
     const rawResponse = await responsePromise.asResponse();

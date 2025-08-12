@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource agent', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('run', async () => {
     const responsePromise = client.agent.run({});
     const rawResponse = await responsePromise.asResponse();
