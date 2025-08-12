@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('top level methods', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getRoot', async () => {
     const responsePromise = client.getRoot();
     const rawResponse = await responsePromise.asResponse();
