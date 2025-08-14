@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource rate', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getLimits', async () => {
     const responsePromise = client.client.rate.getLimits();
     const rawResponse = await responsePromise.asResponse();
