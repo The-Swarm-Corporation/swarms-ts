@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'run_swarms_batch',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a batch of swarms with the specified tasks using a thread pool.\n\n# Response Schema\n```json\n{\n  type: 'array',\n  title: 'Response Run Batch Completions V1 Swarm Batch Completions Post',\n  items: {\n    type: 'object'\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a batch of swarms with the specified tasks using a thread pool.\n\n# Response Schema\n```json\n{\n  type: 'array',\n  title: 'Response Run Batch Completions V1 Swarm Batch Completions Post',\n  items: {\n    type: 'object',\n    additionalProperties: true\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -90,10 +90,12 @@ export const tool: Tool = {
                 type: 'array',
                 items: {
                   type: 'object',
+                  additionalProperties: true,
                 },
               },
               {
                 type: 'object',
+                additionalProperties: true,
               },
             ],
             title: 'Messages',
@@ -198,6 +200,7 @@ export const tool: Tool = {
             title: 'Llm Args',
             description:
               'Additional arguments to pass to the LLM such as top_p, frequency_penalty, presence_penalty, etc.',
+            additionalProperties: true,
           },
           max_loops: {
             type: 'integer',
@@ -251,6 +254,7 @@ export const tool: Tool = {
             description: 'A dictionary of tools that the agent can use to complete its task.',
             items: {
               type: 'object',
+              additionalProperties: true,
             },
           },
         },
