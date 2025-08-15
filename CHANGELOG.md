@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2025-08-15)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Bug Fixes
+
+* **mcp:** generate additionalProperties=true for map schemas to avoid validation issues ([8aa1e16](https://github.com/The-Swarm-Corporation/swarms-ts/commit/8aa1e16fb39ef3f4d2dd90afafd34c27f89f1c49))
+
+
+### Chores
+
+* **mcp:** document remote server in README.md ([b6604ab](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b6604abe86b52d25cd0289623675e5997bd7273d))
+
 ## 0.1.0-alpha.13 (2025-08-14)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
