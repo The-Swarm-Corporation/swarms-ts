@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'check_available_swarms',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCheck the available swarm types.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'SwarmTypesOutput',\n  properties: {\n    success: {\n      type: 'boolean',\n      title: 'Success'\n    },\n    swarm_types: {\n      type: 'object',\n      title: 'Swarm Types'\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCheck the available swarm types.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'SwarmTypesOutput',\n  properties: {\n    success: {\n      type: 'boolean',\n      title: 'Success'\n    },\n    swarm_types: {\n      type: 'object',\n      title: 'Swarm Types',\n      additionalProperties: true\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {

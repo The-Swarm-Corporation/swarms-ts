@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_available_models',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet all available models.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'ModelsAvailableOutput',\n  properties: {\n    models: {\n      type: 'object',\n      title: 'Models'\n    },\n    success: {\n      type: 'boolean',\n      title: 'Success'\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet all available models.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'ModelsAvailableOutput',\n  properties: {\n    models: {\n      type: 'object',\n      title: 'Models',\n      additionalProperties: true\n    },\n    success: {\n      type: 'boolean',\n      title: 'Success'\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
