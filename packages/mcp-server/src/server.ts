@@ -26,7 +26,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'swarms_ts_api',
-      version: '0.1.0-alpha.14',
+      version: '0.1.0-alpha.15',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
