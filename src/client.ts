@@ -752,12 +752,14 @@ export class SwarmsClient {
   reasoningAgents: API.ReasoningAgents = new API.ReasoningAgents(this);
   client: API.Client = new API.Client(this);
 }
+
 SwarmsClient.Health = Health;
 SwarmsClient.Agent = Agent;
 SwarmsClient.Models = Models;
 SwarmsClient.Swarms = Swarms;
 SwarmsClient.ReasoningAgents = ReasoningAgents;
 SwarmsClient.Client = Client;
+
 export declare namespace SwarmsClient {
   export type RequestOptions = Opts.RequestOptions;
 
