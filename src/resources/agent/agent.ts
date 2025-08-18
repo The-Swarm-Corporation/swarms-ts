@@ -137,14 +137,14 @@ export interface AgentSpec {
 
 export interface AgentRunResponse {
   /**
-   * The unique identifier for the agent completion.
-   */
-  id?: string | null;
-
-  /**
    * A description of the agent or completion.
    */
   description?: string | null;
+
+  /**
+   * The unique identifier for the agent completion.
+   */
+  job_id?: string | null;
 
   /**
    * The name of the agent.
