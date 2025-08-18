@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.15 (2025-08-18)
+
+Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
+
+### Features
+
+* **api:** api update ([b341986](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b341986c4dc8c3e13e99b5547abb920f8ef955dc))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v20.17.58 ([c5353d4](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c5353d4d5ab504a241e5d231f069862318eb9146))
+* **internal:** formatting change ([430f553](https://github.com/The-Swarm-Corporation/swarms-ts/commit/430f55362cbfa2c7fd8977f6931a3fa5e2cf412e))
+* **mcp:** update README ([b5644de](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b5644deb280032d294ef303725d68cc03485a086))
+
 ## 0.1.0-alpha.14 (2025-08-15)
 
 Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
