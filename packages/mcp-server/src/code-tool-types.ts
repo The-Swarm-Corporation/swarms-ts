@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { type ClientOptions } from 'swarms-ts/client';
+import { ClientOptions } from 'swarms-ts';
 
 export type WorkerInput = {
   opts: ClientOptions;
