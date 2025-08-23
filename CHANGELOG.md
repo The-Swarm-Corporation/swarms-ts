@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.16 (2025-08-23)
+
+Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
+
+### Features
+
+* **mcp:** add code execution tool ([2e20f5d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/2e20f5d3d827fdd78233806a6b43a9bf6f660edf))
+* **mcp:** add option to infer mcp client ([9c2fe43](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9c2fe43d9921db0651b602a874d98a5851a34d6d))
+* **mcp:** parse query string as mcp client options in mcp server ([49456a4](https://github.com/The-Swarm-Corporation/swarms-ts/commit/49456a4135170d3b3dfd0a937497bbe290d6f0e6))
+
+
+### Chores
+
+* add package to package.json ([358e26f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/358e26f7cd00884d8142b078285f3aa9214a43d9))
+* **client:** qualify global Blob ([c58fbd4](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c58fbd46bc9cda5f8e54fc1937adf98e4a1806cb))
+* **internal:** codegen related update ([9e351d9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9e351d9c42bd59691d05548d6897baacae80c999))
+* **internal:** make mcp-server publishing public by defaut ([1649d7c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/1649d7ce5bc7e9db5bcbd68798d02c55661bbf5e))
+* **internal:** refactor array check ([72b6a69](https://github.com/The-Swarm-Corporation/swarms-ts/commit/72b6a69b683015fe752789fae36b261fb40c68dd))
+* **mcp:** add cors to oauth metadata route ([e4e357a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e4e357a9ffe016657281bead9271b898de9cc1ce))
+* **mcp:** update package.json ([a7b824d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a7b824df03caa800b0dbcfd32e1d807a96db1efc))
+* **mcp:** update types ([8ac11a0](https://github.com/The-Swarm-Corporation/swarms-ts/commit/8ac11a00a4da6ee8013f80b68b78bc5e719663ea))
+* update CI script ([4175aaf](https://github.com/The-Swarm-Corporation/swarms-ts/commit/4175aaf9ce1200e7291140dad625b563c5c7ebca))
+
 ## 0.1.0-alpha.15 (2025-08-18)
 
 Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
