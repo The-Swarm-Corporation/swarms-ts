@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2025-08-24)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Chores
+
+* **internal:** codegen related update ([5f4ca86](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5f4ca86825fc755fcfb8ef3efffe17a629963810))
+
 ## 0.1.0-alpha.16 (2025-08-23)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
