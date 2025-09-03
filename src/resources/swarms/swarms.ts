@@ -27,7 +27,7 @@ export class Swarms extends APIResource {
   }
 
   /**
-   * Run a swarm with the specified task.
+   * Run a swarm with the specified task. Supports streaming when stream=True.
    */
   run(body: SwarmRunParams, options?: RequestOptions): APIPromise<SwarmRunResponse> {
     return this._client.post('/v1/swarm/completions', { body, ...options });
@@ -114,7 +114,6 @@ export interface SwarmSpec {
   swarm_type?:
     | 'AgentRearrange'
     | 'MixtureOfAgents'
-    | 'SpreadSheetSwarm'
     | 'SequentialWorkflow'
     | 'ConcurrentWorkflow'
     | 'GroupChat'
@@ -289,7 +288,6 @@ export interface SwarmRunParams {
   swarm_type?:
     | 'AgentRearrange'
     | 'MixtureOfAgents'
-    | 'SpreadSheetSwarm'
     | 'SequentialWorkflow'
     | 'ConcurrentWorkflow'
     | 'GroupChat'

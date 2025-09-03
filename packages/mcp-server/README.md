@@ -212,7 +212,7 @@ The following tools are available in this MCP server.
 
 ### Resource `agent`:
 
-- `run_agent` (`write`): Run an agent with the specified task.
+- `run_agent` (`write`): Run an agent with the specified task. Supports streaming when stream=True.
 
 ### Resource `agent.batch`:
 
@@ -226,7 +226,7 @@ The following tools are available in this MCP server.
 
 - `check_available_swarms` (`read`): Check the available swarm types.
 - `get_logs_swarms` (`read`): Get all API request logs for all API keys associated with the user identified by the provided API key, excluding any logs that contain a client_ip field in their data.
-- `run_swarms` (`write`): Run a swarm with the specified task.
+- `run_swarms` (`write`): Run a swarm with the specified task. Supports streaming when stream=True.
 
 ### Resource `swarms.batch`:
 
