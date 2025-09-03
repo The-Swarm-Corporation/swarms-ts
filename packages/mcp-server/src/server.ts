@@ -5,8 +5,9 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { Endpoint, endpoints, HandlerFunction, query } from './tools';
 import {
   CallToolRequestSchema,
-  Implementation,
   ListToolsRequestSchema,
+  SetLevelRequestSchema,
+  Implementation,
   Tool,
 } from '@modelcontextprotocol/sdk/types.js';
 import { ClientOptions } from 'swarms-ts';
@@ -32,7 +33,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'swarms_ts_api',
-      version: '0.1.0-alpha.17',
+      version: '0.1.0-alpha.18',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
@@ -55,7 +56,7 @@ export function initMcpServer(params: {
   let providedEndpoints: Endpoint[] | null = null;
   let endpointMap: Record<string, Endpoint> | null = null;
 
-  const initTools = (implementation?: Implementation) => {
+  const initTools = async (implementation?: Implementation) => {
     if (implementation && (!mcpOptions.client || mcpOptions.client === 'infer')) {
       mcpOptions.client =
         implementation.name.toLowerCase().includes('claude') ? 'claude'
@@ -66,8 +67,8 @@ export function initMcpServer(params: {
         ...mcpOptions.capabilities,
       };
     }
-    providedEndpoints = selectTools(endpoints, mcpOptions);
-    endpointMap = Object.fromEntries(providedEndpoints.map((endpoint) => [endpoint.tool.name, endpoint]));
+    providedEndpoints ??= await selectTools(endpoints, mcpOptions);
+    endpointMap ??= Object.fromEntries(providedEndpoints.map((endpoint) => [endpoint.tool.name, endpoint]));
   };
 
   const logAtLevel =
@@ -85,7 +86,7 @@ export function initMcpServer(params: {
     error: logAtLevel('error'),
   };
 
-  const client = new SwarmsClient({
+  let client = new SwarmsClient({
     logger,
     ...params.clientOptions,
     defaultHeaders: {
@@ -96,7 +97,7 @@ export function initMcpServer(params: {
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     if (providedEndpoints === null) {
-      initTools(server.getClientVersion());
+      await initTools(server.getClientVersion());
     }
     return {
       tools: providedEndpoints!.map((endpoint) => endpoint.tool),
@@ -105,7 +106,7 @@ export function initMcpServer(params: {
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (endpointMap === null) {
-      initTools(server.getClientVersion());
+      await initTools(server.getClientVersion());
     }
     const { name, arguments: args } = request.params;
     const endpoint = endpointMap![name];
@@ -115,12 +116,35 @@ export function initMcpServer(params: {
 
     return executeHandler(endpoint.tool, endpoint.handler, client, args, mcpOptions.capabilities);
   });
+
+  server.setRequestHandler(SetLevelRequestSchema, async (request) => {
+    const { level } = request.params;
+    switch (level) {
+      case 'debug':
+        client = client.withOptions({ logLevel: 'debug' });
+        break;
+      case 'info':
+        client = client.withOptions({ logLevel: 'info' });
+        break;
+      case 'notice':
+      case 'warning':
+        client = client.withOptions({ logLevel: 'warn' });
+        break;
+      case 'error':
+        client = client.withOptions({ logLevel: 'error' });
+        break;
+      default:
+        client = client.withOptions({ logLevel: 'off' });
+        break;
+    }
+    return {};
+  });
 }
 
 /**
  * Selects the tools to include in the MCP Server based on the provided options.
  */
-export function selectTools(endpoints: Endpoint[], options?: McpOptions): Endpoint[] {
+export async function selectTools(endpoints: Endpoint[], options?: McpOptions): Promise<Endpoint[]> {
   const filteredEndpoints = query(options?.filters ?? [], endpoints);
 
   let includedTools = filteredEndpoints;
@@ -135,7 +159,7 @@ export function selectTools(endpoints: Endpoint[], options?: McpOptions): Endpoi
     } else if (options?.includeDynamicTools) {
       includedTools = dynamicTools(endpoints);
     } else if (options?.includeCodeTools) {
-      includedTools = [codeTool()];
+      includedTools = [await codeTool()];
     } else {
       includedTools = endpoints;
     }

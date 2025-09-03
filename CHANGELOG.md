@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.18 (2025-09-03)
+
+Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
+
+### Features
+
+* **api:** api update ([d5442c2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d5442c282ee679bfd83efa19529bea8c4b685ebd))
+* **mcp:** allow setting logging level ([96d0ca9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/96d0ca9f609e88eb7e1581d9a30cb081b1758c14))
+* **mcp:** expose client options in `streamableHTTPApp` ([ea1fe0c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/ea1fe0c46c786eb8a302af43b582a133c33eb17d))
+
+
+### Chores
+
+* **internal:** codegen related update ([b87258c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b87258c02c0880c6158db3083585fc32f6d19c46))
+
 ## 0.1.0-alpha.17 (2025-08-29)
 
 Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
