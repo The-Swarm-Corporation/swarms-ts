@@ -10,7 +10,7 @@ export class Agent extends APIResource {
   batch: BatchAPI.Batch = new BatchAPI.Batch(this._client);
 
   /**
-   * Run an agent with the specified task.
+   * Run an agent with the specified task. Supports streaming when stream=True.
    */
   run(body: AgentRunParams, options?: RequestOptions): APIPromise<AgentRunResponse> {
     return this._client.post('/v1/agent/completions', { body, ...options });
@@ -42,14 +42,14 @@ export interface AgentCompletion {
   imgs?: Array<string> | null;
 
   /**
-   * A flag indicating whether the agent should stream its output.
-   */
-  stream?: boolean | null;
-
-  /**
    * The task to be completed by the agent.
    */
   task?: string | null;
+
+  /**
+   * A list of tools that the agent should use to complete its task.
+   */
+  tools_enabled?: Array<string> | null;
 }
 
 export interface AgentSpec {
@@ -96,6 +96,17 @@ export interface AgentSpec {
   max_tokens?: number | null;
 
   /**
+   * The MCP connection to use for the agent.
+   */
+  mcp_config?: AgentSpec.McpConfig | null;
+
+  /**
+   * The MCP connections to use for the agent. This is a list of MCP connections.
+   * Includes multiple MCP connections.
+   */
+  mcp_configs?: AgentSpec.McpConfigs | null;
+
+  /**
    * The URL of the MCP server that the agent can use to complete its task.
    */
   mcp_url?: string | null;
@@ -105,6 +116,16 @@ export interface AgentSpec {
    * generating outputs. For example: gpt-4o, gpt-4o-mini, openai/o3-mini
    */
   model_name?: string | null;
+
+  /**
+   * The effort to put into reasoning.
+   */
+  reasoning_effort?: string | null;
+
+  /**
+   * A parameter enabling an agent to use reasoning.
+   */
+  reasoning_enabled?: boolean | null;
 
   /**
    * The designated role of the agent within the swarm, which influences its behavior
@@ -130,9 +151,115 @@ export interface AgentSpec {
   temperature?: number | null;
 
   /**
+   * The number of tokens to use for thinking.
+   */
+  thinking_tokens?: number | null;
+
+  /**
+   * A parameter enabling an agent to summarize tool calls.
+   */
+  tool_call_summary?: boolean | null;
+
+  /**
    * A dictionary of tools that the agent can use to complete its task.
    */
   tools_list_dictionary?: Array<{ [key: string]: unknown }> | null;
+}
+
+export namespace AgentSpec {
+  /**
+   * The MCP connection to use for the agent.
+   */
+  export interface McpConfig {
+    /**
+     * Authentication token for accessing the MCP server
+     */
+    authorization_token?: string | null;
+
+    /**
+     * Headers to send to the MCP server
+     */
+    headers?: { [key: string]: string } | null;
+
+    /**
+     * Timeout for the MCP server
+     */
+    timeout?: number | null;
+
+    /**
+     * Dictionary containing configuration settings for MCP tools
+     */
+    tool_configurations?: { [key: string]: unknown } | null;
+
+    /**
+     * The transport protocol to use for the MCP server
+     */
+    transport?: string | null;
+
+    /**
+     * The type of connection, defaults to 'mcp'
+     */
+    type?: string | null;
+
+    /**
+     * The URL endpoint for the MCP server
+     */
+    url?: string | null;
+
+    [k: string]: unknown;
+  }
+
+  /**
+   * The MCP connections to use for the agent. This is a list of MCP connections.
+   * Includes multiple MCP connections.
+   */
+  export interface McpConfigs {
+    /**
+     * List of MCP connections
+     */
+    connections: Array<McpConfigs.Connection>;
+  }
+
+  export namespace McpConfigs {
+    export interface Connection {
+      /**
+       * Authentication token for accessing the MCP server
+       */
+      authorization_token?: string | null;
+
+      /**
+       * Headers to send to the MCP server
+       */
+      headers?: { [key: string]: string } | null;
+
+      /**
+       * Timeout for the MCP server
+       */
+      timeout?: number | null;
+
+      /**
+       * Dictionary containing configuration settings for MCP tools
+       */
+      tool_configurations?: { [key: string]: unknown } | null;
+
+      /**
+       * The transport protocol to use for the MCP server
+       */
+      transport?: string | null;
+
+      /**
+       * The type of connection, defaults to 'mcp'
+       */
+      type?: string | null;
+
+      /**
+       * The URL endpoint for the MCP server
+       */
+      url?: string | null;
+
+      [k: string]: unknown;
+    }
+  }
 }
 
 export interface AgentRunResponse {
@@ -202,14 +329,14 @@ export interface AgentRunParams {
   imgs?: Array<string> | null;
 
   /**
-   * A flag indicating whether the agent should stream its output.
-   */
-  stream?: boolean | null;
-
-  /**
    * The task to be completed by the agent.
    */
   task?: string | null;
+
+  /**
+   * A list of tools that the agent should use to complete its task.
+   */
+  tools_enabled?: Array<string> | null;
 }
 
 Agent.Batch = Batch;

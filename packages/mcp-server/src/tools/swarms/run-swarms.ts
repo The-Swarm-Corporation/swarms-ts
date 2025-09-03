@@ -1,6 +1,5 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { maybeFilter } from 'swarms-ts-mcp/filtering';
 import { Metadata, asTextContentResult } from 'swarms-ts-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,8 +16,7 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'run_swarms',
-  description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a swarm with the specified task.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'SwarmCompletion',\n  properties: {\n    description: {\n      type: 'string',\n      title: 'Description',\n      description: 'The description of the swarm.'\n    },\n    execution_time: {\n      type: 'number',\n      title: 'Execution Time',\n      description: 'The execution time of the swarm.'\n    },\n    job_id: {\n      type: 'string',\n      title: 'Job Id',\n      description: 'The unique identifier for the swarm completion.'\n    },\n    number_of_agents: {\n      type: 'integer',\n      title: 'Number Of Agents',\n      description: 'The number of agents in the swarm.'\n    },\n    output: {\n      type: 'object',\n      title: 'Output',\n      description: 'The output of the swarm.',\n      additionalProperties: true\n    },\n    service_tier: {\n      type: 'string',\n      title: 'Service Tier',\n      description: 'The service tier of the swarm.'\n    },\n    status: {\n      type: 'string',\n      title: 'Status',\n      description: 'The status of the swarm completion.'\n    },\n    swarm_name: {\n      type: 'string',\n      title: 'Swarm Name',\n      description: 'The name of the swarm.'\n    },\n    swarm_type: {\n      type: 'string',\n      title: 'Swarm Type',\n      description: 'The type of the swarm.'\n    },\n    usage: {\n      type: 'object',\n      title: 'Usage',\n      description: 'The usage of the swarm.',\n      additionalProperties: true\n    }\n  },\n  required: [    'description',\n    'execution_time',\n    'job_id',\n    'number_of_agents',\n    'output',\n    'service_tier',\n    'status',\n    'swarm_name',\n    'swarm_type',\n    'usage'\n  ]\n}\n```",
+  description: 'Run a swarm with the specified task. Supports streaming when stream=True.',
   inputSchema: {
     type: 'object',
     properties: {
@@ -114,7 +112,6 @@ export const tool: Tool = {
         enum: [
           'AgentRearrange',
           'MixtureOfAgents',
-          'SpreadSheetSwarm',
           'SequentialWorkflow',
           'ConcurrentWorkflow',
           'GroupChat',
@@ -142,12 +139,6 @@ export const tool: Tool = {
         items: {
           type: 'string',
         },
-      },
-      jq_filter: {
-        type: 'string',
-        title: 'jq Filter',
-        description:
-          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
     required: [],
@@ -199,6 +190,107 @@ export const tool: Tool = {
             description:
               'The maximum number of tokens that the agent is allowed to generate in its responses, limiting output length.',
           },
+          mcp_config: {
+            type: 'object',
+            title: 'MCPConnection',
+            description: 'The MCP connection to use for the agent.',
+            properties: {
+              authorization_token: {
+                type: 'string',
+                title: 'Authorization Token',
+                description: 'Authentication token for accessing the MCP server',
+              },
+              headers: {
+                type: 'object',
+                title: 'Headers',
+                description: 'Headers to send to the MCP server',
+                additionalProperties: true,
+              },
+              timeout: {
+                type: 'integer',
+                title: 'Timeout',
+                description: 'Timeout for the MCP server',
+              },
+              tool_configurations: {
+                type: 'object',
+                title: 'Tool Configurations',
+                description: 'Dictionary containing configuration settings for MCP tools',
+                additionalProperties: true,
+              },
+              transport: {
+                type: 'string',
+                title: 'Transport',
+                description: 'The transport protocol to use for the MCP server',
+              },
+              type: {
+                type: 'string',
+                title: 'Type',
+                description: "The type of connection, defaults to 'mcp'",
+              },
+              url: {
+                type: 'string',
+                title: 'Url',
+                description: 'The URL endpoint for the MCP server',
+              },
+            },
+          },
+          mcp_configs: {
+            type: 'object',
+            title: 'MultipleMCPConnections',
+            description:
+              'The MCP connections to use for the agent. This is a list of MCP connections. Includes multiple MCP connections.',
+            properties: {
+              connections: {
+                type: 'array',
+                title: 'Connections',
+                description: 'List of MCP connections',
+                items: {
+                  type: 'object',
+                  title: 'MCPConnection',
+                  properties: {
+                    authorization_token: {
+                      type: 'string',
+                      title: 'Authorization Token',
+                      description: 'Authentication token for accessing the MCP server',
+                    },
+                    headers: {
+                      type: 'object',
+                      title: 'Headers',
+                      description: 'Headers to send to the MCP server',
+                      additionalProperties: true,
+                    },
+                    timeout: {
+                      type: 'integer',
+                      title: 'Timeout',
+                      description: 'Timeout for the MCP server',
+                    },
+                    tool_configurations: {
+                      type: 'object',
+                      title: 'Tool Configurations',
+                      description: 'Dictionary containing configuration settings for MCP tools',
+                      additionalProperties: true,
+                    },
+                    transport: {
+                      type: 'string',
+                      title: 'Transport',
+                      description: 'The transport protocol to use for the MCP server',
+                    },
+                    type: {
+                      type: 'string',
+                      title: 'Type',
+                      description: "The type of connection, defaults to 'mcp'",
+                    },
+                    url: {
+                      type: 'string',
+                      title: 'Url',
+                      description: 'The URL endpoint for the MCP server',
+                    },
+                  },
+                },
+              },
+            },
+            required: ['connections'],
+          },
           mcp_url: {
             type: 'string',
             title: 'Mcp Url',
@@ -209,6 +301,16 @@ export const tool: Tool = {
             title: 'Model Name',
             description:
               'The name of the AI model that the agent will utilize for processing tasks and generating outputs. For example: gpt-4o, gpt-4o-mini, openai/o3-mini',
+          },
+          reasoning_effort: {
+            type: 'string',
+            title: 'Reasoning Effort',
+            description: 'The effort to put into reasoning.',
+          },
+          reasoning_enabled: {
+            type: 'boolean',
+            title: 'Reasoning Enabled',
+            description: 'A parameter enabling an agent to use reasoning.',
           },
           role: {
             type: 'string',
@@ -233,6 +335,16 @@ export const tool: Tool = {
             description:
               "A parameter that controls the randomness of the agent's output; lower values result in more deterministic responses.",
           },
+          thinking_tokens: {
+            type: 'integer',
+            title: 'Thinking Tokens',
+            description: 'The number of tokens to use for thinking.',
+          },
+          tool_call_summary: {
+            type: 'boolean',
+            title: 'Tool Call Summary',
+            description: 'A parameter enabling an agent to summarize tool calls.',
+          },
           tools_list_dictionary: {
             type: 'array',
             title: 'Tools List Dictionary',
@@ -251,8 +363,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
-  const { jq_filter, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(jq_filter, await client.swarms.run(body)));
+  const body = args as any;
+  return asTextContentResult(await client.swarms.run(body));
 };
 
 export default { metadata, tool, handler };
