@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2025-09-06)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Bug Fixes
+
+* **mcp:** fix query options parsing ([b8301f9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b8301f9f790d51b13de5279787f9b7d39366d236))
+
+
+### Chores
+
+* ci build action ([c4650fa](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c4650fa23c2b520d02e892b6c5459c7af0b1388e))
+* **internal:** codegen related update ([c0bcc33](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c0bcc33004d7d00ee9a6b07c5811fd9ed1fce38e))
+
 ## 0.1.0-alpha.18 (2025-09-03)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
