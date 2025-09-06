@@ -1,0 +1,42 @@
+{
+  "dxt_version": "0.1",
+  "name": "swarms-ts-mcp",
+  "version": "0.1.0-alpha.18",
+  "description": "The official MCP Server for the Swarms Client API",
+  "author": {
+    "name": "Swarms Client",
+    "email": "kye@swarms.world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Swarm-Corporation/swarms-ts.git"
+  },
+  "homepage": "https://github.com/The-Swarm-Corporation/swarms-ts/tree/main/packages/mcp-server#readme",
+  "documentation": "https://docs.swarms.world/en/latest/",
+  "server": {
+    "type": "node",
+    "entry_point": "${__dirname}/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/index.js"],
+      "env": {
+        "SWARMS_API_KEY": "${user_config.SWARMS_API_KEY}"
+      }
+    }
+  },
+  "user_config": {
+    "SWARMS_API_KEY": {
+      "title": "api_key",
+      "description": "",
+      "required": false,
+      "type": "string"
+    }
+  },
+  "tools_generated": true,
+  "compatibility": {
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "keywords": ["api"]
+}
