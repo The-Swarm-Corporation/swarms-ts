@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-09-12)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Bug Fixes
+
+* coerce nullable values to undefined ([a753115](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a753115fe4b3376e4fdf9c2bd10147f5b7be242a))
+* **mcp:** fix uploading dxt release assets ([62e102e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/62e102e7620b6b71186e226ec7bbaca40d687c80))
+
+
+### Chores
+
+* **mcp:** upload dxt as release asset ([e0028f9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e0028f97d8307819e4a01880e1a0b4def05cd66d))
+
 ## 0.1.0-alpha.19 (2025-09-06)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
