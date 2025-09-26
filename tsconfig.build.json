@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "swarms-ts/*": ["dist/src/*"],
-      "swarms-ts": ["dist/src/index.ts"]
+      "swarms-ts/*": ["./dist/src/*"],
+      "swarms-ts": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

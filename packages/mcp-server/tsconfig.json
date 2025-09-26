@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "swarms-ts-mcp/*": ["src/*"],
-      "swarms-ts-mcp": ["src/index.ts"]
+      "swarms-ts-mcp/*": ["./src/*"],
+      "swarms-ts-mcp": ["./src/index.ts"]
     },
     "noEmit": true,
 
