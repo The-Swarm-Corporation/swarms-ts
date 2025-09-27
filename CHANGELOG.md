@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-09-27)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Features
+
+* **mcp:** add docs search tool ([81f1f9e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/81f1f9ec92c8578efda61274947f2c878b8afb30))
+* **mcp:** add option for including docs tools ([3efcce0](https://github.com/The-Swarm-Corporation/swarms-ts/commit/3efcce04d641a7e1628311ac8466094dfffd08bc))
+* **mcp:** enable experimental docs search tool ([008b5f7](https://github.com/The-Swarm-Corporation/swarms-ts/commit/008b5f7466296d0d09a4da13215955309d4d3fa1))
+
+
+### Bug Fixes
+
+* **ci:** set permissions for DXT publish action ([5443a74](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5443a74cb3de11241011bae1a8137f91438a6a73))
+* coerce nullable values to undefined ([a753115](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a753115fe4b3376e4fdf9c2bd10147f5b7be242a))
+* **mcp:** fix uploading dxt release assets ([62e102e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/62e102e7620b6b71186e226ec7bbaca40d687c80))
+
+
+### Performance Improvements
+
+* faster formatting ([8a472ed](https://github.com/The-Swarm-Corporation/swarms-ts/commit/8a472edb6bc4240a087b023767e679e809916575))
+
+
+### Chores
+
+* **codegen:** internal codegen update ([e186555](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e18655505e2c3e9350f6b1347582947bc13c0112))
+* do not install brew dependencies in ./scripts/bootstrap by default ([345e57b](https://github.com/The-Swarm-Corporation/swarms-ts/commit/345e57bc9c0babe15a8198fd477dfd0bcc42eee5))
+* **internal:** gitignore .mcpb files ([68eed9e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/68eed9eea6e495c5d2c5059c3aae00c6f3eec32b))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([84a1a8f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/84a1a8f0de45732f72a44820f5bb8ff75b4ea431))
+* **mcp:** rename dxt to mcpb ([4365973](https://github.com/The-Swarm-Corporation/swarms-ts/commit/43659734052f3ed0653bc0ea987d114cc4307dbf))
+* **mcp:** upload dxt as release asset ([e0028f9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e0028f97d8307819e4a01880e1a0b4def05cd66d))
+
 ## 0.1.0-alpha.19 (2025-09-06)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
