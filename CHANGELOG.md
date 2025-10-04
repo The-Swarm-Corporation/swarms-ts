@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-10-04)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Bug Fixes
+
+* **mcp:** fix cli argument parsing logic ([7fb25a1](https://github.com/The-Swarm-Corporation/swarms-ts/commit/7fb25a191dbcb886eb7f28927d92475aeb697fe3))
+* **mcp:** resolve a linting issue in server code ([a9a6a06](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a9a6a0683f29798464b48f4b909170b2d5109908))
+
+
+### Chores
+
+* **internal:** codegen related update ([78f92e5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/78f92e55ea8af4e093b9064417b5cf472282ac8f))
+* **internal:** fix incremental formatting in some cases ([c786bde](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c786bde35586b2905046dcc4b23c93b5bbad171c))
+* **internal:** ignore .eslintcache ([16c6615](https://github.com/The-Swarm-Corporation/swarms-ts/commit/16c66150ef3a09ec96e74bea74531d8d725f8c94))
+* **jsdoc:** fix [@link](https://github.com/link) annotations to refer only to parts of the package‘s public interface ([5097275](https://github.com/The-Swarm-Corporation/swarms-ts/commit/509727551960275f9ef38495b1fb1d8b4c577f8a))
+* **mcp:** allow pointing `docs_search` tool at other URLs ([395e6f5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/395e6f57e5b24adbf6edbcd8ae1c4b9c938f7bc6))
+* update lockfile ([76538f5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/76538f59c205d0da64bfec5f16fa81e0e075ac0d))
+
 ## 0.1.0-alpha.20 (2025-09-27)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
