@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_completion_reasoning_agents',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a reasoning agent with the specified task.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'Response Run Reasoning Agent Completions V1 Reasoning Agent Completions Post',\n  additionalProperties: true\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRun a reasoning agent with the specified task.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/reasoning_agent_create_completion_response',\n  $defs: {\n    reasoning_agent_create_completion_response: {\n      type: 'object',\n      title: 'Response Run Reasoning Agent Completions V1 Reasoning Agent Completions Post',\n      additionalProperties: true\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {

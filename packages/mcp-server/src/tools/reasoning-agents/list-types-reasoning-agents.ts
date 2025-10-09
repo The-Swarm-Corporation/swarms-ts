@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_types_reasoning_agents',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet the types of reasoning agents available.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  title: 'Response Get Reasoning Agent Types V1 Reasoning Agent Types Get',\n  additionalProperties: true\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet the types of reasoning agents available.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/reasoning_agent_list_types_response',\n  $defs: {\n    reasoning_agent_list_types_response: {\n      type: 'object',\n      title: 'Response Get Reasoning Agent Types V1 Reasoning Agent Types Get',\n      additionalProperties: true\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
