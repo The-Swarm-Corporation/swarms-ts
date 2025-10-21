@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-10-21)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Features
+
+* **api:** api update ([72b4d2d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/72b4d2d9273ab6a68bf875419df5d308b5601cce))
+
+
+### Chores
+
+* extract some types in mcp docs ([e3c0e41](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e3c0e41c6beaea55f16a7e9de451ac8515cd00e9))
+* **internal:** use npm pack for build uploads ([e73802c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e73802ca8c9a0951b2ce40b7c80c3b663e96d422))
+
 ## 0.1.0-alpha.21 (2025-10-04)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
