@@ -1,6 +1,6 @@
 {
   "name": "swarms-ts",
-  "version": "0.1.0-alpha.21",
+  "version": "0.1.0-alpha.22",
   "description": "The official TypeScript library for the Swarms Client API",
   "author": "Swarms Client <kye@swarms.world>",
   "types": "dist/index.d.ts",
