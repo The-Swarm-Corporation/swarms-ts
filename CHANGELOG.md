@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-alpha.23 (2025-11-10)
+
+Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
+
+### Features
+
+* **mcp:** enable optional code execution tool on http mcp servers ([ffdc755](https://github.com/The-Swarm-Corporation/swarms-ts/commit/ffdc755733f06731b4e51d327851140839ed1332))
+
+
+### Bug Fixes
+
+* **mcpb:** pin @anthropic-ai/mcpb version ([a0d9be7](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a0d9be7898604b68f16ba584faa295a387c7a414))
+
+
+### Chores
+
+* **internal:** codegen related update ([c855e6d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c855e6d5a9daf2daf598c498cce1977ec9e514e8))
+* **internal:** codegen related update ([8884acc](https://github.com/The-Swarm-Corporation/swarms-ts/commit/8884acc712540a12cce58806fd00143c5e9b5754))
+* **internal:** grammar fix (it's -&gt; its) ([eebf853](https://github.com/The-Swarm-Corporation/swarms-ts/commit/eebf85349daeb159caebcec0b8a7335d6a5e60dd))
+* mcp code tool explicit error message when missing a run function ([b73f155](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b73f15525388bfd58f8134b3264c895df6de3058))
+* **mcp:** add friendlier MCP code tool errors on incorrect method invocations ([6f59e26](https://github.com/The-Swarm-Corporation/swarms-ts/commit/6f59e262b94ca7567ff4d0da4b1d8993952d0111))
+* **mcp:** add line numbers to code tool errors ([411d27f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/411d27f2bcbe2e9c73d91ce6287fb98ce537723f))
+* use structured error when code execution tool errors ([2ae090d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/2ae090d461bf2597c24c4c8fd4867d7c16c42756))
+
+
+### Documentation
+
+* **mcp:** add a README button for one-click add to Cursor ([3df8fff](https://github.com/The-Swarm-Corporation/swarms-ts/commit/3df8fff5575169d0e284f61bda4ee4aa1873b80a))
+* **mcp:** add a README link to add server to VS Code or Claude Code ([dcb86a5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/dcb86a5b53b62830d6345c6960a0bb73a7842407))
+
 ## 0.1.0-alpha.22 (2025-10-21)
 
 Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
