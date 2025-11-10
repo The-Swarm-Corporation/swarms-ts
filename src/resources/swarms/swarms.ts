@@ -143,7 +143,7 @@ export interface SwarmSpec {
 export interface SwarmCheckAvailableResponse {
   success?: boolean | null;
 
-  swarm_types?: null;
+  swarm_types?: Array<string> | null;
 }
 
 export interface SwarmGetLogsResponse {
