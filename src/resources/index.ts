@@ -4,6 +4,7 @@ export {
   Agent,
   type AgentCompletion,
   type AgentSpec,
+  type AgentListResponse,
   type AgentRunResponse,
   type AgentRunParams,
 } from './agent/agent';

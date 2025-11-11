@@ -250,6 +250,7 @@ The following tools are available in this MCP server.
 
 ### Resource `agent`:
 
+- `list_agent` (`read`): Get all unique agent configurations that the user has created or used, without task details. Allows users to reuse agent configs with new tasks.
 - `run_agent` (`write`): Run an agent with the specified task. Supports streaming when stream=True.
 
 ### Resource `agent.batch`:
@@ -278,3 +279,28 @@ The following tools are available in this MCP server.
 ### Resource `client.rate`:
 
 - `get_limits_client_rate` (`read`): Get the rate limits and current usage for the user associated with the provided API key.
+
+### Resource `client.auto_swarm_builder`:
+
+- `create_completion_client_auto_swarm_builder` (`write`): Generate and orchestrate agent swarms autonomously using AI-powered swarm composition and task decomposition.
+- `list_execution_types_client_auto_swarm_builder` (`read`): Retrieve all available execution types and return formats for the Auto Swarm Builder endpoint.
+
+### Resource `client.advanced_research`:
+
+- `create_completion_client_advanced_research` (`write`): Execute comprehensive research sessions with multi-source data collection, analysis, and synthesis capabilities.
+
+### Resource `client.advanced_research.batch`:
+
+- `create_completion_advanced_research_client_batch` (`write`): Execute multiple advanced research sessions concurrently with independent configurations for high-throughput research workflows.
+
+### Resource `client.tools`:
+
+- `list_available_client_tools` (`read`): Retrieve comprehensive information about all available tools and capabilities supported by the Swarms API.
+
+### Resource `client.marketplace`:
+
+- `list_agents_client_marketplace` (`read`): Retrieve free agents from the marketplace.
+
+### Resource `client.batched_grid_workflow`:
+
+- `complete_workflow_client_batched_grid_workflow` (`write`): Complete a batched grid workflow with the specified input data. Enables you to run a grid workflow with multiple agents and tasks in a single request.
