@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.24 (2025-11-11)
+
+Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
+
+### Features
+
+* **api:** manual updates to stainless config ([227a187](https://github.com/The-Swarm-Corporation/swarms-ts/commit/227a1870467f49b6add897b752c21103533c1070))
+
 ## 0.1.0-alpha.23 (2025-11-10)
 
 Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
