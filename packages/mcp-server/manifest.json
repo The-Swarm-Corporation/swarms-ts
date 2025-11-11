@@ -12,7 +12,7 @@
     "url": "git+https://github.com/The-Swarm-Corporation/swarms-ts.git"
   },
   "homepage": "https://github.com/The-Swarm-Corporation/swarms-ts/tree/main/packages/mcp-server#readme",
-  "documentation": "https://docs.swarms.world/en/latest/",
+  "documentation": "https://docs.swarms.ai",
   "server": {
     "type": "node",
     "entry_point": "index.js",

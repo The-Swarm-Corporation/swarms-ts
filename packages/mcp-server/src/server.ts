@@ -34,7 +34,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'swarms_ts_api',
-      version: '0.1.0-alpha.23',
+      version: '0.1.0-alpha.24',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
@@ -88,6 +88,7 @@ export function initMcpServer(params: {
   };
 
   let client = new SwarmsClient({
+    ...{ environment: (readEnv('SWARMS_CLIENT_ENVIRONMENT') || undefined) as any },
     logger,
     ...params.clientOptions,
     defaultHeaders: {
