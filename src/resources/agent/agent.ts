@@ -10,6 +10,14 @@ export class Agent extends APIResource {
   batch: BatchAPI.Batch = new BatchAPI.Batch(this._client);
 
   /**
+   * Get all unique agent configurations that the user has created or used, without
+   * task details. Allows users to reuse agent configs with new tasks.
+   */
+  list(options?: RequestOptions): APIPromise<AgentListResponse> {
+    return this._client.get('/v1/agents/list', options);
+  }
+
+  /**
    * Run an agent with the specified task. Supports streaming when stream=True.
    */
   run(body: AgentRunParams, options?: RequestOptions): APIPromise<AgentRunResponse> {
@@ -262,6 +270,8 @@ export namespace AgentSpec {
   }
 }
 
+export type AgentListResponse = { [key: string]: unknown };
+
 export interface AgentRunResponse {
   /**
    * A description of the agent or completion.
@@ -345,6 +355,7 @@ export declare namespace Agent {
   export {
     type AgentCompletion as AgentCompletion,
     type AgentSpec as AgentSpec,
+    type AgentListResponse as AgentListResponse,
     type AgentRunResponse as AgentRunResponse,
     type AgentRunParams as AgentRunParams,
   };

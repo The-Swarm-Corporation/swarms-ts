@@ -6,6 +6,7 @@ export { Metadata, Endpoint, HandlerFunction };
 
 import get_root_client from './top-level/get-root-client';
 import check_health from './health/check-health';
+import list_agent from './agent/list-agent';
 import run_agent from './agent/run-agent';
 import run_agent_batch from './agent/batch/run-agent-batch';
 import list_available_models from './models/list-available-models';
@@ -16,6 +17,13 @@ import run_swarms_batch from './swarms/batch/run-swarms-batch';
 import create_completion_reasoning_agents from './reasoning-agents/create-completion-reasoning-agents';
 import list_types_reasoning_agents from './reasoning-agents/list-types-reasoning-agents';
 import get_limits_client_rate from './client/rate/get-limits-client-rate';
+import create_completion_client_auto_swarm_builder from './client/auto-swarm-builder/create-completion-client-auto-swarm-builder';
+import list_execution_types_client_auto_swarm_builder from './client/auto-swarm-builder/list-execution-types-client-auto-swarm-builder';
+import create_completion_client_advanced_research from './client/advanced-research/create-completion-client-advanced-research';
+import create_completion_advanced_research_client_batch from './client/advanced-research/batch/create-completion-advanced-research-client-batch';
+import list_available_client_tools from './client/tools/list-available-client-tools';
+import list_agents_client_marketplace from './client/marketplace/list-agents-client-marketplace';
+import complete_workflow_client_batched_grid_workflow from './client/batched-grid-workflow/complete-workflow-client-batched-grid-workflow';
 
 export const endpoints: Endpoint[] = [];
 
@@ -25,6 +33,7 @@ function addEndpoint(endpoint: Endpoint) {
 
 addEndpoint(get_root_client);
 addEndpoint(check_health);
+addEndpoint(list_agent);
 addEndpoint(run_agent);
 addEndpoint(run_agent_batch);
 addEndpoint(list_available_models);
@@ -35,6 +44,13 @@ addEndpoint(run_swarms_batch);
 addEndpoint(create_completion_reasoning_agents);
 addEndpoint(list_types_reasoning_agents);
 addEndpoint(get_limits_client_rate);
+addEndpoint(create_completion_client_auto_swarm_builder);
+addEndpoint(list_execution_types_client_auto_swarm_builder);
+addEndpoint(create_completion_client_advanced_research);
+addEndpoint(create_completion_advanced_research_client_batch);
+addEndpoint(list_available_client_tools);
+addEndpoint(list_agents_client_marketplace);
+addEndpoint(complete_workflow_client_batched_grid_workflow);
 
 export type Filter = {
   type: 'resource' | 'operation' | 'tag' | 'tool';
