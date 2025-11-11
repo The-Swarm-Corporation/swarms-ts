@@ -1,7 +1,7 @@
 {
   "dxt_version": "0.2",
   "name": "swarms-ts-mcp",
-  "version": "0.1.0-alpha.23",
+  "version": "0.1.0-alpha.24",
   "description": "The official MCP Server for the Swarms Client API",
   "author": {
     "name": "Swarms Client",
