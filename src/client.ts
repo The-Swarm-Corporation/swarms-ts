@@ -25,7 +25,14 @@ import {
   ReasoningAgents,
 } from './resources/reasoning-agents';
 import { GetRootResponse } from './resources/top-level';
-import { Agent, AgentCompletion, AgentRunParams, AgentRunResponse, AgentSpec } from './resources/agent/agent';
+import {
+  Agent,
+  AgentCompletion,
+  AgentListResponse,
+  AgentRunParams,
+  AgentRunResponse,
+  AgentSpec,
+} from './resources/agent/agent';
 import {
   SwarmCheckAvailableResponse,
   SwarmGetLogsResponse,
@@ -795,6 +802,7 @@ export declare namespace SwarmsClient {
     Agent as Agent,
     type AgentCompletion as AgentCompletion,
     type AgentSpec as AgentSpec,
+    type AgentListResponse as AgentListResponse,
     type AgentRunResponse as AgentRunResponse,
     type AgentRunParams as AgentRunParams,
   };

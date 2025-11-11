@@ -44,6 +44,7 @@ const fuse = new Fuse(
   [
     'client.getRoot',
     'client.health.check',
+    'client.agent.list',
     'client.agent.run',
     'client.agent.batch.run',
     'client.models.listAvailable',
@@ -54,6 +55,13 @@ const fuse = new Fuse(
     'client.reasoningAgents.createCompletion',
     'client.reasoningAgents.listTypes',
     'client.client.rate.getLimits',
+    'client.client.autoSwarmBuilder.createCompletion',
+    'client.client.autoSwarmBuilder.listExecutionTypes',
+    'client.client.advancedResearch.createCompletion',
+    'client.client.advancedResearch.batch.createCompletion',
+    'client.client.tools.listAvailable',
+    'client.client.marketplace.listAgents',
+    'client.client.batchedGridWorkflow.completeWorkflow',
   ],
   { threshold: 1, shouldSort: true },
 );

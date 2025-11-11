@@ -24,10 +24,12 @@ Types:
 
 - <code><a href="./src/resources/agent/agent.ts">AgentCompletion</a></code>
 - <code><a href="./src/resources/agent/agent.ts">AgentSpec</a></code>
+- <code><a href="./src/resources/agent/agent.ts">AgentListResponse</a></code>
 - <code><a href="./src/resources/agent/agent.ts">AgentRunResponse</a></code>
 
 Methods:
 
+- <code title="get /v1/agents/list">client.agent.<a href="./src/resources/agent/agent.ts">list</a>() -> AgentListResponse</code>
 - <code title="post /v1/agent/completions">client.agent.<a href="./src/resources/agent/agent.ts">run</a>({ ...params }) -> AgentRunResponse</code>
 
 ## Batch
@@ -98,3 +100,65 @@ Types:
 Methods:
 
 - <code title="get /v1/rate/limits">client.client.rate.<a href="./src/resources/client/rate.ts">getLimits</a>() -> RateGetLimitsResponse</code>
+
+## AutoSwarmBuilder
+
+Types:
+
+- <code><a href="./src/resources/client/auto-swarm-builder.ts">AutoSwarmBuilderCreateCompletionResponse</a></code>
+- <code><a href="./src/resources/client/auto-swarm-builder.ts">AutoSwarmBuilderListExecutionTypesResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/auto-swarm-builder/completions">client.client.autoSwarmBuilder.<a href="./src/resources/client/auto-swarm-builder.ts">createCompletion</a>({ ...params }) -> AutoSwarmBuilderCreateCompletionResponse</code>
+- <code title="get /v1/auto-swarm-builder/execution-types">client.client.autoSwarmBuilder.<a href="./src/resources/client/auto-swarm-builder.ts">listExecutionTypes</a>() -> AutoSwarmBuilderListExecutionTypesResponse</code>
+
+## AdvancedResearch
+
+Types:
+
+- <code><a href="./src/resources/client/advanced-research/advanced-research.ts">AdvancedResearchCreateCompletionResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/advanced-research/completions">client.client.advancedResearch.<a href="./src/resources/client/advanced-research/advanced-research.ts">createCompletion</a>({ ...params }) -> AdvancedResearchCreateCompletionResponse</code>
+
+### Batch
+
+Types:
+
+- <code><a href="./src/resources/client/advanced-research/batch.ts">BatchCreateCompletionResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/advanced-research/batch/completions">client.client.advancedResearch.batch.<a href="./src/resources/client/advanced-research/batch.ts">createCompletion</a>({ ...params }) -> BatchCreateCompletionResponse</code>
+
+## Tools
+
+Types:
+
+- <code><a href="./src/resources/client/tools.ts">ToolListAvailableResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/tools/available">client.client.tools.<a href="./src/resources/client/tools.ts">listAvailable</a>() -> ToolListAvailableResponse</code>
+
+## Marketplace
+
+Types:
+
+- <code><a href="./src/resources/client/marketplace.ts">MarketplaceListAgentsResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/marketplace/agents">client.client.marketplace.<a href="./src/resources/client/marketplace.ts">listAgents</a>() -> MarketplaceListAgentsResponse</code>
+
+## BatchedGridWorkflow
+
+Types:
+
+- <code><a href="./src/resources/client/batched-grid-workflow.ts">BatchedGridWorkflowCompleteWorkflowResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/batched-grid-workflow/completions">client.client.batchedGridWorkflow.<a href="./src/resources/client/batched-grid-workflow.ts">completeWorkflow</a>({ ...params }) -> BatchedGridWorkflowCompleteWorkflowResponse</code>
