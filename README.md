@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Swarms Client REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [docs.swarms.world](https://docs.swarms.world/en/latest/). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [docs.swarms.ai](https://docs.swarms.ai). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -24,6 +24,7 @@ import SwarmsClient from 'swarms-ts';
 
 const client = new SwarmsClient({
   apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted
+  environment: 'sandbox', // defaults to 'production'
 });
 
 const response = await client.getRoot();
@@ -39,6 +40,7 @@ import SwarmsClient from 'swarms-ts';
 
 const client = new SwarmsClient({
   apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted
+  environment: 'sandbox', // defaults to 'production'
 });
 
 const response: unknown = await client.getRoot();
