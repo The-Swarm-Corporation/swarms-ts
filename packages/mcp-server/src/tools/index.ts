@@ -22,7 +22,6 @@ import list_execution_types_client_auto_swarm_builder from './client/auto-swarm-
 import create_completion_client_advanced_research from './client/advanced-research/create-completion-client-advanced-research';
 import create_completion_advanced_research_client_batch from './client/advanced-research/batch/create-completion-advanced-research-client-batch';
 import list_available_client_tools from './client/tools/list-available-client-tools';
-import list_agents_client_marketplace from './client/marketplace/list-agents-client-marketplace';
 import complete_workflow_client_batched_grid_workflow from './client/batched-grid-workflow/complete-workflow-client-batched-grid-workflow';
 
 export const endpoints: Endpoint[] = [];
@@ -49,7 +48,6 @@ addEndpoint(list_execution_types_client_auto_swarm_builder);
 addEndpoint(create_completion_client_advanced_research);
 addEndpoint(create_completion_advanced_research_client_batch);
 addEndpoint(list_available_client_tools);
-addEndpoint(list_agents_client_marketplace);
 addEndpoint(complete_workflow_client_batched_grid_workflow);
 
 export type Filter = {
