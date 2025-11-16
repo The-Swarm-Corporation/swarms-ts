@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-alpha.26 (2025-11-16)
+
+Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
+
+### Features
+
+* **api:** api update ([9c74447](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9c744479bb5d9ca9e1baeb32bed43eb528c5d067))
+
+
+### Bug Fixes
+
+* **mcp:** return tool execution error on jq failure ([b7ae080](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b7ae08081606c28a6a77d036067d233a66ec7d33))
+
+
+### Chores
+
+* **mcp:** clarify http auth error ([fca1848](https://github.com/The-Swarm-Corporation/swarms-ts/commit/fca184804e1bfa3e770a70d5bc7160ae75bca17d))
+* **mcp:** upgrade jq-web ([bc3159d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/bc3159dd6864baceaa268992bc37b1680999e120))
+
 ## 0.1.0-alpha.25 (2025-11-11)
 
 Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
