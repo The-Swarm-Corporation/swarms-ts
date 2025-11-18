@@ -28,13 +28,15 @@ export const tool: Tool = {
         description: 'A description of the swarm.',
       },
       execution_type: {
-        type: 'array',
+        type: 'string',
         title: 'Execution Type',
         description: 'The type of execution to perform.',
-        items: {
-          type: 'object',
-          additionalProperties: true,
-        },
+        enum: [
+          'return-agents',
+          'execute-swarm-router',
+          'return-swarm-router-config',
+          'return-agents-objects',
+        ],
       },
       max_loops: {
         type: 'integer',
