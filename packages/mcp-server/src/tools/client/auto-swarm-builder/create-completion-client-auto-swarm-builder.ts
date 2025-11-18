@@ -31,12 +31,7 @@ export const tool: Tool = {
         type: 'string',
         title: 'Execution Type',
         description: 'The type of execution to perform.',
-        enum: [
-          'return-agents',
-          'execute-swarm-router',
-          'return-swarm-router-config',
-          'return-agents-objects',
-        ],
+        enum: ['return-agents', 'return-swarm-router-config', 'return-agents-objects'],
       },
       max_loops: {
         type: 'integer',
