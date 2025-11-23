@@ -297,10 +297,6 @@ The following tools are available in this MCP server.
 
 - `list_available_client_tools` (`read`): Retrieve comprehensive information about all available tools and capabilities supported by the Swarms API.
 
-### Resource `client.marketplace`:
-
-- `list_agents_client_marketplace` (`read`): Retrieve free agents from the marketplace.
-
 ### Resource `client.batched_grid_workflow`:
 
 - `complete_workflow_client_batched_grid_workflow` (`write`): Complete a batched grid workflow with the specified input data. Enables you to run a grid workflow with multiple agents and tasks in a single request.

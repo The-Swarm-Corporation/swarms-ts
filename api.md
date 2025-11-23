@@ -145,14 +145,6 @@ Methods:
 
 ## Marketplace
 
-Types:
-
-- <code><a href="./src/resources/client/marketplace.ts">MarketplaceListAgentsResponse</a></code>
-
-Methods:
-
-- <code title="get /v1/marketplace/agents">client.client.marketplace.<a href="./src/resources/client/marketplace.ts">listAgents</a>() -> MarketplaceListAgentsResponse</code>
-
 ## BatchedGridWorkflow
 
 Types:

@@ -60,7 +60,6 @@ const fuse = new Fuse(
     'client.client.advancedResearch.createCompletion',
     'client.client.advancedResearch.batch.createCompletion',
     'client.client.tools.listAvailable',
-    'client.client.marketplace.listAgents',
     'client.client.batchedGridWorkflow.completeWorkflow',
   ],
   { threshold: 1, shouldSort: true },

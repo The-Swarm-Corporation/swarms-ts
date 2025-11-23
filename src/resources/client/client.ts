@@ -15,7 +15,7 @@ import {
   BatchedGridWorkflowCompleteWorkflowResponse,
 } from './batched-grid-workflow';
 import * as MarketplaceAPI from './marketplace';
-import { Marketplace, MarketplaceListAgentsParams, MarketplaceListAgentsResponse } from './marketplace';
+import { Marketplace } from './marketplace';
 import * as RateAPI from './rate';
 import { Rate, RateGetLimitsResponse } from './rate';
 import * as ToolsAPI from './tools';
@@ -66,11 +66,7 @@ export declare namespace Client {
 
   export { Tools as Tools, type ToolListAvailableResponse as ToolListAvailableResponse };
 
-  export {
-    Marketplace as Marketplace,
-    type MarketplaceListAgentsResponse as MarketplaceListAgentsResponse,
-    type MarketplaceListAgentsParams as MarketplaceListAgentsParams,
-  };
+  export { Marketplace as Marketplace };
 
   export {
     BatchedGridWorkflow as BatchedGridWorkflow,

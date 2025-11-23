@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { maybeFilter } from 'swarms-ts-mcp/filtering';
-import { Metadata, asTextContentResult } from 'swarms-ts-mcp/tools/types';
+import { isJqError, maybeFilter } from 'swarms-ts-mcp/filtering';
+import { Metadata, asErrorResult, asTextContentResult } from 'swarms-ts-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import SwarmsClient from 'swarms-ts';
@@ -28,13 +28,10 @@ export const tool: Tool = {
         description: 'A description of the swarm.',
       },
       execution_type: {
-        type: 'array',
+        type: 'string',
         title: 'Execution Type',
         description: 'The type of execution to perform.',
-        items: {
-          type: 'object',
-          additionalProperties: true,
-        },
+        enum: ['return-agents', 'return-swarm-router-config', 'return-agents-objects'],
       },
       max_loops: {
         type: 'integer',
@@ -75,9 +72,16 @@ export const tool: Tool = {
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
   const { jq_filter, ...body } = args as any;
-  return asTextContentResult(
-    await maybeFilter(jq_filter, await client.client.autoSwarmBuilder.createCompletion(body)),
-  );
+  try {
+    return asTextContentResult(
+      await maybeFilter(jq_filter, await client.client.autoSwarmBuilder.createCompletion(body)),
+    );
+  } catch (error) {
+    if (isJqError(error)) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
