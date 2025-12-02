@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Metadata, asTextContentResult } from 'swarms-ts-mcp/tools/types';
+import { Metadata, asErrorResult, asTextContentResult } from 'swarms-ts-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import SwarmsClient from 'swarms-ts';
@@ -284,7 +284,14 @@ export const tool: Tool = {
 
 export const handler = async (client: SwarmsClient, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.client.batchedGridWorkflow.completeWorkflow(body));
+  try {
+    return asTextContentResult(await client.client.batchedGridWorkflow.completeWorkflow(body));
+  } catch (error) {
+    if (error instanceof SwarmsClient.APIError) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
