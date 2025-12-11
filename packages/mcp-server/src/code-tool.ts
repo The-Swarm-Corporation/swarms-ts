@@ -39,6 +39,7 @@ export async function codeTool() {
       },
       body: JSON.stringify({
         project_name: 'swarms',
+        client_opts: { environment: (readEnv('SWARMS_CLIENT_ENVIRONMENT') || undefined) as any },
         code,
       }),
     });
