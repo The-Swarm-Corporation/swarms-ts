@@ -77,7 +77,7 @@ export interface AutoSwarmBuilderCreateCompletionParams {
   /**
    * The type of execution to perform.
    */
-  execution_type?: Array<unknown> | null;
+  execution_type?: 'return-agents' | 'return-swarm-router-config' | 'return-agents-objects' | null;
 
   /**
    * Maximum number of loops to run.

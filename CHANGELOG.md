@@ -1,5 +1,46 @@
 # Changelog
 
+## 0.1.0-alpha.26 (2025-12-19)
+
+Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
+
+### ⚠ BREAKING CHANGES
+
+* **mcp:** remove deprecated tool schemes
+* **mcp:** **Migration:** To migrate, simply modify the command used to invoke the MCP server. Currently, the only supported tool scheme is code mode. Now, starting the server with just `node /path/to/mcp/server` or `npx package-name` will invoke code tools: changing your command to one of these is likely all you will need to do.
+
+### Features
+
+* **api:** api update ([bbe24b1](https://github.com/The-Swarm-Corporation/swarms-ts/commit/bbe24b1298319560358af43d591d7058d2804ec1))
+* **api:** api update ([cd544e2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/cd544e2f43936f5a6e276aec638d29a36734fa2e))
+* **api:** api update ([9c74447](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9c744479bb5d9ca9e1baeb32bed43eb528c5d067))
+* **mcp:** add detail field to docs search tool ([40d224f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/40d224fa5dd1d5b214fa64a3a5c0d1d8afd1240d))
+* **mcp:** add typescript check to code execution tool ([4cc4764](https://github.com/The-Swarm-Corporation/swarms-ts/commit/4cc4764b1cda04fd91a007c23b88f23442e5d630))
+* **mcp:** handle code mode calls in the Stainless API ([a4745f7](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a4745f720ac3f900115e3fe9279094c44af394ee))
+* **mcp:** return logs on code tool errors ([24f00d7](https://github.com/The-Swarm-Corporation/swarms-ts/commit/24f00d7b8ab6faa659124d278ffa1a41513b7536))
+
+
+### Bug Fixes
+
+* **mcp:** add client instantiation options to code tool ([0997665](https://github.com/The-Swarm-Corporation/swarms-ts/commit/09976658c735a400970f7e373fbc233c870ef075))
+* **mcp:** correct code tool API endpoint ([560414e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/560414e021ac9a151f7d132f5a1accf96c901ea5))
+* **mcp:** pass base url to code tool ([58aaa2b](https://github.com/The-Swarm-Corporation/swarms-ts/commit/58aaa2bcd683c0b10c1aeb61ff2df77135f91466))
+* **mcp:** return correct lines on typescript errors ([e3caf34](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e3caf34714d818ce6cb74d847f5bab7222c4fe52))
+* **mcp:** return tool execution error on api error ([5fa89a5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5fa89a5b0c177ce94781239dcc88bfcf2f46cc5a))
+* **mcp:** return tool execution error on jq failure ([b7ae080](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b7ae08081606c28a6a77d036067d233a66ec7d33))
+
+
+### Chores
+
+* **client:** fix logger property type ([d01341c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d01341c7b24f6c108a6080c1b454733c0f268caa))
+* **internal:** codegen related update ([28d09b2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/28d09b2fcd3f4e1414714a9ebe396122d4baf084))
+* **internal:** codegen related update ([20c19fc](https://github.com/The-Swarm-Corporation/swarms-ts/commit/20c19fc1c086878fc010d199b75d0d7cd6eff054))
+* **internal:** upgrade eslint ([7687527](https://github.com/The-Swarm-Corporation/swarms-ts/commit/7687527a48675a0f8ec6798b2286e40be44a9c9c))
+* **mcp:** remove deprecated tool schemes ([a30114c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a30114ced923d511e6be029f517b98d03152967e))
+* **mcp:** update lockfile ([5ba212b](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5ba212bf1780ef65a7feef519d1831b70ce90122))
+* **mcp:** upgrade jq-web ([bc3159d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/bc3159dd6864baceaa268992bc37b1680999e120))
+* use latest @modelcontextprotocol/sdk ([4900793](https://github.com/The-Swarm-Corporation/swarms-ts/commit/4900793f22a7b645f62c8701421ee0c6acb2e034))
+
 ## 0.1.0-alpha.25 (2025-11-11)
 
 Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)

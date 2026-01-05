@@ -26,7 +26,7 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "swarms_ts_api": {
       "command": "npx",
-      "args": ["-y", "swarms-ts-mcp", "--client=claude", "--tools=all"],
+      "args": ["-y", "swarms-ts-mcp"],
       "env": {
         "SWARMS_API_KEY": "My API Key",
         "SWARMS_CLIENT_ENVIRONMENT": "production"
@@ -59,110 +59,22 @@ environment variables in Claude Code's `.claude.json`, which can be found in you
 claude mcp add --transport stdio swarms_ts_api --env SWARMS_API_KEY="Your SWARMS_API_KEY here." -- npx -y swarms-ts-mcp
 ```
 
-## Exposing endpoints to your MCP Client
+## Code Mode
 
-There are three ways to expose endpoints as tools in the MCP server:
+This MCP server is built on the "Code Mode" tool scheme. In this MCP Server,
+your agent will write code against the TypeScript SDK, which will then be executed in an
+isolated sandbox. To accomplish this, the server will expose two tools to your agent:
 
-1. Exposing one tool per endpoint, and filtering as necessary
-2. Exposing a set of tools to dynamically discover and invoke endpoints from the API
-3. Exposing a docs search tool and a code execution tool, allowing the client to write code to be executed against the TypeScript client
+- The first tool is a docs search tool, which can be used to generically query for
+  documentation about your API/SDK.
 
-### Filtering endpoints and tools
+- The second tool is a code tool, where the agent can write code against the TypeScript SDK.
+  The code will be executed in a sandbox environment without web or filesystem access. Then,
+  anything the code returns or prints will be returned to the agent as the result of the
+  tool call.
 
-You can run the package on the command line to discover and filter the set of tools that are exposed by the
-MCP Server. This can be helpful for large APIs where including all endpoints at once is too much for your AI's
-context window.
-
-You can filter by multiple aspects:
-
-- `--tool` includes a specific tool by name
-- `--resource` includes all tools under a specific resource, and can have wildcards, e.g. `my.resource*`
-- `--operation` includes just read (get/list) or just write operations
-
-### Dynamic tools
-
-If you specify `--tools=dynamic` to the MCP server, instead of exposing one tool per endpoint in the API, it will
-expose the following tools:
-
-1. `list_api_endpoints` - Discovers available endpoints, with optional filtering by search query
-2. `get_api_endpoint_schema` - Gets detailed schema information for a specific endpoint
-3. `invoke_api_endpoint` - Executes any endpoint with the appropriate parameters
-
-This allows you to have the full set of API endpoints available to your MCP Client, while not requiring that all
-of their schemas be loaded into context at once. Instead, the LLM will automatically use these tools together to
-search for, look up, and invoke endpoints dynamically. However, due to the indirect nature of the schemas, it
-can struggle to provide the correct properties a bit more than when tools are imported explicitly. Therefore,
-you can opt-in to explicit tools, the dynamic tools, or both.
-
-See more information with `--help`.
-
-All of these command-line options can be repeated, combined together, and have corresponding exclusion versions (e.g. `--no-tool`).
-
-Use `--list` to see the list of available tools, or see below.
-
-### Code execution
-
-If you specify `--tools=code` to the MCP server, it will expose just two tools:
-
-- `search_docs` - Searches the API documentation and returns a list of markdown results
-- `execute` - Runs code against the TypeScript client
-
-This allows the LLM to implement more complex logic by chaining together many API calls without loading
-intermediary results into its context window.
-
-The code execution itself happens in a Deno sandbox that has network access only to the base URL for the API.
-
-### Specifying the MCP Client
-
-Different clients have varying abilities to handle arbitrary tools and schemas.
-
-You can specify the client you are using with the `--client` argument, and the MCP server will automatically
-serve tools and schemas that are more compatible with that client.
-
-- `--client=<type>`: Set all capabilities based on a known MCP client
-
-  - Valid values: `openai-agents`, `claude`, `claude-code`, `cursor`
-  - Example: `--client=cursor`
-
-Additionally, if you have a client not on the above list, or the client has gotten better
-over time, you can manually enable or disable certain capabilities:
-
-- `--capability=<name>`: Specify individual client capabilities
-  - Available capabilities:
-    - `top-level-unions`: Enable support for top-level unions in tool schemas
-    - `valid-json`: Enable JSON string parsing for arguments
-    - `refs`: Enable support for $ref pointers in schemas
-    - `unions`: Enable support for union types (anyOf) in schemas
-    - `formats`: Enable support for format validations in schemas (e.g. date-time, email)
-    - `tool-name-length=N`: Set maximum tool name length to N characters
-  - Example: `--capability=top-level-unions --capability=tool-name-length=40`
-  - Example: `--capability=top-level-unions,tool-name-length=40`
-
-### Examples
-
-1. Filter for read operations on cards:
-
-```bash
---resource=cards --operation=read
-```
-
-2. Exclude specific tools while including others:
-
-```bash
---resource=cards --no-tool=create_cards
-```
-
-3. Configure for Cursor client with custom max tool name length:
-
-```bash
---client=cursor --capability=tool-name-length=40
-```
-
-4. Complex filtering with multiple criteria:
-
-```bash
---resource=cards,accounts --operation=read --tag=kyc --no-tool=create_cards
-```
+Using this scheme, agents are capable of performing very complex tasks deterministically
+and repeatably.
 
 ## Running remotely
 
@@ -187,120 +99,3 @@ A configuration JSON for this server might look like this, assuming the server i
   }
 }
 ```
-
-The command-line arguments for filtering tools and specifying clients can also be used as query parameters in the URL.
-For example, to exclude specific tools while including others, use the URL:
-
-```
-http://localhost:3000?resource=cards&resource=accounts&no_tool=create_cards
-```
-
-Or, to configure for the Cursor client, with a custom max tool name length, use the URL:
-
-```
-http://localhost:3000?client=cursor&capability=tool-name-length%3D40
-```
-
-## Importing the tools and server individually
-
-```js
-// Import the server, generated endpoints, or the init function
-import { server, endpoints, init } from "swarms-ts-mcp/server";
-
-// import a specific tool
-import getRootClient from "swarms-ts-mcp/tools/top-level/get-root-client";
-
-// initialize the server and all endpoints
-init({ server, endpoints });
-
-// manually start server
-const transport = new StdioServerTransport();
-await server.connect(transport);
-
-// or initialize your own server with specific tools
-const myServer = new McpServer(...);
-
-// define your own endpoint
-const myCustomEndpoint = {
-  tool: {
-    name: 'my_custom_tool',
-    description: 'My custom tool',
-    inputSchema: zodToJsonSchema(z.object({ a_property: z.string() })),
-  },
-  handler: async (client: client, args: any) => {
-    return { myResponse: 'Hello world!' };
-  })
-};
-
-// initialize the server with your custom endpoints
-init({ server: myServer, endpoints: [getRootClient, myCustomEndpoint] });
-```
-
-## Available Tools
-
-The following tools are available in this MCP server.
-
-### Resource `$client`:
-
-- `get_root_client` (`read`): Root
-
-### Resource `health`:
-
-- `check_health` (`read`): Health
-
-### Resource `agent`:
-
-- `list_agent` (`read`): Get all unique agent configurations that the user has created or used, without task details. Allows users to reuse agent configs with new tasks.
-- `run_agent` (`write`): Run an agent with the specified task. Supports streaming when stream=True.
-
-### Resource `agent.batch`:
-
-- `run_agent_batch` (`write`): Run a batch of agents with the specified tasks using a thread pool.
-
-### Resource `models`:
-
-- `list_available_models` (`read`): Get all available models.
-
-### Resource `swarms`:
-
-- `check_available_swarms` (`read`): Check the available swarm types.
-- `get_logs_swarms` (`read`): Get all API request logs for all API keys associated with the user identified by the provided API key, excluding any logs that contain a client_ip field in their data.
-- `run_swarms` (`write`): Run a swarm with the specified task. Supports streaming when stream=True.
-
-### Resource `swarms.batch`:
-
-- `run_swarms_batch` (`write`): Run a batch of swarms with the specified tasks using a thread pool.
-
-### Resource `reasoning_agents`:
-
-- `create_completion_reasoning_agents` (`write`): Run a reasoning agent with the specified task.
-- `list_types_reasoning_agents` (`read`): Get the types of reasoning agents available.
-
-### Resource `client.rate`:
-
-- `get_limits_client_rate` (`read`): Get the rate limits and current usage for the user associated with the provided API key.
-
-### Resource `client.auto_swarm_builder`:
-
-- `create_completion_client_auto_swarm_builder` (`write`): Generate and orchestrate agent swarms autonomously using AI-powered swarm composition and task decomposition.
-- `list_execution_types_client_auto_swarm_builder` (`read`): Retrieve all available execution types and return formats for the Auto Swarm Builder endpoint.
-
-### Resource `client.advanced_research`:
-
-- `create_completion_client_advanced_research` (`write`): Execute comprehensive research sessions with multi-source data collection, analysis, and synthesis capabilities.
-
-### Resource `client.advanced_research.batch`:
-
-- `create_completion_advanced_research_client_batch` (`write`): Execute multiple advanced research sessions concurrently with independent configurations for high-throughput research workflows.
-
-### Resource `client.tools`:
-
-- `list_available_client_tools` (`read`): Retrieve comprehensive information about all available tools and capabilities supported by the Swarms API.
-
-### Resource `client.marketplace`:
-
-- `list_agents_client_marketplace` (`read`): Retrieve free agents from the marketplace.
-
-### Resource `client.batched_grid_workflow`:
-
-- `complete_workflow_client_batched_grid_workflow` (`write`): Complete a batched grid workflow with the specified input data. Enables you to run a grid workflow with multiple agents and tasks in a single request.
