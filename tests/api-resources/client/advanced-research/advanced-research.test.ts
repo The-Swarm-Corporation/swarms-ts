@@ -10,7 +10,10 @@ const client = new SwarmsClient({
 describe('resource advancedResearch', () => {
   // Prism tests are disabled
   test.skip('createCompletion: only required params', async () => {
-    const responsePromise = client.client.advancedResearch.createCompletion({ config: {}, task: 'task' });
+    const responsePromise = client.client.advancedResearch.createCompletion({
+      config: {},
+      task: 'task',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
