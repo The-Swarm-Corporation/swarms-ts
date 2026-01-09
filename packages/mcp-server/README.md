@@ -56,7 +56,7 @@ If you use Claude Code, you can install the MCP server by running the command be
 environment variables in Claude Code's `.claude.json`, which can be found in your home directory.
 
 ```
-claude mcp add --transport stdio swarms_ts_api --env SWARMS_API_KEY="Your SWARMS_API_KEY here." -- npx -y swarms-ts-mcp
+claude mcp add swarms_ts_mcp_api --env SWARMS_API_KEY="Your SWARMS_API_KEY here." -- npx -y swarms-ts-mcp
 ```
 
 ## Code Mode

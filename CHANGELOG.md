@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.27 (2026-01-09)
+
+Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
+
+### Bug Fixes
+
+* **mcp:** correct code tool api output types ([57fd661](https://github.com/The-Swarm-Corporation/swarms-ts/commit/57fd661ba9e4d5f8994694862ddb54f0f43a88dd))
+* **mcp:** fix options parsing ([28a7b62](https://github.com/The-Swarm-Corporation/swarms-ts/commit/28a7b62cf625b65d39415dbcc729cfa068ed50ed))
+* **mcp:** update code tool prompt ([f7bcbe1](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f7bcbe1b845d0fb2038c5a8c556b947d2f011e7f))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([587ab3a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/587ab3a49595d9505bb4f9481cd3af3a1982f5a9))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([a79764f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a79764fc41fb04e5b9031e9e76d410d0cf6ac5c4))
+
 ## 0.1.0-alpha.26 (2025-12-19)
 
 Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)

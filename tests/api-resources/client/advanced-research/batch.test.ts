@@ -11,7 +11,12 @@ describe('resource batch', () => {
   // Prism tests are disabled
   test.skip('createCompletion: only required params', async () => {
     const responsePromise = client.client.advancedResearch.batch.createCompletion({
-      input_schemas: [{ config: {}, task: 'task' }],
+      input_schemas: [
+        {
+          config: {},
+          task: 'task',
+        },
+      ],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
