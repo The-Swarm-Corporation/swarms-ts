@@ -1,6 +1,6 @@
 {
   "name": "swarms-ts-mcp",
-  "version": "0.1.0-alpha.26",
+  "version": "0.1.0-alpha.27",
   "description": "The official MCP Server for the Swarms Client API",
   "author": "Swarms Client <kye@swarms.world>",
   "types": "dist/index.d.ts",
