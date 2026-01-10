@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.28 (2026-01-10)
+
+Full Changelog: [v0.1.0-alpha.27...v0.1.0-alpha.28](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.27...v0.1.0-alpha.28)
+
+### Chores
+
+* **internal:** configure MCP Server hosting ([0f8d6e8](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0f8d6e8a3ed3c6476c0bcea46396d7e0ffd0579f))
+
 ## 0.1.0-alpha.27 (2026-01-09)
 
 Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
