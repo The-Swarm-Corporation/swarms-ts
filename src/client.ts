@@ -32,6 +32,7 @@ import {
   AgentRunParams,
   AgentRunResponse,
   AgentSpec,
+  McpConnection,
 } from './resources/agent/agent';
 import {
   SwarmCheckAvailableResponse,
@@ -802,6 +803,7 @@ export declare namespace SwarmsClient {
     Agent as Agent,
     type AgentCompletion as AgentCompletion,
     type AgentSpec as AgentSpec,
+    type McpConnection as McpConnection,
     type AgentListResponse as AgentListResponse,
     type AgentRunResponse as AgentRunResponse,
     type AgentRunParams as AgentRunParams,

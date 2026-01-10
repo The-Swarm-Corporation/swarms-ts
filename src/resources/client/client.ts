@@ -17,7 +17,7 @@ import {
 import * as MarketplaceAPI from './marketplace';
 import { Marketplace } from './marketplace';
 import * as RateAPI from './rate';
-import { Rate, RateGetLimitsResponse } from './rate';
+import { Rate, RateGetLimitsResponse, RateLimitWindow } from './rate';
 import * as ToolsAPI from './tools';
 import { ToolListAvailableResponse, Tools } from './tools';
 import * as AdvancedResearchAPI from './advanced-research/advanced-research';
@@ -49,7 +49,11 @@ Client.Marketplace = Marketplace;
 Client.BatchedGridWorkflow = BatchedGridWorkflow;
 
 export declare namespace Client {
-  export { Rate as Rate, type RateGetLimitsResponse as RateGetLimitsResponse };
+  export {
+    Rate as Rate,
+    type RateLimitWindow as RateLimitWindow,
+    type RateGetLimitsResponse as RateGetLimitsResponse,
+  };
 
   export {
     AutoSwarmBuilder as AutoSwarmBuilder,
