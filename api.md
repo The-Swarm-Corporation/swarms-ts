@@ -24,6 +24,7 @@ Types:
 
 - <code><a href="./src/resources/agent/agent.ts">AgentCompletion</a></code>
 - <code><a href="./src/resources/agent/agent.ts">AgentSpec</a></code>
+- <code><a href="./src/resources/agent/agent.ts">McpConnection</a></code>
 - <code><a href="./src/resources/agent/agent.ts">AgentListResponse</a></code>
 - <code><a href="./src/resources/agent/agent.ts">AgentRunResponse</a></code>
 
@@ -95,6 +96,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/client/rate.ts">RateLimitWindow</a></code>
 - <code><a href="./src/resources/client/rate.ts">RateGetLimitsResponse</a></code>
 
 Methods:

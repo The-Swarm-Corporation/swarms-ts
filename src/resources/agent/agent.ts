@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
+import * as AgentAPI from './agent';
 import * as BatchAPI from './batch';
 import { Batch, BatchRunParams, BatchRunResponse } from './batch';
 import { APIPromise } from '../../core/api-promise';
@@ -106,7 +107,7 @@ export interface AgentSpec {
   /**
    * The MCP connection to use for the agent.
    */
-  mcp_config?: AgentSpec.McpConfig | null;
+  mcp_config?: McpConnection | null;
 
   /**
    * The MCP connections to use for the agent. This is a list of MCP connections.
@@ -176,48 +177,6 @@ export interface AgentSpec {
 
 export namespace AgentSpec {
   /**
-   * The MCP connection to use for the agent.
-   */
-  export interface McpConfig {
-    /**
-     * Authentication token for accessing the MCP server
-     */
-    authorization_token?: string | null;
-
-    /**
-     * Headers to send to the MCP server
-     */
-    headers?: { [key: string]: string } | null;
-
-    /**
-     * Timeout for the MCP server
-     */
-    timeout?: number | null;
-
-    /**
-     * Dictionary containing configuration settings for MCP tools
-     */
-    tool_configurations?: { [key: string]: unknown } | null;
-
-    /**
-     * The transport protocol to use for the MCP server
-     */
-    transport?: string | null;
-
-    /**
-     * The type of connection, defaults to 'mcp'
-     */
-    type?: string | null;
-
-    /**
-     * The URL endpoint for the MCP server
-     */
-    url?: string | null;
-
-    [k: string]: unknown;
-  }
-
-  /**
    * The MCP connections to use for the agent. This is a list of MCP connections.
    * Includes multiple MCP connections.
    */
@@ -225,49 +184,47 @@ export namespace AgentSpec {
     /**
      * List of MCP connections
      */
-    connections: Array<McpConfigs.Connection>;
+    connections: Array<AgentAPI.McpConnection>;
   }
+}
 
-  export namespace McpConfigs {
-    export interface Connection {
-      /**
-       * Authentication token for accessing the MCP server
-       */
-      authorization_token?: string | null;
+export interface McpConnection {
+  /**
+   * Authentication token for accessing the MCP server
+   */
+  authorization_token?: string | null;
 
-      /**
-       * Headers to send to the MCP server
-       */
-      headers?: { [key: string]: string } | null;
+  /**
+   * Headers to send to the MCP server
+   */
+  headers?: { [key: string]: string } | null;
 
-      /**
-       * Timeout for the MCP server
-       */
-      timeout?: number | null;
+  /**
+   * Timeout for the MCP server
+   */
+  timeout?: number | null;
 
-      /**
-       * Dictionary containing configuration settings for MCP tools
-       */
-      tool_configurations?: { [key: string]: unknown } | null;
+  /**
+   * Dictionary containing configuration settings for MCP tools
+   */
+  tool_configurations?: { [key: string]: unknown } | null;
 
-      /**
-       * The transport protocol to use for the MCP server
-       */
-      transport?: string | null;
+  /**
+   * The transport protocol to use for the MCP server
+   */
+  transport?: string | null;
 
-      /**
-       * The type of connection, defaults to 'mcp'
-       */
-      type?: string | null;
+  /**
+   * The type of connection, defaults to 'mcp'
+   */
+  type?: string | null;
 
-      /**
-       * The URL endpoint for the MCP server
-       */
-      url?: string | null;
+  /**
+   * The URL endpoint for the MCP server
+   */
+  url?: string | null;
 
-      [k: string]: unknown;
-    }
-  }
+  [k: string]: unknown;
 }
 
 export type AgentListResponse = { [key: string]: unknown };
@@ -355,6 +312,7 @@ export declare namespace Agent {
   export {
     type AgentCompletion as AgentCompletion,
     type AgentSpec as AgentSpec,
+    type McpConnection as McpConnection,
     type AgentListResponse as AgentListResponse,
     type AgentRunResponse as AgentRunResponse,
     type AgentRunParams as AgentRunParams,

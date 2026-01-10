@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
+import * as RateAPI from './rate';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
@@ -12,6 +13,33 @@ export class Rate extends APIResource {
   getLimits(options?: RequestOptions): APIPromise<RateGetLimitsResponse> {
     return this._client.get('/v1/rate/limits', options);
   }
+}
+
+export interface RateLimitWindow {
+  /**
+   * The number of requests made in this time window.
+   */
+  count: number;
+
+  /**
+   * Whether the rate limit has been exceeded for this time window.
+   */
+  exceeded: boolean;
+
+  /**
+   * The maximum number of requests allowed in this time window.
+   */
+  limit: number;
+
+  /**
+   * The number of requests remaining before hitting the limit.
+   */
+  remaining: number;
+
+  /**
+   * ISO timestamp when the rate limit will reset.
+   */
+  reset_time: string;
 }
 
 export interface RateGetLimitsResponse {
@@ -74,112 +102,20 @@ export namespace RateGetLimitsResponse {
     /**
      * Rate limit information for the last day.
      */
-    day: RateLimits.Day;
+    day: RateAPI.RateLimitWindow;
 
     /**
      * Rate limit information for the last hour.
      */
-    hour: RateLimits.Hour;
+    hour: RateAPI.RateLimitWindow;
 
     /**
      * Rate limit information for the last minute.
      */
-    minute: RateLimits.Minute;
-  }
-
-  export namespace RateLimits {
-    /**
-     * Rate limit information for the last day.
-     */
-    export interface Day {
-      /**
-       * The number of requests made in this time window.
-       */
-      count: number;
-
-      /**
-       * Whether the rate limit has been exceeded for this time window.
-       */
-      exceeded: boolean;
-
-      /**
-       * The maximum number of requests allowed in this time window.
-       */
-      limit: number;
-
-      /**
-       * The number of requests remaining before hitting the limit.
-       */
-      remaining: number;
-
-      /**
-       * ISO timestamp when the rate limit will reset.
-       */
-      reset_time: string;
-    }
-
-    /**
-     * Rate limit information for the last hour.
-     */
-    export interface Hour {
-      /**
-       * The number of requests made in this time window.
-       */
-      count: number;
-
-      /**
-       * Whether the rate limit has been exceeded for this time window.
-       */
-      exceeded: boolean;
-
-      /**
-       * The maximum number of requests allowed in this time window.
-       */
-      limit: number;
-
-      /**
-       * The number of requests remaining before hitting the limit.
-       */
-      remaining: number;
-
-      /**
-       * ISO timestamp when the rate limit will reset.
-       */
-      reset_time: string;
-    }
-
-    /**
-     * Rate limit information for the last minute.
-     */
-    export interface Minute {
-      /**
-       * The number of requests made in this time window.
-       */
-      count: number;
-
-      /**
-       * Whether the rate limit has been exceeded for this time window.
-       */
-      exceeded: boolean;
-
-      /**
-       * The maximum number of requests allowed in this time window.
-       */
-      limit: number;
-
-      /**
-       * The number of requests remaining before hitting the limit.
-       */
-      remaining: number;
-
-      /**
-       * ISO timestamp when the rate limit will reset.
-       */
-      reset_time: string;
-    }
+    minute: RateAPI.RateLimitWindow;
   }
 }
 
 export declare namespace Rate {
-  export { type RateGetLimitsResponse as RateGetLimitsResponse };
+  export { type RateLimitWindow as RateLimitWindow, type RateGetLimitsResponse as RateGetLimitsResponse };
 }
