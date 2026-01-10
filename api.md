@@ -147,6 +147,14 @@ Methods:
 
 ## Marketplace
 
+Types:
+
+- <code><a href="./src/resources/client/marketplace.ts">MarketplaceCreateAgentResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/marketplace/agents">client.client.marketplace.<a href="./src/resources/client/marketplace.ts">createAgent</a>({ ...params }) -> MarketplaceCreateAgentResponse</code>
+
 ## BatchedGridWorkflow
 
 Types:
@@ -156,3 +164,13 @@ Types:
 Methods:
 
 - <code title="post /v1/batched-grid-workflow/completions">client.client.batchedGridWorkflow.<a href="./src/resources/client/batched-grid-workflow.ts">completeWorkflow</a>({ ...params }) -> BatchedGridWorkflowCompleteWorkflowResponse</code>
+
+## GraphWorkflow
+
+Types:
+
+- <code><a href="./src/resources/client/graph-workflow.ts">GraphWorkflowExecuteWorkflowResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/graph-workflow/completions">client.client.graphWorkflow.<a href="./src/resources/client/graph-workflow.ts">executeWorkflow</a>({ ...params }) -> GraphWorkflowExecuteWorkflowResponse</code>

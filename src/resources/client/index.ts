@@ -17,6 +17,15 @@ export {
   type BatchedGridWorkflowCompleteWorkflowParams,
 } from './batched-grid-workflow';
 export { Client } from './client';
-export { Marketplace } from './marketplace';
+export {
+  GraphWorkflow,
+  type GraphWorkflowExecuteWorkflowResponse,
+  type GraphWorkflowExecuteWorkflowParams,
+} from './graph-workflow';
+export {
+  Marketplace,
+  type MarketplaceCreateAgentResponse,
+  type MarketplaceCreateAgentParams,
+} from './marketplace';
 export { Rate, type RateLimitWindow, type RateGetLimitsResponse } from './rate';
 export { Tools, type ToolListAvailableResponse } from './tools';
