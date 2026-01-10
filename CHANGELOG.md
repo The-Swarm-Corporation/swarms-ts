@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.29 (2026-01-10)
+
+Full Changelog: [v0.1.0-alpha.28...v0.1.0-alpha.29](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.28...v0.1.0-alpha.29)
+
+### Features
+
+* **api:** manual updates ([19d9029](https://github.com/The-Swarm-Corporation/swarms-ts/commit/19d90297994291e40a2e03412f3c2f6c3fe7de48))
+* **api:** manual updates ([977d931](https://github.com/The-Swarm-Corporation/swarms-ts/commit/977d93182084833833af7de6e293c640889530c2))
+
 ## 0.1.0-alpha.28 (2026-01-10)
 
 Full Changelog: [v0.1.0-alpha.27...v0.1.0-alpha.28](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.27...v0.1.0-alpha.28)
