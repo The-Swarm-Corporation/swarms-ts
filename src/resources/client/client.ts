@@ -14,10 +14,16 @@ import {
   BatchedGridWorkflowCompleteWorkflowParams,
   BatchedGridWorkflowCompleteWorkflowResponse,
 } from './batched-grid-workflow';
+import * as GraphWorkflowAPI from './graph-workflow';
+import {
+  GraphWorkflow,
+  GraphWorkflowExecuteWorkflowParams,
+  GraphWorkflowExecuteWorkflowResponse,
+} from './graph-workflow';
 import * as MarketplaceAPI from './marketplace';
-import { Marketplace } from './marketplace';
+import { Marketplace, MarketplaceCreateAgentParams, MarketplaceCreateAgentResponse } from './marketplace';
 import * as RateAPI from './rate';
-import { Rate, RateGetLimitsResponse } from './rate';
+import { Rate, RateGetLimitsResponse, RateLimitWindow } from './rate';
 import * as ToolsAPI from './tools';
 import { ToolListAvailableResponse, Tools } from './tools';
 import * as AdvancedResearchAPI from './advanced-research/advanced-research';
@@ -39,6 +45,7 @@ export class Client extends APIResource {
   marketplace: MarketplaceAPI.Marketplace = new MarketplaceAPI.Marketplace(this._client);
   batchedGridWorkflow: BatchedGridWorkflowAPI.BatchedGridWorkflow =
     new BatchedGridWorkflowAPI.BatchedGridWorkflow(this._client);
+  graphWorkflow: GraphWorkflowAPI.GraphWorkflow = new GraphWorkflowAPI.GraphWorkflow(this._client);
 }
 
 Client.Rate = Rate;
@@ -47,9 +54,14 @@ Client.AdvancedResearch = AdvancedResearch;
 Client.Tools = Tools;
 Client.Marketplace = Marketplace;
 Client.BatchedGridWorkflow = BatchedGridWorkflow;
+Client.GraphWorkflow = GraphWorkflow;
 
 export declare namespace Client {
-  export { Rate as Rate, type RateGetLimitsResponse as RateGetLimitsResponse };
+  export {
+    Rate as Rate,
+    type RateLimitWindow as RateLimitWindow,
+    type RateGetLimitsResponse as RateGetLimitsResponse,
+  };
 
   export {
     AutoSwarmBuilder as AutoSwarmBuilder,
@@ -66,11 +78,21 @@ export declare namespace Client {
 
   export { Tools as Tools, type ToolListAvailableResponse as ToolListAvailableResponse };
 
-  export { Marketplace as Marketplace };
+  export {
+    Marketplace as Marketplace,
+    type MarketplaceCreateAgentResponse as MarketplaceCreateAgentResponse,
+    type MarketplaceCreateAgentParams as MarketplaceCreateAgentParams,
+  };
 
   export {
     BatchedGridWorkflow as BatchedGridWorkflow,
     type BatchedGridWorkflowCompleteWorkflowResponse as BatchedGridWorkflowCompleteWorkflowResponse,
     type BatchedGridWorkflowCompleteWorkflowParams as BatchedGridWorkflowCompleteWorkflowParams,
+  };
+
+  export {
+    GraphWorkflow as GraphWorkflow,
+    type GraphWorkflowExecuteWorkflowResponse as GraphWorkflowExecuteWorkflowResponse,
+    type GraphWorkflowExecuteWorkflowParams as GraphWorkflowExecuteWorkflowParams,
   };
 }
