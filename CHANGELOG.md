@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.30 (2026-01-15)
+
+Full Changelog: [v0.1.0-alpha.29...v0.1.0-alpha.30](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.29...v0.1.0-alpha.30)
+
+### Chores
+
+* **internal:** codegen related update ([bc889f0](https://github.com/The-Swarm-Corporation/swarms-ts/commit/bc889f0ba5db2a1e3002cd9abca9da00ef68a034))
+* **internal:** codegen related update ([0db45b9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0db45b9d2ee6fe5bf81b621a58eaec1169bd3421))
+* **internal:** codegen related update ([dbf176e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/dbf176e7ffaf4b21fc2c13805d95a49421d155ea))
+* **internal:** codegen related update ([c9ccb22](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c9ccb223aa0c5baa2fb50456ea61699a88c6a10e))
+* **internal:** upgrade babel, qs, js-yaml ([2e2f0d8](https://github.com/The-Swarm-Corporation/swarms-ts/commit/2e2f0d869d9f8b4c07f4387d7d5f61daf755c6c7))
+* **mcp:** add intent param to execute tool ([e1c067c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e1c067cab63b405c3851f16c2de49e5adf05e768))
+* **mcp:** pass intent param to execute handler ([dfeba6a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/dfeba6ab7af10d044f83d33d624254b2b64ff470))
+* **mcp:** upgrade dependencies ([bf220b8](https://github.com/The-Swarm-Corporation/swarms-ts/commit/bf220b8e4c32e8f917e0e642b9608e7e78ff5295))
+
 ## 0.1.0-alpha.29 (2026-01-10)
 
 Full Changelog: [v0.1.0-alpha.28...v0.1.0-alpha.29](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.28...v0.1.0-alpha.29)
