@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.31 (2026-01-17)
+
+Full Changelog: [v0.1.0-alpha.30...v0.1.0-alpha.31](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.30...v0.1.0-alpha.31)
+
+### Chores
+
+* **internal:** update `actions/checkout` version ([0da5f89](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0da5f8968260eed512ad38af9ca609c9bcd5ae94))
+
 ## 0.1.0-alpha.30 (2026-01-15)
 
 Full Changelog: [v0.1.0-alpha.29...v0.1.0-alpha.30](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.29...v0.1.0-alpha.30)
