@@ -4,6 +4,7 @@ import { McpTool, Metadata, ToolCallResult, asErrorResult, asTextContentResult }
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import { readEnv } from './server';
 import { WorkerInput, WorkerOutput } from './code-tool-types';
+import { SwarmsClient } from 'swarms-ts';
 
 const prompt = `Runs JavaScript code to interact with the Swarms Client API.
 
@@ -52,7 +53,7 @@ export function codeTool(): McpTool {
       required: ['code'],
     },
   };
-  const handler = async (_: unknown, args: any): Promise<ToolCallResult> => {
+  const handler = async (client: SwarmsClient, args: any): Promise<ToolCallResult> => {
     const code = args.code as string;
     const intent = args.intent as string | undefined;
 
@@ -68,8 +69,8 @@ export function codeTool(): McpTool {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
         client_envs: JSON.stringify({
-          SWARMS_API_KEY: readEnv('SWARMS_API_KEY'),
-          SWARMS_CLIENT_BASE_URL: readEnv('SWARMS_CLIENT_BASE_URL'),
+          SWARMS_API_KEY: readEnv('SWARMS_API_KEY') ?? client.apiKey ?? undefined,
+          SWARMS_CLIENT_BASE_URL: readEnv('SWARMS_CLIENT_BASE_URL') ?? client.baseURL ?? undefined,
         }),
       },
       body: JSON.stringify({
