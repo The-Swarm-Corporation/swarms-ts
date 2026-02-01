@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.32 (2026-01-31)
+
+Full Changelog: [v0.1.0-alpha.31...v0.1.0-alpha.32](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.31...v0.1.0-alpha.32)
+
+### Bug Fixes
+
+* **docs:** fix mcp installation instructions for remote servers ([bd64f10](https://github.com/The-Swarm-Corporation/swarms-ts/commit/bd64f10bd631d7213b9a1aa206e9272e808741bc))
+* **mcp:** allow falling back for required env variables ([c2fb06e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c2fb06e3ab3009fac4f7243147c498e6987adb41))
+* **mcp:** do not fallback on baseUrl if environment env variable is set ([009decd](https://github.com/The-Swarm-Corporation/swarms-ts/commit/009decdb9f224fb7d7f250026ad94e9366736363))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([9bc2abf](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9bc2abf355f00fbaab132b1871a044c6da17e2c9))
+* **internal:** codegen related update ([f31664a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f31664aefe2c472febf5d272d26ab81c55568d76))
+* **internal:** update lock file ([ba2e7fa](https://github.com/The-Swarm-Corporation/swarms-ts/commit/ba2e7faf0f5ac6ca70f77d7794477f6e1f9ea58b))
+* **mcp:** up tsconfig lib version to es2022 ([90608b1](https://github.com/The-Swarm-Corporation/swarms-ts/commit/90608b1bafed5e1303da6f2e4313272123ec15a2))
+
 ## 0.1.0-alpha.31 (2026-01-17)
 
 Full Changelog: [v0.1.0-alpha.30...v0.1.0-alpha.31](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.30...v0.1.0-alpha.31)
