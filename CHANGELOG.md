@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.33 (2026-02-03)
+
+Full Changelog: [v0.1.0-alpha.32...v0.1.0-alpha.33](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.32...v0.1.0-alpha.33)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([50897c2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/50897c2e2710d3050d4da501225528459c951397))
+
+
+### Chores
+
+* **client:** do not parse responses with empty content-length ([dcfe07d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/dcfe07d9db4605418799c6ac73bc7ab5eb301ce3))
+* **internal:** support oauth authorization code flow for MCP servers ([84da563](https://github.com/The-Swarm-Corporation/swarms-ts/commit/84da563ee1dc748a9e7ba8de177b9cd9345f049a))
+
 ## 0.1.0-alpha.32 (2026-01-31)
 
 Full Changelog: [v0.1.0-alpha.31...v0.1.0-alpha.32](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.31...v0.1.0-alpha.32)
