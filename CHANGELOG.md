@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.34 (2026-02-07)
+
+Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)
+
+### Features
+
+* **mcp:** add initial server instructions ([de11a14](https://github.com/The-Swarm-Corporation/swarms-ts/commit/de11a149cda979160238d04a2974e29501d9cedb))
+
+
+### Bug Fixes
+
+* **client:** avoid removing abort listener too early ([489bcf3](https://github.com/The-Swarm-Corporation/swarms-ts/commit/489bcf39ccf8b60460afa1486c4b2e4eff34d730))
+
+
+### Chores
+
+* **client:** restructure abort controller binding ([6848c8d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/6848c8d90813a713e1d400dcdd28247a4e7d3589))
+* **internal:** add health check to MCP server when running in HTTP mode ([2324f75](https://github.com/The-Swarm-Corporation/swarms-ts/commit/2324f75b221b0ff396c32c8b4ee8c548e77d5a9c))
+* **internal:** refactor flag parsing for MCP servers and add debug flag ([fe01dd1](https://github.com/The-Swarm-Corporation/swarms-ts/commit/fe01dd137602088d5804be88a619b68857ba535e))
+
 ## 0.1.0-alpha.33 (2026-02-03)
 
 Full Changelog: [v0.1.0-alpha.32...v0.1.0-alpha.33](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.32...v0.1.0-alpha.33)
