@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.1.0-alpha.34 (2026-02-14)
+
+Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)
+
+### Features
+
+* **mcp:** add initial server instructions ([de11a14](https://github.com/The-Swarm-Corporation/swarms-ts/commit/de11a149cda979160238d04a2974e29501d9cedb))
+
+
+### Bug Fixes
+
+* **client:** avoid removing abort listener too early ([489bcf3](https://github.com/The-Swarm-Corporation/swarms-ts/commit/489bcf39ccf8b60460afa1486c4b2e4eff34d730))
+
+
+### Chores
+
+* **client:** restructure abort controller binding ([6848c8d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/6848c8d90813a713e1d400dcdd28247a4e7d3589))
+* **internal:** add health check to MCP server when running in HTTP mode ([2324f75](https://github.com/The-Swarm-Corporation/swarms-ts/commit/2324f75b221b0ff396c32c8b4ee8c548e77d5a9c))
+* **internal:** allow basic filtering of methods allowed for MCP code mode ([1198eb5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/1198eb52b96f5bd0e930d00e20dc464169932ee4))
+* **internal:** always generate MCP server dockerfiles and upgrade associated dependencies ([5c76cdf](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5c76cdf88f16fc1cd8f47b01b2f7f7d83b077602))
+* **internal:** avoid type checking errors with ts-reset ([d0be2c7](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d0be2c7448cfcc3bcdd2064e977ef2d0cb13bb17))
+* **internal:** improve layout of generated MCP server files ([e9d66ff](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e9d66ff9f68bbcc1891d2d73cdccf37285acb5ac))
+* **internal:** refactor flag parsing for MCP servers and add debug flag ([fe01dd1](https://github.com/The-Swarm-Corporation/swarms-ts/commit/fe01dd137602088d5804be88a619b68857ba535e))
+* **mcp:** forward STAINLESS_API_KEY to docs search endpoint ([274aa94](https://github.com/The-Swarm-Corporation/swarms-ts/commit/274aa94ca377a5cb41857d1478d00a017f05131e))
+
 ## 0.1.0-alpha.33 (2026-02-03)
 
 Full Changelog: [v0.1.0-alpha.32...v0.1.0-alpha.33](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.32...v0.1.0-alpha.33)
