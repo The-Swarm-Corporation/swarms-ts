@@ -33,7 +33,6 @@ import SwarmsClient from 'swarms-ts';
 
 const client = new SwarmsClient({
   apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted
-  environment: 'sandbox', // defaults to 'production'
 });
 
 const response = await client.getRoot();
@@ -49,7 +48,6 @@ import SwarmsClient from 'swarms-ts';
 
 const client = new SwarmsClient({
   apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted
-  environment: 'sandbox', // defaults to 'production'
 });
 
 const response: unknown = await client.getRoot();

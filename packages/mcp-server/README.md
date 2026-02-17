@@ -10,7 +10,6 @@ You can run the MCP Server directly via `npx`:
 
 ```sh
 export SWARMS_API_KEY="My API Key"
-export SWARMS_CLIENT_ENVIRONMENT="production"
 npx -y swarms-ts-mcp@latest
 ```
 
@@ -28,8 +27,7 @@ For clients with a configuration JSON, it might look something like this:
       "command": "npx",
       "args": ["-y", "swarms-ts-mcp"],
       "env": {
-        "SWARMS_API_KEY": "My API Key",
-        "SWARMS_CLIENT_ENVIRONMENT": "production"
+        "SWARMS_API_KEY": "My API Key"
       }
     }
   }
