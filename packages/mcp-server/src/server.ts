@@ -56,7 +56,7 @@ export const newMcpServer = async () =>
   new McpServer(
     {
       name: 'swarms_ts_api',
-      version: '0.1.0-alpha.33',
+      version: '0.1.0-alpha.34',
     },
     {
       instructions: await getInstructions(),
