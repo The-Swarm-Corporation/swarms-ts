@@ -91,7 +91,6 @@ export async function initMcpServer(params: {
   };
 
   let client = new SwarmsClient({
-    ...{ environment: (readEnv('SWARMS_CLIENT_ENVIRONMENT') || undefined) as any },
     logger,
     ...params.clientOptions,
     defaultHeaders: {

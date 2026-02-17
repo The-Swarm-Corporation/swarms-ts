@@ -89,17 +89,14 @@ export function codeTool(params: { blockedMethods: SdkMethod[] | undefined }): M
         'Content-Type': 'application/json',
         client_envs: JSON.stringify({
           SWARMS_API_KEY: readEnv('SWARMS_API_KEY') ?? client.apiKey ?? undefined,
-          SWARMS_CLIENT_BASE_URL:
-            readEnv('SWARMS_CLIENT_BASE_URL') ?? readEnv('SWARMS_CLIENT_ENVIRONMENT') ?
-              undefined
-            : client.baseURL ?? undefined,
+          SWARMS_CLIENT_BASE_URL: readEnv('SWARMS_CLIENT_BASE_URL') ?? client.baseURL ?? undefined,
         }),
       },
       body: JSON.stringify({
         project_name: 'swarms',
         code,
         intent,
-        client_opts: { environment: (readEnv('SWARMS_CLIENT_ENVIRONMENT') || undefined) as any },
+        client_opts: {},
       } satisfies WorkerInput),
     });
 
