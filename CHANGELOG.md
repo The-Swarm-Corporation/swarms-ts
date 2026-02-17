@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.35 (2026-02-17)
+
+Full Changelog: [v0.1.0-alpha.34...v0.1.0-alpha.35](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.34...v0.1.0-alpha.35)
+
+### Features
+
+* **api:** manual updates change base url ([9ef93e3](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9ef93e36322070d9d1ef40a90f79bbbc3e864c11))
+
 ## 0.1.0-alpha.34 (2026-02-14)
 
 Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)

@@ -56,7 +56,7 @@ export const newMcpServer = async () =>
   new McpServer(
     {
       name: 'swarms_ts_api',
-      version: '0.1.0-alpha.34',
+      version: '0.1.0-alpha.35',
     },
     {
       instructions: await getInstructions(),
@@ -91,7 +91,6 @@ export async function initMcpServer(params: {
   };
 
   let client = new SwarmsClient({
-    ...{ environment: (readEnv('SWARMS_CLIENT_ENVIRONMENT') || undefined) as any },
     logger,
     ...params.clientOptions,
     defaultHeaders: {

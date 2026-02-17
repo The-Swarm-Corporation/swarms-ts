@@ -334,23 +334,6 @@ describe('instantiate client', () => {
       expect(client.baseURL).toEqual('https://api.swarms.world');
     });
 
-    test('env variable with environment', () => {
-      process.env['SWARMS_CLIENT_BASE_URL'] = 'https://example.com/from_env';
-
-      expect(
-        () => new SwarmsClient({ apiKey: 'My API Key', environment: 'production' }),
-      ).toThrowErrorMatchingInlineSnapshot(
-        `"Ambiguous URL; The \`baseURL\` option (or SWARMS_CLIENT_BASE_URL env var) and the \`environment\` option are given. If you want to use the environment you must pass baseURL: null"`,
-      );
-
-      const client = new SwarmsClient({
-        apiKey: 'My API Key',
-        baseURL: null,
-        environment: 'production',
-      });
-      expect(client.baseURL).toEqual('https://api.swarms.world');
-    });
-
     test('in request options', () => {
       const client = new SwarmsClient({ apiKey: 'My API Key' });
       expect(client.buildURL('/foo', null, 'http://localhost:5000/option')).toEqual(
