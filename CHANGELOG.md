@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.36 (2026-02-18)
+
+Full Changelog: [v0.1.0-alpha.35...v0.1.0-alpha.36](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.35...v0.1.0-alpha.36)
+
+### Chores
+
+* **internal/client:** fix form-urlencoded requests ([113db1b](https://github.com/The-Swarm-Corporation/swarms-ts/commit/113db1babde7b50d04698786befc6b9263f059df))
+* **internal:** allow setting x-stainless-api-key header on mcp server requests ([4155f32](https://github.com/The-Swarm-Corporation/swarms-ts/commit/4155f3286313288e47c8c14afaf883d5f303104c))
+
 ## 0.1.0-alpha.35 (2026-02-17)
 
 Full Changelog: [v0.1.0-alpha.34...v0.1.0-alpha.35](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.34...v0.1.0-alpha.35)
