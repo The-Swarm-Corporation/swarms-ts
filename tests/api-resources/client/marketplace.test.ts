@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource marketplace', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createAgent', async () => {
     const responsePromise = client.client.marketplace.createAgent({});
     const rawResponse = await responsePromise.asResponse();
