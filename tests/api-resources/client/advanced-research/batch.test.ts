@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource batch', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createCompletion: only required params', async () => {
     const responsePromise = client.client.advancedResearch.batch.createCompletion({
       input_schemas: [
@@ -27,7 +27,7 @@ describe('resource batch', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createCompletion: required and optional params', async () => {
     const response = await client.client.advancedResearch.batch.createCompletion({
       input_schemas: [

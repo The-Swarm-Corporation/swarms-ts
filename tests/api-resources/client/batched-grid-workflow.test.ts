@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource batchedGridWorkflow', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('completeWorkflow', async () => {
     const responsePromise = client.client.batchedGridWorkflow.completeWorkflow({});
     const rawResponse = await responsePromise.asResponse();

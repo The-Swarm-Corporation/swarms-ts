@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource autoSwarmBuilder', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createCompletion', async () => {
     const responsePromise = client.client.autoSwarmBuilder.createCompletion({});
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource autoSwarmBuilder', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listExecutionTypes', async () => {
     const responsePromise = client.client.autoSwarmBuilder.listExecutionTypes();
     const rawResponse = await responsePromise.asResponse();
