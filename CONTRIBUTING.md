@@ -60,7 +60,7 @@ $ yarn link swarms-ts
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global swarms-ts
+$ pnpm link --global swarms-ts
 ```
 
 ## Running tests
