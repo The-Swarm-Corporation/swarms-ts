@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.1.0-alpha.37 (2026-02-27)
+
+Full Changelog: [v0.1.0-alpha.36...v0.1.0-alpha.37](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.36...v0.1.0-alpha.37)
+
+### Features
+
+* **mcp:** add an option to disable code tool ([6085a9c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/6085a9cba6f68e5dcc4ad52bba7b9009d2aef7ac))
+
+
+### Bug Fixes
+
+* **docs/contributing:** correct pnpm link command ([9a2f7a9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9a2f7a921dc26e0453ca3a01968a499ea93f46f2))
+* **mcp:** initialize SDK lazily to avoid failing the connection on init errors ([c733a47](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c733a4759d4ed447fc46a3fad05a4317210039ba))
+* **mcp:** update prompt ([b746246](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b7462460ad4ba8035a08ce36517a11815a2db43e))
+
+
+### Chores
+
+* **internal:** cache fetch instruction calls in MCP server ([282a7fc](https://github.com/The-Swarm-Corporation/swarms-ts/commit/282a7fc0a04b676d7baf655ee31a9b54dc8bec81))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([cec3491](https://github.com/The-Swarm-Corporation/swarms-ts/commit/cec34914adf676ea82d0998215591e5ded609a41))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([08bc7ac](https://github.com/The-Swarm-Corporation/swarms-ts/commit/08bc7ac130fef2e6afc325831a96aab1917448a0))
+* **internal:** make MCP code execution location configurable via a flag ([4cce1da](https://github.com/The-Swarm-Corporation/swarms-ts/commit/4cce1daab1596b897d0aa85eef8775034afc6bf4))
+* **internal:** move stringifyQuery implementation to internal function ([3b8ebff](https://github.com/The-Swarm-Corporation/swarms-ts/commit/3b8ebfff692aee1c98e62f0337a8ef8c42d175e3))
+* **internal:** remove mock server code ([ef361be](https://github.com/The-Swarm-Corporation/swarms-ts/commit/ef361be0a28ea0809889ee52220a7e4ba13fc570))
+* **internal:** upgrade @modelcontextprotocol/sdk and hono ([2005930](https://github.com/The-Swarm-Corporation/swarms-ts/commit/200593055acbe7f0be3a837fcba14da9707ea96e))
+* **mcp:** correctly update version in sync with sdk ([7d40c78](https://github.com/The-Swarm-Corporation/swarms-ts/commit/7d40c786a64fb2d69e73196142e42ad9feb7cd08))
+* update mock server docs ([45a1e56](https://github.com/The-Swarm-Corporation/swarms-ts/commit/45a1e5651c25b7b4befdd3a8581db413feace8de))
+
 ## 0.1.0-alpha.36 (2026-02-18)
 
 Full Changelog: [v0.1.0-alpha.35...v0.1.0-alpha.36](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.35...v0.1.0-alpha.36)
