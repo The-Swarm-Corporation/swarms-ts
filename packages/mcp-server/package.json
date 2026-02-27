@@ -1,6 +1,6 @@
 {
   "name": "swarms-ts-mcp",
-  "version": "0.1.0-alpha.36",
+  "version": "0.1.0-alpha.37",
   "description": "The official MCP Server for the Swarms Client API",
   "author": "Swarms Client <kye@swarms.world>",
   "types": "dist/index.d.ts",
@@ -32,7 +32,7 @@
   "dependencies": {
     "swarms-ts": "file:../../dist/",
     "@cloudflare/cabidela": "^0.2.4",
-    "@modelcontextprotocol/sdk": "^1.25.2",
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "@valtown/deno-http-worker": "^0.0.21",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

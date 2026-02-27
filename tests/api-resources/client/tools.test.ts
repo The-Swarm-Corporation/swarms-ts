@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource tools', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listAvailable', async () => {
     const responsePromise = client.client.tools.listAvailable();
     const rawResponse = await responsePromise.asResponse();

@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource batch', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('run: only required params', async () => {
     const responsePromise = client.agent.batch.run({ body: [{}] });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource batch', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('run: required and optional params', async () => {
     const response = await client.agent.batch.run({
       body: [

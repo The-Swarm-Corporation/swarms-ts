@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource reasoningAgents', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createCompletion', async () => {
     const responsePromise = client.reasoningAgents.createCompletion({});
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource reasoningAgents', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listTypes', async () => {
     const responsePromise = client.reasoningAgents.listTypes();
     const rawResponse = await responsePromise.asResponse();

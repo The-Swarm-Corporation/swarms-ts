@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource swarms', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('checkAvailable', async () => {
     const responsePromise = client.swarms.checkAvailable();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource swarms', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getLogs', async () => {
     const responsePromise = client.swarms.getLogs();
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource swarms', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('run', async () => {
     const responsePromise = client.swarms.run({});
     const rawResponse = await responsePromise.asResponse();

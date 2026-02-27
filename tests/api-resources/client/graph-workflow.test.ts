@@ -8,7 +8,7 @@ const client = new SwarmsClient({
 });
 
 describe('resource graphWorkflow', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('executeWorkflow', async () => {
     const responsePromise = client.client.graphWorkflow.executeWorkflow({});
     const rawResponse = await responsePromise.asResponse();
