@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.38 (2026-03-03)
+
+Full Changelog: [v0.1.0-alpha.37...v0.1.0-alpha.38](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.37...v0.1.0-alpha.38)
+
+### Chores
+
+* **internal:** codegen related update ([5f54c83](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5f54c83b10eaaa2f4738200bc2b119703e2c2513))
+* **mcp-server:** return access instructions for 404 without API key ([d31a5e2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d31a5e2a1df114580cbafc162de5be216197e1b7))
+
 ## 0.1.0-alpha.37 (2026-02-27)
 
 Full Changelog: [v0.1.0-alpha.36...v0.1.0-alpha.37](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.36...v0.1.0-alpha.37)
