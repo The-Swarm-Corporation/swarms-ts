@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.39 (2026-03-06)
+
+Full Changelog: [v0.1.0-alpha.38...v0.1.0-alpha.39](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.38...v0.1.0-alpha.39)
+
+### Chores
+
+* **internal:** codegen related update ([c697ccc](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c697ccc6230bcf10d68a55e4bbc56e9fe5658c38))
+* **internal:** use x-stainless-mcp-client-envs header for MCP remote code tool calls ([fe909ce](https://github.com/The-Swarm-Corporation/swarms-ts/commit/fe909ce629bff5b24f2cc2520b9a51116ffcdb7a))
+
 ## 0.1.0-alpha.38 (2026-03-03)
 
 Full Changelog: [v0.1.0-alpha.37...v0.1.0-alpha.38](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.37...v0.1.0-alpha.38)
