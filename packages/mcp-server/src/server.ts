@@ -20,7 +20,7 @@ export const newMcpServer = async (stainlessApiKey: string | undefined) =>
   new McpServer(
     {
       name: 'swarms_ts_api',
-      version: '0.1.0-alpha.39',
+      version: '0.1.0-alpha.40',
     },
     {
       instructions: await getInstructions(stainlessApiKey),

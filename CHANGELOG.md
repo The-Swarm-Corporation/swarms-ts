@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.40 (2026-03-07)
+
+Full Changelog: [v0.1.0-alpha.39...v0.1.0-alpha.40](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.39...v0.1.0-alpha.40)
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([0d3d0d8](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0d3d0d82fbac6c110f232681dc57f912640dad8a))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([57d4702](https://github.com/The-Swarm-Corporation/swarms-ts/commit/57d470292906b37309081c884110200123d941b7))
+* **mcp-server:** improve instructions ([9fcfe98](https://github.com/The-Swarm-Corporation/swarms-ts/commit/9fcfe98e67497d54faec978908dd7b842e614e15))
+
 ## 0.1.0-alpha.39 (2026-03-06)
 
 Full Changelog: [v0.1.0-alpha.38...v0.1.0-alpha.39](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.38...v0.1.0-alpha.39)
