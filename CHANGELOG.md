@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.0-alpha.41 (2026-03-14)
+
+Full Changelog: [v0.1.0-alpha.40...v0.1.0-alpha.41](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.40...v0.1.0-alpha.41)
+
+### Chores
+
+* **internal:** bump @modelcontextprotocol/sdk, @hono/node-server, and minimatch ([be651e9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/be651e99f0fb1e27ece26eead32345af052676c2))
+* **internal:** make generated MCP servers compatible with Cloudflare worker environments ([f2234b2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f2234b2442ae02c09f4b62aefdf3308c2cc0d874))
+* **internal:** support x-stainless-mcp-client-envs header in MCP servers ([cab821e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/cab821ec7748fc1efd06f525edbedcf4c35838a0))
+* **internal:** update dependencies to address dependabot vulnerabilities ([eeb5775](https://github.com/The-Swarm-Corporation/swarms-ts/commit/eeb577575b6661ae4b3cb281182cd64159f18492))
+
 ## 0.1.0-alpha.40 (2026-03-07)
 
 Full Changelog: [v0.1.0-alpha.39...v0.1.0-alpha.40](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.39...v0.1.0-alpha.40)
