@@ -66,6 +66,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: '$client get_root',
         example: "swarms get-root \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'GetRoot',
+        example:
+          'ClientGetRootParams parameters = new();\n\nvar response = await client.GetRoot(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.GetRoot',
         example:
@@ -106,6 +111,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'health check',
         example: "swarms health check \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Health.Check',
+        example:
+          'HealthCheckParams parameters = new();\n\nvar response = await client.Health.Check(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Health.Check',
@@ -157,6 +167,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'agent run',
         example: "swarms agent run \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Agent.Run',
+        example:
+          'AgentRunParams parameters = new();\n\nvar response = await client.Agent.Run(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Agent.Run',
         example:
@@ -199,6 +214,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'agent list',
         example: "swarms agent list \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Agent.List',
+        example:
+          'AgentListParams parameters = new();\n\nvar agents = await client.Agent.List(parameters);\n\nConsole.WriteLine(agents);',
       },
       go: {
         method: 'client.Agent.List',
@@ -245,6 +265,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'batch run',
         example: "swarms agent:batch run \\\n  --api-key 'My API Key' \\\n  --body '{}'",
       },
+      csharp: {
+        method: 'Agent.Batch.Run',
+        example:
+          'BatchRunParams parameters = new()\n{\n    Body =\n    [\n        new()\n        {\n            AgentConfig = new()\n            {\n                AgentName = "agent_name",\n                AutoGeneratePrompt = true,\n                Description = "description",\n                DynamicTemperatureEnabled = true,\n                LlmArgs = new Dictionary<string, JsonElement>()\n                {\n                    { "foo", JsonSerializer.SerializeToElement("bar") }\n                },\n                MaxLoops = 0,\n                MaxTokens = 0,\n                McpConfig = new()\n                {\n                    AuthorizationToken = "authorization_token",\n                    Headers = new Dictionary<string, string>()\n                    {\n                        { "foo", "string" }\n                    },\n                    Timeout = 0,\n                    ToolConfigurations = new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                    Transport = "transport",\n                    Type = "type",\n                    Url = "url",\n                },\n                McpConfigs = new(\n\n                    [\n                        new()\n                        {\n                            AuthorizationToken = "authorization_token",\n                            Headers = new Dictionary<string, string>()\n                            {\n                                { "foo", "string" }\n                            },\n                            Timeout = 0,\n                            ToolConfigurations = new Dictionary<string, JsonElement>(\n\n                            )\n                            {\n                                { "foo", JsonSerializer.SerializeToElement("bar") },\n                            },\n                            Transport = "transport",\n                            Type = "type",\n                            Url = "url",\n                        },\n                    ]\n                ),\n                McpUrl = "mcp_url",\n                ModelName = "model_name",\n                ReasoningEffort = "reasoning_effort",\n                ReasoningEnabled = true,\n                Role = "role",\n                StreamingOn = true,\n                SystemPrompt = "system_prompt",\n                Temperature = 0,\n                ThinkingTokens = 0,\n                ToolCallSummary = true,\n                ToolsListDictionary =\n                [\n                    new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                ],\n            },\n            History = new(\n                new Dictionary<string, JsonElement>()\n                {\n                    { "foo", JsonSerializer.SerializeToElement("bar") }\n                }\n            ),\n            Img = "img",\n            Imgs =\n            [\n                "string"\n            ],\n            Task = "task",\n            ToolsEnabled =\n            [\n                "string"\n            ],\n        },\n    ],\n};\n\nvar response = await client.Agent.Batch.Run(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Agent.Batch.Run',
         example:
@@ -287,6 +312,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'models list_available',
         example: "swarms models list-available \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Models.ListAvailable',
+        example:
+          'ModelListAvailableParams parameters = new();\n\nvar response = await client.Models.ListAvailable(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Models.ListAvailable',
         example:
@@ -327,6 +357,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'swarms check_available',
         example: "swarms swarms check-available \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Swarms.CheckAvailable',
+        example:
+          'SwarmCheckAvailableParams parameters = new();\n\nvar response = await client.Swarms.CheckAvailable(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Swarms.CheckAvailable',
@@ -388,6 +423,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'swarms run',
         example: "swarms swarms run \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Swarms.Run',
+        example:
+          'SwarmRunParams parameters = new();\n\nvar response = await client.Swarms.Run(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Swarms.Run',
         example:
@@ -430,6 +470,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'swarms get_logs',
         example: "swarms swarms get-logs \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Swarms.GetLogs',
+        example:
+          'SwarmGetLogsParams parameters = new();\n\nvar response = await client.Swarms.GetLogs(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Swarms.GetLogs',
@@ -474,6 +519,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'batch run',
         example: "swarms swarms:batch run \\\n  --api-key 'My API Key' \\\n  --body '{}'",
+      },
+      csharp: {
+        method: 'Swarms.Batch.Run',
+        example:
+          'BatchRunParams parameters = new()\n{\n    Body =\n    [\n        new()\n        {\n            Agents =\n            [\n                new()\n                {\n                    AgentName = "agent_name",\n                    AutoGeneratePrompt = true,\n                    Description = "description",\n                    DynamicTemperatureEnabled = true,\n                    LlmArgs = new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                    MaxLoops = 0,\n                    MaxTokens = 0,\n                    McpConfig = new()\n                    {\n                        AuthorizationToken = "authorization_token",\n                        Headers = new Dictionary<string, string>()\n                        {\n                            { "foo", "string" }\n                        },\n                        Timeout = 0,\n                        ToolConfigurations = new Dictionary<string, JsonElement>(\n\n                        )\n                        {\n                            { "foo", JsonSerializer.SerializeToElement("bar") }\n                        },\n                        Transport = "transport",\n                        Type = "type",\n                        Url = "url",\n                    },\n                    McpConfigs = new(\n\n                        [\n                            new()\n                            {\n                                AuthorizationToken = "authorization_token",\n                                Headers = new Dictionary<string, string>()\n                                {\n                                    { "foo", "string" }\n                                },\n                                Timeout = 0,\n                                ToolConfigurations = new Dictionary<string, JsonElement>(\n\n                                )\n                                {\n                                    { "foo", JsonSerializer.SerializeToElement("bar") },\n                                },\n                                Transport = "transport",\n                                Type = "type",\n                                Url = "url",\n                            },\n                        ]\n                    ),\n                    McpUrl = "mcp_url",\n                    ModelName = "model_name",\n                    ReasoningEffort = "reasoning_effort",\n                    ReasoningEnabled = true,\n                    Role = "role",\n                    StreamingOn = true,\n                    SystemPrompt = "system_prompt",\n                    Temperature = 0,\n                    ThinkingTokens = 0,\n                    ToolCallSummary = true,\n                    ToolsListDictionary =\n                    [\n                        new Dictionary<string, JsonElement>()\n                        {\n                            { "foo", JsonSerializer.SerializeToElement("bar") }\n                        },\n                    ],\n                },\n            ],\n            Description = "description",\n            HeavySwarmLoopsPerAgent = 0,\n            HeavySwarmQuestionAgentModelName = "heavy_swarm_question_agent_model_name",\n            HeavySwarmWorkerModelName = "heavy_swarm_worker_model_name",\n            Img = "img",\n            MaxLoops = 0,\n            Messages = new(\n\n                [\n                    new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                ]\n            ),\n            Name = "name",\n            RearrangeFlow = "rearrange_flow",\n            Rules = "rules",\n            ServiceTier = "service_tier",\n            Stream = true,\n            SwarmType = SwarmType.AgentRearrange,\n            Task = "task",\n            Tasks =\n            [\n                "string"\n            ],\n        },\n    ],\n};\n\nvar response = await client.Swarms.Batch.Run(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Swarms.Batch.Run',
@@ -530,6 +580,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'reasoning_agents create_completion',
         example: "swarms reasoning-agents create-completion \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'ReasoningAgents.CreateCompletion',
+        example:
+          'ReasoningAgentCreateCompletionParams parameters = new();\n\nvar response = await client.ReasoningAgents.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.ReasoningAgents.NewCompletion',
         example:
@@ -571,6 +626,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'reasoning_agents list_types',
         example: "swarms reasoning-agents list-types \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'ReasoningAgents.ListTypes',
+        example:
+          'ReasoningAgentListTypesParams parameters = new();\n\nvar response = await client.ReasoningAgents.ListTypes(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.ReasoningAgents.ListTypes',
@@ -614,6 +674,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'rate get_limits',
         example: "swarms client:rate get-limits \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Client.Rate.GetLimits',
+        example:
+          'RateGetLimitsParams parameters = new();\n\nvar response = await client.Client.Rate.GetLimits(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Client.Rate.GetLimits',
@@ -667,6 +732,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'auto_swarm_builder create_completion',
         example: "swarms client:auto-swarm-builder create-completion \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Client.AutoSwarmBuilder.CreateCompletion',
+        example:
+          'AutoSwarmBuilderCreateCompletionParams parameters = new();\n\nvar response = await client.Client.AutoSwarmBuilder.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Client.AutoSwarmBuilder.NewCompletion',
         example:
@@ -709,6 +779,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'auto_swarm_builder list_execution_types',
         example: "swarms client:auto-swarm-builder list-execution-types \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Client.AutoSwarmBuilder.ListExecutionTypes',
+        example:
+          'AutoSwarmBuilderListExecutionTypesParams parameters = new();\n\nvar response = await client.Client.AutoSwarmBuilder.ListExecutionTypes(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Client.AutoSwarmBuilder.ListExecutionTypes',
@@ -760,6 +835,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "swarms client:advanced-research create-completion \\\n  --api-key 'My API Key' \\\n  --config '{}' \\\n  --task task",
       },
+      csharp: {
+        method: 'Client.AdvancedResearch.CreateCompletion',
+        example:
+          'AdvancedResearchCreateCompletionParams parameters = new()\n{\n    Config = new()\n    {\n        Description = "description",\n        DirectorAgentName = "director_agent_name",\n        DirectorMaxLoops = 0,\n        DirectorMaxTokens = 0,\n        DirectorModelName = "director_model_name",\n        ExaSearchMaxCharacters = 0,\n        ExaSearchNumResults = 0,\n        MaxLoops = 0,\n        Name = "name",\n        WorkerModelName = "worker_model_name",\n    },\n    Task = "task",\n};\n\nvar response = await client.Client.AdvancedResearch.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Client.AdvancedResearch.NewCompletion',
         example:
@@ -808,6 +888,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "swarms client:advanced-research:batch create-completion \\\n  --api-key 'My API Key' \\\n  --input-schema '{config: {}, task: task}'",
       },
+      csharp: {
+        method: 'Client.AdvancedResearch.Batch.CreateCompletion',
+        example:
+          'BatchCreateCompletionParams parameters = new()\n{\n    InputSchemas =\n    [\n        new()\n        {\n            Config = new()\n            {\n                Description = "description",\n                DirectorAgentName = "director_agent_name",\n                DirectorMaxLoops = 0,\n                DirectorMaxTokens = 0,\n                DirectorModelName = "director_model_name",\n                ExaSearchMaxCharacters = 0,\n                ExaSearchNumResults = 0,\n                MaxLoops = 0,\n                Name = "name",\n                WorkerModelName = "worker_model_name",\n            },\n            Task = "task",\n            Img = "img",\n        },\n    ],\n};\n\nvar response = await client.Client.AdvancedResearch.Batch.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Client.AdvancedResearch.Batch.NewCompletion',
         example:
@@ -851,6 +936,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'tools list_available',
         example: "swarms client:tools list-available \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Client.Tools.ListAvailable',
+        example:
+          'ToolListAvailableParams parameters = new();\n\nvar response = await client.Client.Tools.ListAvailable(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Client.Tools.ListAvailable',
         example:
@@ -893,6 +983,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'marketplace create_agent',
         example: "swarms client:marketplace create-agent \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Client.Marketplace.CreateAgent',
+        example:
+          'MarketplaceCreateAgentParams parameters = new();\n\nvar response = await client.Client.Marketplace.CreateAgent(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Client.Marketplace.NewAgent',
@@ -945,6 +1040,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       cli: {
         method: 'batched_grid_workflow complete_workflow',
         example: "swarms client:batched-grid-workflow complete-workflow \\\n  --api-key 'My API Key'",
+      },
+      csharp: {
+        method: 'Client.BatchedGridWorkflow.CompleteWorkflow',
+        example:
+          'BatchedGridWorkflowCompleteWorkflowParams parameters = new();\n\nvar response = await client.Client.BatchedGridWorkflow.CompleteWorkflow(parameters);\n\nConsole.WriteLine(response);',
       },
       go: {
         method: 'client.Client.BatchedGridWorkflow.CompleteWorkflow',
@@ -1003,6 +1103,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'graph_workflow execute_workflow',
         example: "swarms client:graph-workflow execute-workflow \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Client.GraphWorkflow.ExecuteWorkflow',
+        example:
+          'GraphWorkflowExecuteWorkflowParams parameters = new();\n\nvar response = await client.Client.GraphWorkflow.ExecuteWorkflow(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Client.GraphWorkflow.ExecuteWorkflow',
         example:
@@ -1051,6 +1156,11 @@ const EMBEDDED_READMES: { language: string; content: string }[] = [
     language: 'java',
     content:
       '# Swarms Client Java API Library\n\n<!-- x-release-please-start-version -->\n[![Maven Central](https://img.shields.io/maven-central/v/com.swarms.api/swarms-client-java)](https://central.sonatype.com/artifact/com.swarms.api/swarms-client-java/0.0.1)\n[![javadoc](https://javadoc.io/badge2/com.swarms.api/swarms-client-java/0.0.1/javadoc.svg)](https://javadoc.io/doc/com.swarms.api/swarms-client-java/0.0.1)\n<!-- x-release-please-end -->\n\nThe Swarms Client Java SDK provides convenient access to the [Swarms Client REST API](https://docs.swarms.ai)   from applications written in Java.\n\n\n\nIt is generated with [Stainless](https://www.stainless.com/).\n\n## MCP Server\n\nUse the Swarms Client MCP Server to enable AI assistants to interact with this API, allowing them to explore endpoints, make test requests, and use documentation to help integrate this SDK into your application.\n\n[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=swarms-ts-mcp&config=eyJuYW1lIjoic3dhcm1zLXRzLW1jcCIsInRyYW5zcG9ydCI6Imh0dHAiLCJ1cmwiOiJodHRwczovL3N3YXJtcy5zdGxtY3AuY29tIiwiaGVhZGVycyI6eyJ4LWFwaS1rZXkiOiJNeSBBUEkgS2V5In19)\n[![Install in VS Code](https://img.shields.io/badge/_-Add_to_VS_Code-blue?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAuMjM1IDM5Ljg4NGEyLjQ5MSAyLjQ5MSAwIDAgMS0xLjc4MS0uNzNMMTIuNyAyNC43OGwtMy40NiAyLjYyNC0zLjQwNiAyLjU4MmExLjY2NSAxLjY2NSAwIDAgMS0xLjA4Mi4zMzggMS42NjQgMS42NjQgMCAwIDEtMS4wNDYtLjQzMWwtMi4yLTJhMS42NjYgMS42NjYgMCAwIDEgMC0yLjQ2M0w3LjQ1OCAyMCA0LjY3IDE3LjQ1MyAxLjUwNyAxNC41N2ExLjY2NSAxLjY2NSAwIDAgMSAwLTIuNDYzbDIuMi0yYTEuNjY1IDEuNjY1IDAgMCAxIDIuMTMtLjA5N2w2Ljg2MyA1LjIwOUwyOC40NTIuODQ0YTIuNDg4IDIuNDg4IDAgMCAxIDEuODQxLS43MjljLjM1MS4wMDkuNjk5LjA5MSAxLjAxOS4yNDVsOC4yMzYgMy45NjFhMi41IDIuNSAwIDAgMSAxLjQxNSAyLjI1M3YuMDk5LS4wNDVWMzMuMzd2LS4wNDUuMDk1YTIuNTAxIDIuNTAxIDAgMCAxLTEuNDE2IDIuMjU3bC04LjIzNSAzLjk2MWEyLjQ5MiAyLjQ5MiAwIDAgMS0xLjA3Ny4yNDZabS43MTYtMjguOTQ3LTExLjk0OCA5LjA2MiAxMS45NTIgOS4wNjUtLjAwNC0xOC4xMjdaIi8+PC9zdmc+)](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22swarms-ts-mcp%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fswarms.stlmcp.com%22%2C%22headers%22%3A%7B%22x-api-key%22%3A%22My%20API%20Key%22%7D%7D)\n\n> Note: You may need to set environment variables in your MCP client.\n\n<!-- x-release-please-start-version -->\n\nThe REST API documentation can be found on [docs.swarms.ai](https://docs.swarms.ai). Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.swarms.api/swarms-client-java/0.0.1).\n\n<!-- x-release-please-end -->\n\n## Installation\n\n<!-- x-release-please-start-version -->\n\n### Gradle\n\n~~~kotlin\nimplementation("com.swarms.api:swarms-client-java:0.0.1")\n~~~\n\n### Maven\n\n~~~xml\n<dependency>\n  <groupId>com.swarms.api</groupId>\n  <artifactId>swarms-client-java</artifactId>\n  <version>0.0.1</version>\n</dependency>\n~~~\n\n<!-- x-release-please-end -->\n\n## Requirements\n\nThis library requires Java 8 or later.\n\n## Usage\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.ClientGetRootParams;\nimport com.swarms.api.models.ClientGetRootResponse;\n\n// Configures using the `swarmsclient.swarmsApiKey` and `swarmsclient.baseUrl` system properties\n// Or configures using the `SWARMS_API_KEY` and `SWARMS_CLIENT_BASE_URL` environment variables\nSwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\nClientGetRootResponse response = client.getRoot();\n```\n\n## Client configuration\n\nConfigure the client using system properties or environment variables:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\n\n// Configures using the `swarmsclient.swarmsApiKey` and `swarmsclient.baseUrl` system properties\n// Or configures using the `SWARMS_API_KEY` and `SWARMS_CLIENT_BASE_URL` environment variables\nSwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n```\n\nOr manually:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    .apiKey("My API Key")\n    .build();\n```\n\nOr using a combination of the two approaches:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    // Configures using the `swarmsclient.swarmsApiKey` and `swarmsclient.baseUrl` system properties\n    // Or configures using the `SWARMS_API_KEY` and `SWARMS_CLIENT_BASE_URL` environment variables\n    .fromEnv()\n    .apiKey("My API Key")\n    .build();\n```\n\nSee this table for the available options:\n\n| Setter    | System property             | Environment variable     | Required | Default value                |\n| --------- | --------------------------- | ------------------------ | -------- | ---------------------------- |\n| `apiKey`  | `swarmsclient.swarmsApiKey` | `SWARMS_API_KEY`         | false    | -                            |\n| `baseUrl` | `swarmsclient.baseUrl`      | `SWARMS_CLIENT_BASE_URL` | true     | `"https://api.swarms.world"` |\n\nSystem properties take precedence over environment variables.\n\n> [!TIP]\n> Don\'t create more than one client in the same application. Each client has a connection pool and\n> thread pools, which are more efficient to share between requests.\n\n### Modifying configuration\n\nTo temporarily use a modified client configuration, while reusing the same connection and thread       pools, call `withOptions()` on any client or service:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\n\nSwarmsClientClient clientWithOptions = client.withOptions(optionsBuilder -> {\n    optionsBuilder.baseUrl("https://example.com");\n    optionsBuilder.maxRetries(42);\n});\n```\n\nThe `withOptions()` method does not affect the original client or service.\n\n## Requests and responses\n\nTo send a request to the Swarms Client API, build an instance of some `Params` class and pass it to the     corresponding client method. When the response is received, it will be deserialized into an instance of     a Java class.\n\nFor example, `client.getRoot(...)` should be called with an instance of `ClientGetRootParams`, and it     will return an instance of `ClientGetRootResponse`.\n\n## Immutability\n\nEach class in the SDK has an associated   [builder](https://blogs.oracle.com/javamagazine/post/exploring-joshua-blochs-builder-design-pattern-in-java)   or factory method for constructing it.\n\nEach class is [immutable](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)   once constructed. If the class has an associated builder, then it has a `toBuilder()` method, which can   be used to convert it back to a builder for making a modified copy.\n\nBecause each class is immutable, builder modification will _never_ affect already built class instances.\n\n## Asynchronous execution\n\nThe default client is synchronous. To switch to asynchronous execution, call the `async()` method:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.ClientGetRootParams;\nimport com.swarms.api.models.ClientGetRootResponse;\nimport java.util.concurrent.CompletableFuture;\n\n// Configures using the `swarmsclient.swarmsApiKey` and `swarmsclient.baseUrl` system properties\n// Or configures using the `SWARMS_API_KEY` and `SWARMS_CLIENT_BASE_URL` environment variables\nSwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\nCompletableFuture<ClientGetRootResponse> response = client.async().getRoot();\n```\n\nOr create an asynchronous client from the beginning:\n\n```java\nimport com.swarms.api.client.SwarmsClientClientAsync;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClientAsync;\nimport com.swarms.api.models.ClientGetRootParams;\nimport com.swarms.api.models.ClientGetRootResponse;\nimport java.util.concurrent.CompletableFuture;\n\n// Configures using the `swarmsclient.swarmsApiKey` and `swarmsclient.baseUrl` system properties\n// Or configures using the `SWARMS_API_KEY` and `SWARMS_CLIENT_BASE_URL` environment variables\nSwarmsClientClientAsync client = SwarmsClientOkHttpClientAsync.fromEnv();\n\nCompletableFuture<ClientGetRootResponse> response = client.getRoot();\n```\n\nThe asynchronous client supports the same options as the synchronous one, except most methods return `CompletableFuture`s.\n\n\n\n\n\n\n\n## Raw responses\n\nThe SDK defines methods that deserialize responses into instances of Java classes.       However, these methods don\'t provide access to the response headers, status code, or the raw response       body.\n\nTo access this data, prefix any HTTP method call on a client or service with `withRawResponse()`:\n\n```java\nimport com.swarms.api.core.http.Headers;\nimport com.swarms.api.core.http.HttpResponseFor;\nimport com.swarms.api.models.ClientGetRootParams;\nimport com.swarms.api.models.ClientGetRootResponse;\n\nHttpResponseFor<ClientGetRootResponse> response = client.withRawResponse().getRoot();\n\nint statusCode = response.statusCode();\nHeaders headers = response.headers();\n```\n\nYou can still deserialize the response into an instance of a Java class if needed:\n\n```java\nimport com.swarms.api.models.ClientGetRootResponse;\n\nClientGetRootResponse parsedResponse = response.parse();\n```\n\n## Error handling\n\nThe SDK throws custom unchecked exception types:\n\n- [`SwarmsClientServiceException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/SwarmsClientServiceException.kt): Base class for HTTP errors. See this table for which exception       subclass is thrown for each HTTP status code:\n\n  | Status | Exception                                          |\n  | ------ | -------------------------------------------------- |\n  | 400    | [`BadRequestException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/BadRequestException.kt)           |\n  | 401    | [`UnauthorizedException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/UnauthorizedException.kt)         |\n  | 403    | [`PermissionDeniedException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/PermissionDeniedException.kt)     |\n  | 404    | [`NotFoundException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/NotFoundException.kt)             |\n  | 422    | [`UnprocessableEntityException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/UnprocessableEntityException.kt)  |\n  | 429    | [`RateLimitException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/RateLimitException.kt)            |\n  | 5xx    | [`InternalServerException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/InternalServerException.kt)       |\n  | others | [`UnexpectedStatusCodeException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/UnexpectedStatusCodeException.kt) |\n\n- [`SwarmsClientIoException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/SwarmsClientIoException.kt): I/O networking errors.\n\n- [`SwarmsClientRetryableException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/SwarmsClientRetryableException.kt): Generic error indicating a failure that could be retried by the client.\n\n- [`SwarmsClientInvalidDataException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/SwarmsClientInvalidDataException.kt): Failure to interpret successfully parsed data. For example,       when accessing a property that\'s supposed to be required, but the API unexpectedly omitted it from the       response.\n\n- [`SwarmsClientException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/SwarmsClientException.kt): Base class for all exceptions. Most errors will result in one of the       previously mentioned ones, but completely generic errors may be thrown using the base class.\n\n\n\n## Logging\n\nThe SDK uses the standard   [OkHttp logging interceptor](https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor).\n\nEnable logging by setting the `SWARMS_CLIENT_LOG` environment variable to   `info`:\n\n```sh\nexport SWARMS_CLIENT_LOG=info\n```\n\nOr to `debug` for more verbose logging:\n\n```sh\nexport SWARMS_CLIENT_LOG=debug\n```\n\n## ProGuard and R8\n\nAlthough the SDK uses reflection, it is still usable with     [ProGuard](https://github.com/Guardsquare/proguard) and     [R8](https://developer.android.com/topic/performance/app-optimization/enable-app-optimization) because     `swarms-client-java-core` is published with a     [configuration file](swarms-client-java-core/src/main/resources/META-INF/proguard/swarms-client-java-core.pro) containing     [keep rules](https://www.guardsquare.com/manual/configuration/usage).\n\nProGuard and R8 should automatically detect and use the published rules, but you can also manually copy     the keep rules if necessary.\n\n\n\n\n\n## Jackson\n\nThe SDK depends on [Jackson](https://github.com/FasterXML/jackson) for JSON     serialization/deserialization. It is compatible with version 2.13.4 or higher,     but depends on version 2.18.2 by default.\n\nThe SDK throws an exception if it detects an incompatible Jackson version at runtime (e.g. if the     default version was overridden in your Maven or Gradle config).\n\nIf the SDK threw an exception, but you\'re _certain_ the version is compatible, then disable the version     check using the `checkJacksonVersionCompatibility` on [`SwarmsClientOkHttpClient`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClient.kt) or     [`SwarmsClientOkHttpClientAsync`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClientAsync.kt).\n\n> [!CAUTION]\n> We make no guarantee that the SDK works correctly when the Jackson version check is disabled.\n\nAlso note that there are bugs in older Jackson versions that can affect the SDK. We don\'t work around all     Jackson bugs ([example](https://github.com/FasterXML/jackson-databind/issues/3240)) and expect users to     upgrade Jackson for those instead.\n\n## Network options\n\n### Retries\n\nThe SDK automatically retries 2 times by default, with a short exponential backoff between requests.\n\nOnly the following error types are retried:\n- Connection errors (for example, due to a network connectivity problem)\n- 408 Request Timeout\n- 409 Conflict\n- 429 Rate Limit\n- 5xx Internal\n\nThe API may also explicitly instruct the SDK to retry or not retry a request.\n\nTo set a custom number of retries, configure the client using the `maxRetries` method:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    .fromEnv()\n    .maxRetries(4)\n    .build();\n```\n\n### Timeouts\n\nRequests time out after 1 minute by default.\n\nTo set a custom timeout, configure the method call using the `timeout` method:\n\n```java\nimport com.swarms.api.models.ClientGetRootResponse;\n\nClientGetRootResponse response = client.getRoot(RequestOptions.builder().timeout(Duration.ofSeconds(30)).build());\n```\n\nOr configure the default for all method calls at the client level:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport java.time.Duration;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    .fromEnv()\n    .timeout(Duration.ofSeconds(30))\n    .build();\n```\n\n### Proxies\n\nTo route requests through a proxy, configure the client using the `proxy` method:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport java.net.InetSocketAddress;\nimport java.net.Proxy;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    .fromEnv()\n    .proxy(new Proxy(\n      Proxy.Type.HTTP, new InetSocketAddress(\n        "https://example.com", 8080\n      )\n    ))\n    .build();\n```\n\n### Connection pooling\n\nTo customize the underlying OkHttp connection pool, configure the client using the   `maxIdleConnections` and `keepAliveDuration` methods:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport java.time.Duration;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    .fromEnv()\n    // If `maxIdleConnections` is set, then `keepAliveDuration` must be set, and vice versa.\n    .maxIdleConnections(10)\n    .keepAliveDuration(Duration.ofMinutes(2))\n    .build();\n```\n\nIf both options are unset, OkHttp\'s default connection pool settings are used.\n\n### HTTPS\n\n> [!NOTE]\n> Most applications should not call these methods, and instead use the system defaults. The defaults include\n> special optimizations that can be lost if the implementations are modified.\n\nTo configure how HTTPS connections are secured, configure the client using the `sslSocketFactory`,   `trustManager`, and `hostnameVerifier` methods:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    .fromEnv()\n    // If `sslSocketFactory` is set, then `trustManager` must be set, and vice versa.\n    .sslSocketFactory(yourSSLSocketFactory)\n    .trustManager(yourTrustManager)\n    .hostnameVerifier(yourHostnameVerifier)\n    .build();\n```\n\n\n\n### Custom HTTP client\n\nThe SDK consists of three artifacts:\n- `swarms-client-java-core`\n  - Contains core SDK logic\n  - Does not depend on [OkHttp](https://square.github.io/okhttp)\n  - Exposes [`SwarmsClientClient`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClient.kt), [`SwarmsClientClientAsync`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientAsync.kt),             [`SwarmsClientClientImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientImpl.kt), and [`SwarmsClientClientAsyncImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientAsyncImpl.kt), all of which can             work with any HTTP client\n- `swarms-client-java-client-okhttp`\n  - Depends on [OkHttp](https://square.github.io/okhttp)\n  - Exposes [`SwarmsClientOkHttpClient`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClient.kt) and [`SwarmsClientOkHttpClientAsync`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClientAsync.kt), which             provide a way to construct [`SwarmsClientClientImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientImpl.kt) and             [`SwarmsClientClientAsyncImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientAsyncImpl.kt), respectively, using OkHttp\n- `swarms-client-java`\n  - Depends on and exposes the APIs of both `swarms-client-java-core` and `swarms-client-java-client-okhttp`\n  - Does not have its own logic\n\nThis structure allows replacing the SDK\'s default HTTP client without pulling in unnecessary dependencies.\n\n#### Customized [`OkHttpClient`](https://square.github.io/okhttp/3.x/okhttp/okhttp3/OkHttpClient.html)\n\n> [!TIP]\n> Try the available [network options](#network-options) before replacing the default client.\n\nTo use a customized `OkHttpClient`:\n\n1. Replace your [`swarms-client-java` dependency](#installation) with `swarms-client-java-core`\n2. Copy `swarms-client-java-client-okhttp`\'s [`OkHttpClient`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/OkHttpClient.kt) class into your code and        customize it\n3. Construct [`SwarmsClientClientImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientImpl.kt) or [`SwarmsClientClientAsyncImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientAsyncImpl.kt), similarly to        [`SwarmsClientOkHttpClient`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClient.kt) or [`SwarmsClientOkHttpClientAsync`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClientAsync.kt), using your        customized client\n\n### Completely custom HTTP client\n\nTo use a completely custom HTTP client:\n\n1. Replace your [`swarms-client-java` dependency](#installation) with `swarms-client-java-core`\n2. Write a class that implements the [`HttpClient`](swarms-client-java-core/src/main/kotlin/com/swarms/api/core/http/HttpClient.kt) interface\n3. Construct [`SwarmsClientClientImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientImpl.kt) or [`SwarmsClientClientAsyncImpl`](swarms-client-java-core/src/main/kotlin/com/swarms/api/client/SwarmsClientClientAsyncImpl.kt), similarly to        [`SwarmsClientOkHttpClient`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClient.kt) or [`SwarmsClientOkHttpClientAsync`](swarms-client-java-client-okhttp/src/main/kotlin/com/swarms/api/client/okhttp/SwarmsClientOkHttpClientAsync.kt), using your new        client class\n\n## Undocumented API functionality\n\nThe SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.\n\n### Parameters\n\nTo set undocumented parameters, call the `putAdditionalHeader`, `putAdditionalQueryParam`, or       `putAdditionalBodyProperty` methods on any `Params` class:\n\n```java\nimport com.swarms.api.core.JsonValue;\nimport com.swarms.api.models.ClientGetRootParams;\n\nClientGetRootParams params = ClientGetRootParams.builder()\n    .putAdditionalHeader("Secret-Header", "42")\n    .putAdditionalQueryParam("secret_query_param", "42")\n    .putAdditionalBodyProperty("secretProperty", JsonValue.from("42"))\n    .build();\n```\n\nThese can be accessed on the built object later using the `_additionalHeaders()`,       `_additionalQueryParams()`, and `_additionalBodyProperties()` methods.\n\nTo set a documented parameter or property to an undocumented or not yet supported _value_, pass a       [`JsonValue`](swarms-client-java-core/src/main/kotlin/com/swarms/api/core/Values.kt) object to its setter:\n\n```java\nimport com.swarms.api.models.ClientGetRootParams;\n\nClientGetRootParams params = ClientGetRootParams.builder().build();\n```\n\nThe most straightforward way to create a [`JsonValue`](swarms-client-java-core/src/main/kotlin/com/swarms/api/core/Values.kt) is using its       `from(...)` method:\n\n```java\nimport com.swarms.api.core.JsonValue;\nimport java.util.List;\nimport java.util.Map;\n\n// Create primitive JSON values\nJsonValue nullValue = JsonValue.from(null);\nJsonValue booleanValue = JsonValue.from(true);\nJsonValue numberValue = JsonValue.from(42);\nJsonValue stringValue = JsonValue.from("Hello World!");\n\n// Create a JSON array value equivalent to `["Hello", "World"]`\nJsonValue arrayValue = JsonValue.from(List.of(\n  "Hello", "World"\n));\n\n// Create a JSON object value equivalent to `{ "a": 1, "b": 2 }`\nJsonValue objectValue = JsonValue.from(Map.of(\n  "a", 1,\n  "b", 2\n));\n\n// Create an arbitrarily nested JSON equivalent to:\n// {\n//   "a": [1, 2],\n//   "b": [3, 4]\n// }\nJsonValue complexValue = JsonValue.from(Map.of(\n  "a", List.of(\n    1, 2\n  ),\n  "b", List.of(\n    3, 4\n  )\n));\n```\n\nNormally a `Builder` class\'s `build` method will throw         [`IllegalStateException`](https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html)         if any required parameter or property is unset.\n\nTo forcibly omit a required parameter or property, pass [`JsonMissing`](swarms-client-java-core/src/main/kotlin/com/swarms/api/core/Values.kt):\n\n```java\nimport com.swarms.api.core.JsonMissing;\nimport com.swarms.api.models.ClientGetRootParams;\nimport com.swarms.api.models.client.advancedresearch.AdvancedResearchCreateCompletionParams;\n\nClientGetRootParams params = AdvancedResearchCreateCompletionParams.builder()\n    .task("task")\n    .config(JsonMissing.of())\n    .build();\n```\n\n### Response properties\n\nTo access undocumented response properties, call the `_additionalProperties()` method:\n\n```java\nimport com.swarms.api.core.JsonValue;\nimport java.util.Map;\n\nMap<String, JsonValue> additionalProperties = client.health().check(params)._additionalProperties();\nJsonValue secretPropertyValue = additionalProperties.get("secretProperty");\n\nString result = secretPropertyValue.accept(new JsonValue.Visitor<>() {\n    @Override\n    public String visitNull() {\n        return "It\'s null!";\n    }\n\n    @Override\n    public String visitBoolean(boolean value) {\n        return "It\'s a boolean!";\n    }\n\n    @Override\n    public String visitNumber(Number value) {\n        return "It\'s a number!";\n    }\n\n    // Other methods include `visitMissing`, `visitString`, `visitArray`, and `visitObject`\n    // The default implementation of each unimplemented method delegates to `visitDefault`, which throws by default, but can also be overridden\n});\n```\n\nTo access a property\'s raw JSON value, which may be undocumented, call its `_` prefixed method:\n\n```java\nimport com.swarms.api.core.JsonField;\nimport java.util.Optional;\n\nJsonField<Object> field = client.health().check(params)._field();\n\nif (field.isMissing()) {\n  // The property is absent from the JSON response\n} else if (field.isNull()) {\n  // The property was set to literal null\n} else {\n  // Check if value was provided as a string\n  // Other methods include `asNumber()`, `asBoolean()`, etc.\n  Optional<String> jsonString = field.asString();\n\n  // Try to deserialize into a custom type\n  MyClass myObject = field.asUnknown().orElseThrow().convert(MyClass.class);\n}\n```\n\n### Response validation\n\nIn rare cases, the API may return a response that doesn\'t match the expected type. For example, the SDK     may expect a property to contain a `String`, but the API could return something else.\n\nBy default, the SDK will not throw an exception in this case. It will throw     [`SwarmsClientInvalidDataException`](swarms-client-java-core/src/main/kotlin/com/swarms/api/errors/SwarmsClientInvalidDataException.kt) only if you directly access the property.\n\nIf you would prefer to check that the response is completely well-typed upfront, then either call     `validate()`:\n\n```java\nimport com.swarms.api.models.health.HealthCheckResponse;\n\nHealthCheckResponse response = client.health().check(params).validate();\n```\n\nOr configure the method call to validate the response using the `responseValidation` method:\n\n```java\nimport com.swarms.api.models.ClientGetRootResponse;\n\nClientGetRootResponse response = client.getRoot(RequestOptions.builder().responseValidation(true).build());\n```\n\nOr configure the default for all method calls at the client level:\n\n```java\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\n\nSwarmsClientClient client = SwarmsClientOkHttpClient.builder()\n    .fromEnv()\n    .responseValidation(true)\n    .build();\n```\n\n## FAQ\n\n### Why don\'t you use plain `enum` classes?\n\nJava `enum` classes are not trivially   [forwards compatible](https://www.stainless.com/blog/making-java-enums-forwards-compatible). Using them in   the SDK could cause runtime exceptions if the API is updated to respond with a new enum value.\n\n### Why do you represent fields using `JsonField<T>` instead of just plain `T`?\n\nUsing `JsonField<T>` enables a few features:\n\n- Allowing usage of [undocumented API functionality](#undocumented-api-functionality)\n- Lazily [validating the API response against the expected shape](#response-validation)\n- Representing absent vs explicitly null values\n\n### Why don\'t you use [`data` classes](https://kotlinlang.org/docs/data-classes.html)?\n\nIt is not [backwards compatible to add new fields to a data class](https://kotlinlang.org/docs/api-guidelines-backward-compatibility.html#avoid-using-data-classes-in-your-api)   and we don\'t want to introduce a breaking change every time we add a field to a class.\n\n### Why don\'t you use checked exceptions?\n\nChecked exceptions are widely considered a mistake in the Java programming language. In fact, they were   omitted from Kotlin for this reason.\n\nChecked exceptions:\n\n- Are verbose to handle\n- Encourage error handling at the wrong level of abstraction, where nothing can be done about the error\n- Are tedious to propagate due to the [function coloring problem](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function)\n- Don\'t play well with lambdas (also due to the function coloring problem)\n\n## Semantic versioning\n\nThis package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:\n\n1. Changes to library internals which are technically public but not intended or documented for external use. _(Please open a GitHub issue to let us know if you are relying on such internals.)_\n2. Changes that we do not expect to impact the vast majority of users in practice.\n\nWe take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.\n\nWe are keen for your feedback; please open an [issue](https://www.github.com/The-Swarm-Corporation/swarms-java/issues) with questions, bugs, or suggestions.\n',
+  },
+  {
+    language: 'csharp',
+    content:
+      '# Swarms Client C# API Library\n\nThe Swarms Client C# SDK provides convenient access to the [Swarms Client REST API](https://docs.swarms.ai) from applications written in   C#.\n\n## Installation\n\nInstall the package from [NuGet](https://www.nuget.org/packages/Swarms):\n\n```bash\ndotnet add package Swarms\n```\n\n## Requirements\n\nThis library requires .NET Standard 2.0 or later.\n\n## Usage\n\nSee the [`examples`](examples) directory for complete and runnable examples.\n\n```csharp\nSwarmsClientClient client = new();\n\nClientGetRootParams parameters = new();\n\nvar response = await client.GetRoot(parameters);\n\nConsole.WriteLine(response);\n```',
   },
   {
     language: 'cli',
