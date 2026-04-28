@@ -62,6 +62,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_root\n\n`client.getRoot(): object`\n\n**get** `/`\n\nRoot\n\n### Returns\n\n- `object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.getRoot();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.getRoot',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.getRoot();\n\nconsole.log(response);",
+      },
+      python: {
+        method: 'get_root',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.get_root()\nprint(response)',
+      },
+      java: {
+        method: 'getRoot',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.ClientGetRootParams;\nimport com.swarms.api.models.ClientGetRootResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ClientGetRootResponse response = client.getRoot();\n    }\n}',
+      },
+      go: {
+        method: 'client.GetRoot',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.GetRoot(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
+      },
       cli: {
         method: '$client get_root',
         example: "swarms get-root \\\n  --api-key 'My API Key'",
@@ -71,28 +91,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'ClientGetRootParams parameters = new();\n\nvar response = await client.GetRoot(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.GetRoot',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.GetRoot(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/ \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'getRoot',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.ClientGetRootParams;\nimport com.swarms.api.models.ClientGetRootResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ClientGetRootResponse response = client.getRoot();\n    }\n}',
-      },
-      python: {
-        method: 'get_root',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.get_root()\nprint(response)',
-      },
-      typescript: {
-        method: 'client.getRoot',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.getRoot();\n\nconsole.log(response);",
       },
     },
   },
@@ -108,6 +108,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## check\n\n`client.health.check(): { status?: string; }`\n\n**get** `/health`\n\nHealth\n\n### Returns\n\n- `{ status?: string; }`\n\n  - `status?: string`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.health.check();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.health.check',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.health.check();\n\nconsole.log(response.status);",
+      },
+      python: {
+        method: 'health.check',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.health.check()\nprint(response.status)',
+      },
+      java: {
+        method: 'health().check',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.health.HealthCheckParams;\nimport com.swarms.api.models.health.HealthCheckResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        HealthCheckResponse response = client.health().check();\n    }\n}',
+      },
+      go: {
+        method: 'client.Health.Check',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Health.Check(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Status)\n}\n',
+      },
       cli: {
         method: 'health check',
         example: "swarms health check \\\n  --api-key 'My API Key'",
@@ -117,28 +137,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'HealthCheckParams parameters = new();\n\nvar response = await client.Health.Check(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Health.Check',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Health.Check(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Status)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/health \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'health().check',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.health.HealthCheckParams;\nimport com.swarms.api.models.health.HealthCheckResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        HealthCheckResponse response = client.health().check();\n    }\n}',
-      },
-      python: {
-        method: 'health.check',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.health.check()\nprint(response.status)',
-      },
-      typescript: {
-        method: 'client.health.check',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.health.check();\n\nconsole.log(response.status);",
       },
     },
   },
@@ -163,6 +163,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## run\n\n`client.agent.run(agent_config?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: mcp_connection; mcp_configs?: object; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }, history?: object | object[], img?: string, imgs?: string[], task?: string, tools_enabled?: string[]): { description?: string; job_id?: string; name?: string; outputs?: object; success?: boolean; temperature?: number; timestamp?: string; usage?: object; }`\n\n**post** `/v1/agent/completions`\n\nRun an agent with the specified task. Supports streaming when stream=True.\n\n### Parameters\n\n- `agent_config?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: { authorization_token?: string; headers?: object; timeout?: number; tool_configurations?: object; transport?: string; type?: string; url?: string; }; mcp_configs?: { connections: object[]; }; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }`\n  The configuration of the agent to be completed.\n  - `agent_name: string`\n    The unique name assigned to the agent, which identifies its role and functionality within the swarm.\n  - `auto_generate_prompt?: boolean`\n    A flag indicating whether the agent should automatically create prompts based on the task requirements.\n  - `description?: string`\n    A detailed explanation of the agent's purpose, capabilities, and any specific tasks it is designed to perform.\n  - `dynamic_temperature_enabled?: boolean`\n    A flag indicating whether the agent should dynamically adjust its temperature based on the task.\n  - `llm_args?: object`\n    Additional arguments to pass to the LLM such as top_p, frequency_penalty, presence_penalty, etc.\n  - `max_loops?: number`\n    The maximum number of times the agent is allowed to repeat its task, enabling iterative processing if necessary.\n  - `max_tokens?: number`\n    The maximum number of tokens that the agent is allowed to generate in its responses, limiting output length.\n  - `mcp_config?: { authorization_token?: string; headers?: object; timeout?: number; tool_configurations?: object; transport?: string; type?: string; url?: string; }`\n    The MCP connection to use for the agent.\n  - `mcp_configs?: { connections: { authorization_token?: string; headers?: object; timeout?: number; tool_configurations?: object; transport?: string; type?: string; url?: string; }[]; }`\n    The MCP connections to use for the agent. This is a list of MCP connections. Includes multiple MCP connections.\n  - `mcp_url?: string`\n    The URL of the MCP server that the agent can use to complete its task.\n  - `model_name?: string`\n    The name of the AI model that the agent will utilize for processing tasks and generating outputs. For example: gpt-4o, gpt-4o-mini, openai/o3-mini\n  - `reasoning_effort?: string`\n    The effort to put into reasoning.\n  - `reasoning_enabled?: boolean`\n    A parameter enabling an agent to use reasoning.\n  - `role?: string`\n    The designated role of the agent within the swarm, which influences its behavior and interaction with other agents.\n  - `streaming_on?: boolean`\n    A flag indicating whether the agent should stream its output.\n  - `system_prompt?: string`\n    The initial instruction or context provided to the agent, guiding its behavior and responses during execution.\n  - `temperature?: number`\n    A parameter that controls the randomness of the agent's output; lower values result in more deterministic responses.\n  - `thinking_tokens?: number`\n    The number of tokens to use for thinking.\n  - `tool_call_summary?: boolean`\n    A parameter enabling an agent to summarize tool calls.\n  - `tools_list_dictionary?: object[]`\n    A dictionary of tools that the agent can use to complete its task.\n\n- `history?: object | object[]`\n  The history of the agent's previous tasks and responses. Can be either a dictionary or a list of message objects.\n\n- `img?: string`\n  An optional image URL that may be associated with the agent's task or representation.\n\n- `imgs?: string[]`\n  A list of image URLs that may be associated with the agent's task or representation.\n\n- `task?: string`\n  The task to be completed by the agent.\n\n- `tools_enabled?: string[]`\n  A list of tools that the agent should use to complete its task.\n\n### Returns\n\n- `{ description?: string; job_id?: string; name?: string; outputs?: object; success?: boolean; temperature?: number; timestamp?: string; usage?: object; }`\n\n  - `description?: string`\n  - `job_id?: string`\n  - `name?: string`\n  - `outputs?: object`\n  - `success?: boolean`\n  - `temperature?: number`\n  - `timestamp?: string`\n  - `usage?: object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.agent.run();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.agent.run',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.agent.run();\n\nconsole.log(response.job_id);",
+      },
+      python: {
+        method: 'agent.run',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.agent.run()\nprint(response.job_id)',
+      },
+      java: {
+        method: 'agent().run',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.AgentRunParams;\nimport com.swarms.api.models.agent.AgentRunResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AgentCompletion params = AgentCompletion.builder().build();\n        AgentRunResponse response = client.agent().run(params);\n    }\n}',
+      },
+      go: {
+        method: 'client.Agent.Run',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Agent.Run(context.TODO(), swarms.AgentRunParams{\n\t\tAgentCompletion: swarms.AgentCompletionParam{},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
+      },
       cli: {
         method: 'agent run',
         example: "swarms agent run \\\n  --api-key 'My API Key'",
@@ -172,29 +192,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'AgentRunParams parameters = new();\n\nvar response = await client.Agent.Run(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Agent.Run',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Agent.Run(context.TODO(), swarms.AgentRunParams{\n\t\tAgentCompletion: swarms.AgentCompletionParam{},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
-      },
       http: {
         example:
           "curl https://api.swarms.world/v1/agent/completions \\\n    -H 'Content-Type: application/json' \\\n    -H \"x-api-key: $SWARMS_API_KEY\" \\\n    -d '{}'",
-      },
-      java: {
-        method: 'agent().run',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.AgentRunParams;\nimport com.swarms.api.models.agent.AgentRunResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AgentCompletion params = AgentCompletion.builder().build();\n        AgentRunResponse response = client.agent().run(params);\n    }\n}',
-      },
-      python: {
-        method: 'agent.run',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.agent.run()\nprint(response.job_id)',
-      },
-      typescript: {
-        method: 'client.agent.run',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.agent.run();\n\nconsole.log(response.job_id);",
       },
     },
   },
@@ -211,6 +211,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.agent.list(): object`\n\n**get** `/v1/agents/list`\n\nGet all unique agent configurations that the user has created or used, without task details. Allows users to reuse agent configs with new tasks.\n\n### Returns\n\n- `object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst agents = await client.agent.list();\n\nconsole.log(agents);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.agent.list',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst agents = await client.agent.list();\n\nconsole.log(agents);",
+      },
+      python: {
+        method: 'agent.list',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nagents = client.agent.list()\nprint(agents)',
+      },
+      java: {
+        method: 'agent().list',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentListParams;\nimport com.swarms.api.models.agent.AgentListResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AgentListResponse agents = client.agent().list();\n    }\n}',
+      },
+      go: {
+        method: 'client.Agent.List',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tagents, err := client.Agent.List(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", agents)\n}\n',
+      },
       cli: {
         method: 'agent list',
         example: "swarms agent list \\\n  --api-key 'My API Key'",
@@ -220,28 +240,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'AgentListParams parameters = new();\n\nvar agents = await client.Agent.List(parameters);\n\nConsole.WriteLine(agents);',
       },
-      go: {
-        method: 'client.Agent.List',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tagents, err := client.Agent.List(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", agents)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/v1/agents/list \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'agent().list',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentListParams;\nimport com.swarms.api.models.agent.AgentListResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AgentListResponse agents = client.agent().list();\n    }\n}',
-      },
-      python: {
-        method: 'agent.list',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nagents = client.agent.list()\nprint(agents)',
-      },
-      typescript: {
-        method: 'client.agent.list',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst agents = await client.agent.list();\n\nconsole.log(agents);",
       },
     },
   },
@@ -261,6 +261,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## run\n\n`client.agent.batch.run(body: { agent_config?: agent_spec; history?: object | object[]; img?: string; imgs?: string[]; task?: string; tools_enabled?: string[]; }[]): { batch_id?: string; execution_time?: number; results?: object; timestamp?: string; total_requests?: number; }`\n\n**post** `/v1/agent/batch/completions`\n\nRun a batch of agents with the specified tasks using a thread pool.\n\n### Parameters\n\n- `body: { agent_config?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: mcp_connection; mcp_configs?: object; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }; history?: object | object[]; img?: string; imgs?: string[]; task?: string; tools_enabled?: string[]; }[]`\n\n### Returns\n\n- `{ batch_id?: string; execution_time?: number; results?: object; timestamp?: string; total_requests?: number; }`\n\n  - `batch_id?: string`\n  - `execution_time?: number`\n  - `results?: object`\n  - `timestamp?: string`\n  - `total_requests?: number`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.agent.batch.run({ body: [{}] });\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.agent.batch.run',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.agent.batch.run({ body: [{}] });\n\nconsole.log(response.batch_id);",
+      },
+      python: {
+        method: 'agent.batch.run',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.agent.batch.run(\n    body=[{}],\n)\nprint(response.batch_id)',
+      },
+      java: {
+        method: 'agent().batch().run',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.batch.BatchRunParams;\nimport com.swarms.api.models.agent.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<AgentCompletion> params = List.of(AgentCompletion.builder().build());\n        BatchRunResponse response = client.agent().batch().run(params);\n    }\n}',
+      },
+      go: {
+        method: 'client.Agent.Batch.Run',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Agent.Batch.Run(context.TODO(), swarms.AgentBatchRunParams{\n\t\tBody: []swarms.AgentCompletionParam{{}},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.BatchID)\n}\n',
+      },
       cli: {
         method: 'batch run',
         example: "swarms agent:batch run \\\n  --api-key 'My API Key' \\\n  --body '{}'",
@@ -270,29 +290,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'BatchRunParams parameters = new()\n{\n    Body =\n    [\n        new()\n        {\n            AgentConfig = new()\n            {\n                AgentName = "agent_name",\n                AutoGeneratePrompt = true,\n                Description = "description",\n                DynamicTemperatureEnabled = true,\n                LlmArgs = new Dictionary<string, JsonElement>()\n                {\n                    { "foo", JsonSerializer.SerializeToElement("bar") }\n                },\n                MaxLoops = 0,\n                MaxTokens = 0,\n                McpConfig = new()\n                {\n                    AuthorizationToken = "authorization_token",\n                    Headers = new Dictionary<string, string>()\n                    {\n                        { "foo", "string" }\n                    },\n                    Timeout = 0,\n                    ToolConfigurations = new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                    Transport = "transport",\n                    Type = "type",\n                    Url = "url",\n                },\n                McpConfigs = new(\n\n                    [\n                        new()\n                        {\n                            AuthorizationToken = "authorization_token",\n                            Headers = new Dictionary<string, string>()\n                            {\n                                { "foo", "string" }\n                            },\n                            Timeout = 0,\n                            ToolConfigurations = new Dictionary<string, JsonElement>(\n\n                            )\n                            {\n                                { "foo", JsonSerializer.SerializeToElement("bar") },\n                            },\n                            Transport = "transport",\n                            Type = "type",\n                            Url = "url",\n                        },\n                    ]\n                ),\n                McpUrl = "mcp_url",\n                ModelName = "model_name",\n                ReasoningEffort = "reasoning_effort",\n                ReasoningEnabled = true,\n                Role = "role",\n                StreamingOn = true,\n                SystemPrompt = "system_prompt",\n                Temperature = 0,\n                ThinkingTokens = 0,\n                ToolCallSummary = true,\n                ToolsListDictionary =\n                [\n                    new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                ],\n            },\n            History = new(\n                new Dictionary<string, JsonElement>()\n                {\n                    { "foo", JsonSerializer.SerializeToElement("bar") }\n                }\n            ),\n            Img = "img",\n            Imgs =\n            [\n                "string"\n            ],\n            Task = "task",\n            ToolsEnabled =\n            [\n                "string"\n            ],\n        },\n    ],\n};\n\nvar response = await client.Agent.Batch.Run(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Agent.Batch.Run',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Agent.Batch.Run(context.TODO(), swarms.AgentBatchRunParams{\n\t\tBody: []swarms.AgentCompletionParam{{}},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.BatchID)\n}\n',
-      },
       http: {
         example:
           'curl https://api.swarms.world/v1/agent/batch/completions \\\n    -H \'Content-Type: application/json\' \\\n    -H "x-api-key: $SWARMS_API_KEY" \\\n    -d \'[\n          {\n            "agent_config": {\n              "agent_name": "agent_name",\n              "auto_generate_prompt": true,\n              "description": "description",\n              "dynamic_temperature_enabled": true,\n              "llm_args": {\n                "foo": "bar"\n              },\n              "max_loops": 0,\n              "max_tokens": 0,\n              "mcp_config": {\n                "authorization_token": "authorization_token",\n                "headers": {\n                  "foo": "string"\n                },\n                "timeout": 0,\n                "tool_configurations": {\n                  "foo": "bar"\n                },\n                "transport": "transport",\n                "type": "type",\n                "url": "url"\n              },\n              "mcp_configs": {\n                "connections": [\n                  {\n                    "authorization_token": "authorization_token",\n                    "headers": {\n                      "foo": "string"\n                    },\n                    "timeout": 0,\n                    "tool_configurations": {\n                      "foo": "bar"\n                    },\n                    "transport": "transport",\n                    "type": "type",\n                    "url": "url"\n                  }\n                ]\n              },\n              "mcp_url": "mcp_url",\n              "model_name": "model_name",\n              "reasoning_effort": "reasoning_effort",\n              "reasoning_enabled": true,\n              "role": "role",\n              "streaming_on": true,\n              "system_prompt": "system_prompt",\n              "temperature": 0,\n              "thinking_tokens": 0,\n              "tool_call_summary": true,\n              "tools_list_dictionary": [\n                {\n                  "foo": "bar"\n                }\n              ]\n            },\n            "history": {\n              "foo": "bar"\n            },\n            "img": "img",\n            "imgs": [\n              "string"\n            ],\n            "task": "task",\n            "tools_enabled": [\n              "string"\n            ]\n          }\n        ]\'',
-      },
-      java: {
-        method: 'agent().batch().run',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.batch.BatchRunParams;\nimport com.swarms.api.models.agent.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<AgentCompletion> params = List.of(AgentCompletion.builder().build());\n        BatchRunResponse response = client.agent().batch().run(params);\n    }\n}',
-      },
-      python: {
-        method: 'agent.batch.run',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.agent.batch.run(\n    body=[{}],\n)\nprint(response.batch_id)',
-      },
-      typescript: {
-        method: 'client.agent.batch.run',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.agent.batch.run({ body: [{}] });\n\nconsole.log(response.batch_id);",
       },
     },
   },
@@ -308,6 +308,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_available\n\n`client.models.listAvailable(): { models?: object; success?: boolean; }`\n\n**get** `/v1/models/available`\n\nGet all available models.\n\n### Returns\n\n- `{ models?: object; success?: boolean; }`\n\n  - `models?: object`\n  - `success?: boolean`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.models.listAvailable();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.models.listAvailable',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.models.listAvailable();\n\nconsole.log(response.models);",
+      },
+      python: {
+        method: 'models.list_available',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.models.list_available()\nprint(response.models)',
+      },
+      java: {
+        method: 'models().listAvailable',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.models.ModelListAvailableParams;\nimport com.swarms.api.models.models.ModelListAvailableResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ModelListAvailableResponse response = client.models().listAvailable();\n    }\n}',
+      },
+      go: {
+        method: 'client.Models.ListAvailable',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Models.ListAvailable(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Models)\n}\n',
+      },
       cli: {
         method: 'models list_available',
         example: "swarms models list-available \\\n  --api-key 'My API Key'",
@@ -317,28 +337,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'ModelListAvailableParams parameters = new();\n\nvar response = await client.Models.ListAvailable(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Models.ListAvailable',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Models.ListAvailable(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Models)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/v1/models/available \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'models().listAvailable',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.models.ModelListAvailableParams;\nimport com.swarms.api.models.models.ModelListAvailableResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ModelListAvailableResponse response = client.models().listAvailable();\n    }\n}',
-      },
-      python: {
-        method: 'models.list_available',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.models.list_available()\nprint(response.models)',
-      },
-      typescript: {
-        method: 'client.models.listAvailable',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.models.listAvailable();\n\nconsole.log(response.models);",
       },
     },
   },
@@ -354,6 +354,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## check_available\n\n`client.swarms.checkAvailable(): { success?: boolean; swarm_types?: string[]; }`\n\n**get** `/v1/swarms/available`\n\nCheck the available swarm types.\n\n### Returns\n\n- `{ success?: boolean; swarm_types?: string[]; }`\n\n  - `success?: boolean`\n  - `swarm_types?: string[]`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.swarms.checkAvailable();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.swarms.checkAvailable',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.checkAvailable();\n\nconsole.log(response.success);",
+      },
+      python: {
+        method: 'swarms.check_available',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.check_available()\nprint(response.success)',
+      },
+      java: {
+        method: 'swarms().checkAvailable',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmCheckAvailableParams;\nimport com.swarms.api.models.swarms.SwarmCheckAvailableResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmCheckAvailableResponse response = client.swarms().checkAvailable();\n    }\n}',
+      },
+      go: {
+        method: 'client.Swarms.CheckAvailable',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.CheckAvailable(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Success)\n}\n',
+      },
       cli: {
         method: 'swarms check_available',
         example: "swarms swarms check-available \\\n  --api-key 'My API Key'",
@@ -363,28 +383,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'SwarmCheckAvailableParams parameters = new();\n\nvar response = await client.Swarms.CheckAvailable(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Swarms.CheckAvailable',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.CheckAvailable(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Success)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/v1/swarms/available \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'swarms().checkAvailable',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmCheckAvailableParams;\nimport com.swarms.api.models.swarms.SwarmCheckAvailableResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmCheckAvailableResponse response = client.swarms().checkAvailable();\n    }\n}',
-      },
-      python: {
-        method: 'swarms.check_available',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.check_available()\nprint(response.success)',
-      },
-      typescript: {
-        method: 'client.swarms.checkAvailable',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.checkAvailable();\n\nconsole.log(response.success);",
       },
     },
   },
@@ -419,6 +419,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## run\n\n`client.swarms.run(agents?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: mcp_connection; mcp_configs?: object; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }[], description?: string, heavy_swarm_loops_per_agent?: number, heavy_swarm_question_agent_model_name?: string, heavy_swarm_worker_model_name?: string, img?: string, max_loops?: number, messages?: object[] | object, name?: string, rearrange_flow?: string, rules?: string, service_tier?: string, stream?: boolean, swarm_type?: string, task?: string, tasks?: string[]): { description: string; execution_time: number; job_id: string; number_of_agents: number; output: object; service_tier: string; status: string; swarm_name: string; swarm_type: string; usage: object; }`\n\n**post** `/v1/swarm/completions`\n\nRun a swarm with the specified task. Supports streaming when stream=True.\n\n### Parameters\n\n- `agents?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: { authorization_token?: string; headers?: object; timeout?: number; tool_configurations?: object; transport?: string; type?: string; url?: string; }; mcp_configs?: { connections: object[]; }; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }[]`\n  A list of agents or specifications that define the agents participating in the swarm.\n\n- `description?: string`\n  A comprehensive description of the swarm's objectives, capabilities, and intended outcomes.\n\n- `heavy_swarm_loops_per_agent?: number`\n  The number of loops to run per agent in the heavy swarm.\n\n- `heavy_swarm_question_agent_model_name?: string`\n  The model name to use for the question agent in the heavy swarm.\n\n- `heavy_swarm_worker_model_name?: string`\n  The model name to use for the worker agent in the heavy swarm.\n\n- `img?: string`\n  An optional image URL that may be associated with the swarm's task or representation.\n\n- `max_loops?: number`\n  The maximum number of execution loops allowed for the swarm, enabling repeated processing if needed.\n\n- `messages?: object[] | object`\n  A list of messages that the swarm should complete.\n\n- `name?: string`\n  The name of the swarm, which serves as an identifier for the group of agents and their collective task.\n\n- `rearrange_flow?: string`\n  Instructions on how to rearrange the flow of tasks among agents, if applicable.\n\n- `rules?: string`\n  Guidelines or constraints that govern the behavior and interactions of the agents within the swarm.\n\n- `service_tier?: string`\n  The service tier to use for processing. Options: 'standard' (default) or 'flex' for lower cost but slower processing.\n\n- `stream?: boolean`\n  A flag indicating whether the swarm should stream its output.\n\n- `swarm_type?: string`\n  The classification of the swarm, indicating its operational style and methodology.\n\n- `task?: string`\n  The specific task or objective that the swarm is designed to accomplish.\n\n- `tasks?: string[]`\n  A list of tasks that the swarm should complete.\n\n### Returns\n\n- `{ description: string; execution_time: number; job_id: string; number_of_agents: number; output: object; service_tier: string; status: string; swarm_name: string; swarm_type: string; usage: object; }`\n\n  - `description: string`\n  - `execution_time: number`\n  - `job_id: string`\n  - `number_of_agents: number`\n  - `output: object`\n  - `service_tier: string`\n  - `status: string`\n  - `swarm_name: string`\n  - `swarm_type: string`\n  - `usage: object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.swarms.run();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.swarms.run',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.run();\n\nconsole.log(response.job_id);",
+      },
+      python: {
+        method: 'swarms.run',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.run()\nprint(response.job_id)',
+      },
+      java: {
+        method: 'swarms().run',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmRunParams;\nimport com.swarms.api.models.swarms.SwarmRunResponse;\nimport com.swarms.api.models.swarms.SwarmSpec;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmSpec params = SwarmSpec.builder().build();\n        SwarmRunResponse response = client.swarms().run(params);\n    }\n}',
+      },
+      go: {
+        method: 'client.Swarms.Run',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.Run(context.TODO(), swarms.SwarmRunParams{\n\t\tSwarmSpec: swarms.SwarmSpecParam{},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
+      },
       cli: {
         method: 'swarms run',
         example: "swarms swarms run \\\n  --api-key 'My API Key'",
@@ -428,29 +448,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'SwarmRunParams parameters = new();\n\nvar response = await client.Swarms.Run(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Swarms.Run',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.Run(context.TODO(), swarms.SwarmRunParams{\n\t\tSwarmSpec: swarms.SwarmSpecParam{},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
-      },
       http: {
         example:
           "curl https://api.swarms.world/v1/swarm/completions \\\n    -H 'Content-Type: application/json' \\\n    -H \"x-api-key: $SWARMS_API_KEY\" \\\n    -d '{}'",
-      },
-      java: {
-        method: 'swarms().run',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmRunParams;\nimport com.swarms.api.models.swarms.SwarmRunResponse;\nimport com.swarms.api.models.swarms.SwarmSpec;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmSpec params = SwarmSpec.builder().build();\n        SwarmRunResponse response = client.swarms().run(params);\n    }\n}',
-      },
-      python: {
-        method: 'swarms.run',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.run()\nprint(response.job_id)',
-      },
-      typescript: {
-        method: 'client.swarms.run',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.run();\n\nconsole.log(response.job_id);",
       },
     },
   },
@@ -467,6 +467,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_logs\n\n`client.swarms.getLogs(): { count?: number; logs?: object; status?: string; timestamp?: string; }`\n\n**get** `/v1/swarm/logs`\n\nGet all API request logs for all API keys associated with the user identified by the provided API key, excluding any logs that contain a client_ip field in their data.\n\n### Returns\n\n- `{ count?: number; logs?: object; status?: string; timestamp?: string; }`\n\n  - `count?: number`\n  - `logs?: object`\n  - `status?: string`\n  - `timestamp?: string`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.swarms.getLogs();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.swarms.getLogs',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.getLogs();\n\nconsole.log(response.count);",
+      },
+      python: {
+        method: 'swarms.get_logs',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.get_logs()\nprint(response.count)',
+      },
+      java: {
+        method: 'swarms().getLogs',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmGetLogsParams;\nimport com.swarms.api.models.swarms.SwarmGetLogsResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmGetLogsResponse response = client.swarms().getLogs();\n    }\n}',
+      },
+      go: {
+        method: 'client.Swarms.GetLogs',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.GetLogs(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Count)\n}\n',
+      },
       cli: {
         method: 'swarms get_logs',
         example: "swarms swarms get-logs \\\n  --api-key 'My API Key'",
@@ -476,28 +496,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'SwarmGetLogsParams parameters = new();\n\nvar response = await client.Swarms.GetLogs(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Swarms.GetLogs',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.GetLogs(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Count)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/v1/swarm/logs \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'swarms().getLogs',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmGetLogsParams;\nimport com.swarms.api.models.swarms.SwarmGetLogsResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmGetLogsResponse response = client.swarms().getLogs();\n    }\n}',
-      },
-      python: {
-        method: 'swarms.get_logs',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.get_logs()\nprint(response.count)',
-      },
-      typescript: {
-        method: 'client.swarms.getLogs',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.getLogs();\n\nconsole.log(response.count);",
       },
     },
   },
@@ -516,6 +516,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## run\n\n`client.swarms.batch.run(body: { agents?: agent_spec[]; description?: string; heavy_swarm_loops_per_agent?: number; heavy_swarm_question_agent_model_name?: string; heavy_swarm_worker_model_name?: string; img?: string; max_loops?: number; messages?: object[] | object; name?: string; rearrange_flow?: string; rules?: string; service_tier?: string; stream?: boolean; swarm_type?: string; task?: string; tasks?: string[]; }[]): object[]`\n\n**post** `/v1/swarm/batch/completions`\n\nRun a batch of swarms with the specified tasks using a thread pool.\n\n### Parameters\n\n- `body: { agents?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: mcp_connection; mcp_configs?: object; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }[]; description?: string; heavy_swarm_loops_per_agent?: number; heavy_swarm_question_agent_model_name?: string; heavy_swarm_worker_model_name?: string; img?: string; max_loops?: number; messages?: object[] | object; name?: string; rearrange_flow?: string; rules?: string; service_tier?: string; stream?: boolean; swarm_type?: string; task?: string; tasks?: string[]; }[]`\n\n### Returns\n\n- `object[]`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.swarms.batch.run({ body: [{}] });\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.swarms.batch.run',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.batch.run({ body: [{}] });\n\nconsole.log(response);",
+      },
+      python: {
+        method: 'swarms.batch.run',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.batch.run(\n    body=[{}],\n)\nprint(response)',
+      },
+      java: {
+        method: 'swarms().batch().run',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmSpec;\nimport com.swarms.api.models.swarms.batch.BatchRunParams;\nimport com.swarms.api.models.swarms.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<SwarmSpec> params = List.of(SwarmSpec.builder().build());\n        List<BatchRunResponse> response = client.swarms().batch().run(params);\n    }\n}',
+      },
+      go: {
+        method: 'client.Swarms.Batch.Run',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.Batch.Run(context.TODO(), swarms.SwarmBatchRunParams{\n\t\tBody: []swarms.SwarmSpecParam{{}},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
+      },
       cli: {
         method: 'batch run',
         example: "swarms swarms:batch run \\\n  --api-key 'My API Key' \\\n  --body '{}'",
@@ -525,29 +545,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'BatchRunParams parameters = new()\n{\n    Body =\n    [\n        new()\n        {\n            Agents =\n            [\n                new()\n                {\n                    AgentName = "agent_name",\n                    AutoGeneratePrompt = true,\n                    Description = "description",\n                    DynamicTemperatureEnabled = true,\n                    LlmArgs = new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                    MaxLoops = 0,\n                    MaxTokens = 0,\n                    McpConfig = new()\n                    {\n                        AuthorizationToken = "authorization_token",\n                        Headers = new Dictionary<string, string>()\n                        {\n                            { "foo", "string" }\n                        },\n                        Timeout = 0,\n                        ToolConfigurations = new Dictionary<string, JsonElement>(\n\n                        )\n                        {\n                            { "foo", JsonSerializer.SerializeToElement("bar") }\n                        },\n                        Transport = "transport",\n                        Type = "type",\n                        Url = "url",\n                    },\n                    McpConfigs = new(\n\n                        [\n                            new()\n                            {\n                                AuthorizationToken = "authorization_token",\n                                Headers = new Dictionary<string, string>()\n                                {\n                                    { "foo", "string" }\n                                },\n                                Timeout = 0,\n                                ToolConfigurations = new Dictionary<string, JsonElement>(\n\n                                )\n                                {\n                                    { "foo", JsonSerializer.SerializeToElement("bar") },\n                                },\n                                Transport = "transport",\n                                Type = "type",\n                                Url = "url",\n                            },\n                        ]\n                    ),\n                    McpUrl = "mcp_url",\n                    ModelName = "model_name",\n                    ReasoningEffort = "reasoning_effort",\n                    ReasoningEnabled = true,\n                    Role = "role",\n                    StreamingOn = true,\n                    SystemPrompt = "system_prompt",\n                    Temperature = 0,\n                    ThinkingTokens = 0,\n                    ToolCallSummary = true,\n                    ToolsListDictionary =\n                    [\n                        new Dictionary<string, JsonElement>()\n                        {\n                            { "foo", JsonSerializer.SerializeToElement("bar") }\n                        },\n                    ],\n                },\n            ],\n            Description = "description",\n            HeavySwarmLoopsPerAgent = 0,\n            HeavySwarmQuestionAgentModelName = "heavy_swarm_question_agent_model_name",\n            HeavySwarmWorkerModelName = "heavy_swarm_worker_model_name",\n            Img = "img",\n            MaxLoops = 0,\n            Messages = new(\n\n                [\n                    new Dictionary<string, JsonElement>()\n                    {\n                        { "foo", JsonSerializer.SerializeToElement("bar") }\n                    },\n                ]\n            ),\n            Name = "name",\n            RearrangeFlow = "rearrange_flow",\n            Rules = "rules",\n            ServiceTier = "service_tier",\n            Stream = true,\n            SwarmType = SwarmType.AgentRearrange,\n            Task = "task",\n            Tasks =\n            [\n                "string"\n            ],\n        },\n    ],\n};\n\nvar response = await client.Swarms.Batch.Run(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Swarms.Batch.Run',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Swarms.Batch.Run(context.TODO(), swarms.SwarmBatchRunParams{\n\t\tBody: []swarms.SwarmSpecParam{{}},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
-      },
       http: {
         example:
           'curl https://api.swarms.world/v1/swarm/batch/completions \\\n    -H \'Content-Type: application/json\' \\\n    -H "x-api-key: $SWARMS_API_KEY" \\\n    -d \'[\n          {\n            "agents": [\n              {\n                "agent_name": "agent_name",\n                "auto_generate_prompt": true,\n                "description": "description",\n                "dynamic_temperature_enabled": true,\n                "llm_args": {\n                  "foo": "bar"\n                },\n                "max_loops": 0,\n                "max_tokens": 0,\n                "mcp_config": {\n                  "authorization_token": "authorization_token",\n                  "headers": {\n                    "foo": "string"\n                  },\n                  "timeout": 0,\n                  "tool_configurations": {\n                    "foo": "bar"\n                  },\n                  "transport": "transport",\n                  "type": "type",\n                  "url": "url"\n                },\n                "mcp_configs": {\n                  "connections": [\n                    {\n                      "authorization_token": "authorization_token",\n                      "headers": {\n                        "foo": "string"\n                      },\n                      "timeout": 0,\n                      "tool_configurations": {\n                        "foo": "bar"\n                      },\n                      "transport": "transport",\n                      "type": "type",\n                      "url": "url"\n                    }\n                  ]\n                },\n                "mcp_url": "mcp_url",\n                "model_name": "model_name",\n                "reasoning_effort": "reasoning_effort",\n                "reasoning_enabled": true,\n                "role": "role",\n                "streaming_on": true,\n                "system_prompt": "system_prompt",\n                "temperature": 0,\n                "thinking_tokens": 0,\n                "tool_call_summary": true,\n                "tools_list_dictionary": [\n                  {\n                    "foo": "bar"\n                  }\n                ]\n              }\n            ],\n            "description": "description",\n            "heavy_swarm_loops_per_agent": 0,\n            "heavy_swarm_question_agent_model_name": "heavy_swarm_question_agent_model_name",\n            "heavy_swarm_worker_model_name": "heavy_swarm_worker_model_name",\n            "img": "img",\n            "max_loops": 0,\n            "messages": [\n              {\n                "foo": "bar"\n              }\n            ],\n            "name": "name",\n            "rearrange_flow": "rearrange_flow",\n            "rules": "rules",\n            "service_tier": "service_tier",\n            "stream": true,\n            "swarm_type": "AgentRearrange",\n            "task": "task",\n            "tasks": [\n              "string"\n            ]\n          }\n        ]\'',
-      },
-      java: {
-        method: 'swarms().batch().run',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmSpec;\nimport com.swarms.api.models.swarms.batch.BatchRunParams;\nimport com.swarms.api.models.swarms.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<SwarmSpec> params = List.of(SwarmSpec.builder().build());\n        List<BatchRunResponse> response = client.swarms().batch().run(params);\n    }\n}',
-      },
-      python: {
-        method: 'swarms.batch.run',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.swarms.batch.run(\n    body=[{}],\n)\nprint(response)',
-      },
-      typescript: {
-        method: 'client.swarms.batch.run',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.swarms.batch.run({ body: [{}] });\n\nconsole.log(response);",
       },
     },
   },
@@ -576,6 +576,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_completion\n\n`client.reasoningAgents.createCompletion(agent_name?: string, description?: string, max_loops?: number, memory_capacity?: number, model_name?: string, num_knowledge_items?: number, num_samples?: number, output_type?: string, swarm_type?: string, system_prompt?: string, task?: string): object`\n\n**post** `/v1/reasoning-agent/completions`\n\nRun a reasoning agent with the specified task.\n\n### Parameters\n\n- `agent_name?: string`\n  The unique name assigned to the reasoning agent.\n\n- `description?: string`\n  A detailed explanation of the reasoning agent's purpose and capabilities.\n\n- `max_loops?: number`\n  The maximum number of times the reasoning agent is allowed to repeat its task.\n\n- `memory_capacity?: number`\n  The memory capacity for the reasoning agent.\n\n- `model_name?: string`\n  The name of the AI model that the reasoning agent will utilize.\n\n- `num_knowledge_items?: number`\n  The number of knowledge items to use for the reasoning agent.\n\n- `num_samples?: number`\n  The number of samples to generate for the reasoning agent.\n\n- `output_type?: string`\n  The type of output format for the reasoning agent.\n\n- `swarm_type?: string`\n  The type of reasoning swarm to use (e.g., reasoning duo, self-consistency, IRE).\n\n- `system_prompt?: string`\n  The initial instruction or context provided to the reasoning agent.\n\n- `task?: string`\n  The task to be completed by the reasoning agent.\n\n### Returns\n\n- `object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.reasoningAgents.createCompletion();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.reasoningAgents.createCompletion',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.reasoningAgents.createCompletion();\n\nconsole.log(response);",
+      },
+      python: {
+        method: 'reasoning_agents.create_completion',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.reasoning_agents.create_completion()\nprint(response)',
+      },
+      java: {
+        method: 'reasoningAgents().createCompletion',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentCreateCompletionParams;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ReasoningAgentCreateCompletionResponse response = client.reasoningAgents().createCompletion();\n    }\n}',
+      },
+      go: {
+        method: 'client.ReasoningAgents.NewCompletion',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.ReasoningAgents.NewCompletion(context.TODO(), swarms.ReasoningAgentNewCompletionParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
+      },
       cli: {
         method: 'reasoning_agents create_completion',
         example: "swarms reasoning-agents create-completion \\\n  --api-key 'My API Key'",
@@ -585,29 +605,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'ReasoningAgentCreateCompletionParams parameters = new();\n\nvar response = await client.ReasoningAgents.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.ReasoningAgents.NewCompletion',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.ReasoningAgents.NewCompletion(context.TODO(), swarms.ReasoningAgentNewCompletionParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
-      },
       http: {
         example:
           "curl https://api.swarms.world/v1/reasoning-agent/completions \\\n    -H 'Content-Type: application/json' \\\n    -H \"x-api-key: $SWARMS_API_KEY\" \\\n    -d '{}'",
-      },
-      java: {
-        method: 'reasoningAgents().createCompletion',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentCreateCompletionParams;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ReasoningAgentCreateCompletionResponse response = client.reasoningAgents().createCompletion();\n    }\n}',
-      },
-      python: {
-        method: 'reasoning_agents.create_completion',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.reasoning_agents.create_completion()\nprint(response)',
-      },
-      typescript: {
-        method: 'client.reasoningAgents.createCompletion',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.reasoningAgents.createCompletion();\n\nconsole.log(response);",
       },
     },
   },
@@ -623,6 +623,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_types\n\n`client.reasoningAgents.listTypes(): object`\n\n**get** `/v1/reasoning-agent/types`\n\nGet the types of reasoning agents available.\n\n### Returns\n\n- `object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.reasoningAgents.listTypes();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.reasoningAgents.listTypes',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.reasoningAgents.listTypes();\n\nconsole.log(response);",
+      },
+      python: {
+        method: 'reasoning_agents.list_types',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.reasoning_agents.list_types()\nprint(response)',
+      },
+      java: {
+        method: 'reasoningAgents().listTypes',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentListTypesParams;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentListTypesResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ReasoningAgentListTypesResponse response = client.reasoningAgents().listTypes();\n    }\n}',
+      },
+      go: {
+        method: 'client.ReasoningAgents.ListTypes',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.ReasoningAgents.ListTypes(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
+      },
       cli: {
         method: 'reasoning_agents list_types',
         example: "swarms reasoning-agents list-types \\\n  --api-key 'My API Key'",
@@ -632,29 +652,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'ReasoningAgentListTypesParams parameters = new();\n\nvar response = await client.ReasoningAgents.ListTypes(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.ReasoningAgents.ListTypes',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.ReasoningAgents.ListTypes(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
-      },
       http: {
         example:
           'curl https://api.swarms.world/v1/reasoning-agent/types \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'reasoningAgents().listTypes',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentListTypesParams;\nimport com.swarms.api.models.reasoningagents.ReasoningAgentListTypesResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ReasoningAgentListTypesResponse response = client.reasoningAgents().listTypes();\n    }\n}',
-      },
-      python: {
-        method: 'reasoning_agents.list_types',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.reasoning_agents.list_types()\nprint(response)',
-      },
-      typescript: {
-        method: 'client.reasoningAgents.listTypes',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.reasoningAgents.listTypes();\n\nconsole.log(response);",
       },
     },
   },
@@ -671,6 +671,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_limits\n\n`client.client.rate.getLimits(): { limits: object; rate_limits: object; tier: string; timestamp: string; success?: boolean; }`\n\n**get** `/v1/rate/limits`\n\nGet the rate limits and current usage for the user associated with the provided API key.\n\n### Returns\n\n- `{ limits: { maximum_requests_per_day: number; maximum_requests_per_hour: number; maximum_requests_per_minute: number; tokens_per_agent: number; }; rate_limits: { day: object; hour: object; minute: object; }; tier: string; timestamp: string; success?: boolean; }`\n\n  - `limits: { maximum_requests_per_day: number; maximum_requests_per_hour: number; maximum_requests_per_minute: number; tokens_per_agent: number; }`\n  - `rate_limits: { day: { count: number; exceeded: boolean; limit: number; remaining: number; reset_time: string; }; hour: { count: number; exceeded: boolean; limit: number; remaining: number; reset_time: string; }; minute: { count: number; exceeded: boolean; limit: number; remaining: number; reset_time: string; }; }`\n  - `tier: string`\n  - `timestamp: string`\n  - `success?: boolean`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.rate.getLimits();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.rate.getLimits',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.rate.getLimits();\n\nconsole.log(response.limits);",
+      },
+      python: {
+        method: 'client.rate.get_limits',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.rate.get_limits()\nprint(response.limits)',
+      },
+      java: {
+        method: 'client().rate().getLimits',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.rate.RateGetLimitsParams;\nimport com.swarms.api.models.client.rate.RateGetLimitsResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        RateGetLimitsResponse response = client.client().rate().getLimits();\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.Rate.GetLimits',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.Rate.GetLimits(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Limits)\n}\n',
+      },
       cli: {
         method: 'rate get_limits',
         example: "swarms client:rate get-limits \\\n  --api-key 'My API Key'",
@@ -680,28 +700,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'RateGetLimitsParams parameters = new();\n\nvar response = await client.Client.Rate.GetLimits(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.Rate.GetLimits',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.Rate.GetLimits(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Limits)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/v1/rate/limits \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'client().rate().getLimits',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.rate.RateGetLimitsParams;\nimport com.swarms.api.models.client.rate.RateGetLimitsResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        RateGetLimitsResponse response = client.client().rate().getLimits();\n    }\n}',
-      },
-      python: {
-        method: 'client.rate.get_limits',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.rate.get_limits()\nprint(response.limits)',
-      },
-      typescript: {
-        method: 'client.client.rate.getLimits',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.rate.getLimits();\n\nconsole.log(response.limits);",
       },
     },
   },
@@ -728,6 +728,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_completion\n\n`client.client.autoSwarmBuilder.createCompletion(description?: string, execution_type?: 'return-agents' | 'return-swarm-router-config' | 'return-agents-objects', max_loops?: number, max_tokens?: number, model_name?: string, name?: string, task?: string): { success: boolean; job_id?: string; outputs?: object; timestamp?: string; type?: string; usage?: object; }`\n\n**post** `/v1/auto-swarm-builder/completions`\n\nGenerate and orchestrate agent swarms autonomously using AI-powered swarm composition and task decomposition.\n\n### Parameters\n\n- `description?: string`\n  A description of the swarm.\n\n- `execution_type?: 'return-agents' | 'return-swarm-router-config' | 'return-agents-objects'`\n  The type of execution to perform.\n\n- `max_loops?: number`\n  Maximum number of loops to run.\n\n- `max_tokens?: number`\n  The maximum number of tokens to use for the swarm.\n\n- `model_name?: string`\n  The model name to use for the swarm.\n\n- `name?: string`\n  The name of the swarm.\n\n- `task?: string`\n  The task for the swarm, if any.\n\n### Returns\n\n- `{ success: boolean; job_id?: string; outputs?: object; timestamp?: string; type?: string; usage?: object; }`\n  Schema for the Auto Swarm Builder API response.\n\nAttributes:\n    success (bool): Whether the swarm was built successfully.\n    job_id (Optional[str]): The job ID of the swarm.\n    outputs (Optional[dict]): The outputs of the auto swarms builder.\n    type (Optional[str]): The type of the swarm execution.\n    timestamp (Optional[str]): The timestamp of the swarm execution.\n    usage (Optional[dict]): The usage statistics of the swarm execution.\n\n  - `success: boolean`\n  - `job_id?: string`\n  - `outputs?: object`\n  - `timestamp?: string`\n  - `type?: string`\n  - `usage?: object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.autoSwarmBuilder.createCompletion();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.autoSwarmBuilder.createCompletion',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.autoSwarmBuilder.createCompletion();\n\nconsole.log(response.job_id);",
+      },
+      python: {
+        method: 'client.auto_swarm_builder.create_completion',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.auto_swarm_builder.create_completion()\nprint(response.job_id)',
+      },
+      java: {
+        method: 'client().autoSwarmBuilder().createCompletion',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.autoswarmbuilder.AutoSwarmBuilderCreateCompletionParams;\nimport com.swarms.api.models.client.autoswarmbuilder.AutoSwarmBuilderCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AutoSwarmBuilderCreateCompletionResponse response = client.client().autoSwarmBuilder().createCompletion();\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.AutoSwarmBuilder.NewCompletion',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AutoSwarmBuilder.NewCompletion(context.TODO(), swarms.ClientAutoSwarmBuilderNewCompletionParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
+      },
       cli: {
         method: 'auto_swarm_builder create_completion',
         example: "swarms client:auto-swarm-builder create-completion \\\n  --api-key 'My API Key'",
@@ -737,29 +757,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'AutoSwarmBuilderCreateCompletionParams parameters = new();\n\nvar response = await client.Client.AutoSwarmBuilder.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.AutoSwarmBuilder.NewCompletion',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AutoSwarmBuilder.NewCompletion(context.TODO(), swarms.ClientAutoSwarmBuilderNewCompletionParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
-      },
       http: {
         example:
           "curl https://api.swarms.world/v1/auto-swarm-builder/completions \\\n    -H 'Content-Type: application/json' \\\n    -H \"x-api-key: $SWARMS_API_KEY\" \\\n    -d '{}'",
-      },
-      java: {
-        method: 'client().autoSwarmBuilder().createCompletion',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.autoswarmbuilder.AutoSwarmBuilderCreateCompletionParams;\nimport com.swarms.api.models.client.autoswarmbuilder.AutoSwarmBuilderCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AutoSwarmBuilderCreateCompletionResponse response = client.client().autoSwarmBuilder().createCompletion();\n    }\n}',
-      },
-      python: {
-        method: 'client.auto_swarm_builder.create_completion',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.auto_swarm_builder.create_completion()\nprint(response.job_id)',
-      },
-      typescript: {
-        method: 'client.client.autoSwarmBuilder.createCompletion',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.autoSwarmBuilder.createCompletion();\n\nconsole.log(response.job_id);",
       },
     },
   },
@@ -776,6 +776,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_execution_types\n\n`client.client.autoSwarmBuilder.listExecutionTypes(): string[]`\n\n**get** `/v1/auto-swarm-builder/execution-types`\n\nRetrieve all available execution types and return formats for the Auto Swarm Builder endpoint.\n\n### Returns\n\n- `string[]`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.autoSwarmBuilder.listExecutionTypes();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.autoSwarmBuilder.listExecutionTypes',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.autoSwarmBuilder.listExecutionTypes();\n\nconsole.log(response);",
+      },
+      python: {
+        method: 'client.auto_swarm_builder.list_execution_types',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.auto_swarm_builder.list_execution_types()\nprint(response)',
+      },
+      java: {
+        method: 'client().autoSwarmBuilder().listExecutionTypes',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.autoswarmbuilder.AutoSwarmBuilderListExecutionTypesParams;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<String> response = client.client().autoSwarmBuilder().listExecutionTypes();\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.AutoSwarmBuilder.ListExecutionTypes',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AutoSwarmBuilder.ListExecutionTypes(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
+      },
       cli: {
         method: 'auto_swarm_builder list_execution_types',
         example: "swarms client:auto-swarm-builder list-execution-types \\\n  --api-key 'My API Key'",
@@ -785,29 +805,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'AutoSwarmBuilderListExecutionTypesParams parameters = new();\n\nvar response = await client.Client.AutoSwarmBuilder.ListExecutionTypes(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.AutoSwarmBuilder.ListExecutionTypes',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AutoSwarmBuilder.ListExecutionTypes(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
-      },
       http: {
         example:
           'curl https://api.swarms.world/v1/auto-swarm-builder/execution-types \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'client().autoSwarmBuilder().listExecutionTypes',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.autoswarmbuilder.AutoSwarmBuilderListExecutionTypesParams;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<String> response = client.client().autoSwarmBuilder().listExecutionTypes();\n    }\n}',
-      },
-      python: {
-        method: 'client.auto_swarm_builder.list_execution_types',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.auto_swarm_builder.list_execution_types()\nprint(response)',
-      },
-      typescript: {
-        method: 'client.client.autoSwarmBuilder.listExecutionTypes',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.autoSwarmBuilder.listExecutionTypes();\n\nconsole.log(response);",
       },
     },
   },
@@ -830,6 +830,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_completion\n\n`client.client.advancedResearch.createCompletion(config: { description?: string; director_agent_name?: string; director_max_loops?: number; director_max_tokens?: number; director_model_name?: string; exa_search_max_characters?: number; exa_search_num_results?: number; max_loops?: number; name?: string; worker_model_name?: string; }, task: string, img?: string): { id: string; characters_per_source: number; description: string; name: string; outputs: object; sources: number; timestamp: string; usage: object; }`\n\n**post** `/v1/advanced-research/completions`\n\nExecute comprehensive research sessions with multi-source data collection, analysis, and synthesis capabilities.\n\n### Parameters\n\n- `config: { description?: string; director_agent_name?: string; director_max_loops?: number; director_max_tokens?: number; director_model_name?: string; exa_search_max_characters?: number; exa_search_num_results?: number; max_loops?: number; name?: string; worker_model_name?: string; }`\n  The configuration for the advanced research\n  - `description?: string`\n    Description of the advanced research session\n  - `director_agent_name?: string`\n    Name of the director agent\n  - `director_max_loops?: number`\n    Maximum loops for the director agent\n  - `director_max_tokens?: number`\n    Maximum tokens for the director agent's output\n  - `director_model_name?: string`\n    Model name for the director agent\n  - `exa_search_max_characters?: number`\n    Maximum characters to return from the Exa search tool\n  - `exa_search_num_results?: number`\n    Number of results to return from the Exa search tool\n  - `max_loops?: number`\n    Number of research loops to run\n  - `name?: string`\n    Name of the advanced research session\n  - `worker_model_name?: string`\n    Model name for worker agents\n\n- `task: string`\n  The task to be completed\n\n- `img?: string`\n  The image to be used for the advanced research\n\n### Returns\n\n- `{ id: string; characters_per_source: number; description: string; name: string; outputs: object; sources: number; timestamp: string; usage: object; }`\n\n  - `id: string`\n  - `characters_per_source: number`\n  - `description: string`\n  - `name: string`\n  - `outputs: object`\n  - `sources: number`\n  - `timestamp: string`\n  - `usage: object`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.advancedResearch.createCompletion({\n  config: {},\n  task: 'task',\n});\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.advancedResearch.createCompletion',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.advancedResearch.createCompletion({\n  config: {},\n  task: 'task',\n});\n\nconsole.log(response.id);",
+      },
+      python: {
+        method: 'client.advanced_research.create_completion',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.advanced_research.create_completion(\n    config={},\n    task="task",\n)\nprint(response.id)',
+      },
+      java: {
+        method: 'client().advancedResearch().createCompletion',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.advancedresearch.AdvancedResearchCreateCompletionParams;\nimport com.swarms.api.models.client.advancedresearch.AdvancedResearchCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AdvancedResearchCreateCompletionParams params = AdvancedResearchCreateCompletionParams.builder()\n            .config(AdvancedResearchCreateCompletionParams.Config.builder().build())\n            .task("task")\n            .build();\n        AdvancedResearchCreateCompletionResponse response = client.client().advancedResearch().createCompletion(params);\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.AdvancedResearch.NewCompletion',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AdvancedResearch.NewCompletion(context.TODO(), swarms.ClientAdvancedResearchNewCompletionParams{\n\t\tConfig: swarms.ClientAdvancedResearchNewCompletionParamsConfig{},\n\t\tTask:   swarms.String("task"),\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.ID)\n}\n',
+      },
       cli: {
         method: 'advanced_research create_completion',
         example:
@@ -840,29 +860,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'AdvancedResearchCreateCompletionParams parameters = new()\n{\n    Config = new()\n    {\n        Description = "description",\n        DirectorAgentName = "director_agent_name",\n        DirectorMaxLoops = 0,\n        DirectorMaxTokens = 0,\n        DirectorModelName = "director_model_name",\n        ExaSearchMaxCharacters = 0,\n        ExaSearchNumResults = 0,\n        MaxLoops = 0,\n        Name = "name",\n        WorkerModelName = "worker_model_name",\n    },\n    Task = "task",\n};\n\nvar response = await client.Client.AdvancedResearch.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.AdvancedResearch.NewCompletion',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AdvancedResearch.NewCompletion(context.TODO(), swarms.ClientAdvancedResearchNewCompletionParams{\n\t\tConfig: swarms.ClientAdvancedResearchNewCompletionParamsConfig{},\n\t\tTask:   swarms.String("task"),\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.ID)\n}\n',
-      },
       http: {
         example:
           'curl https://api.swarms.world/v1/advanced-research/completions \\\n    -H \'Content-Type: application/json\' \\\n    -H "x-api-key: $SWARMS_API_KEY" \\\n    -d \'{\n          "config": {},\n          "task": "task"\n        }\'',
-      },
-      java: {
-        method: 'client().advancedResearch().createCompletion',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.advancedresearch.AdvancedResearchCreateCompletionParams;\nimport com.swarms.api.models.client.advancedresearch.AdvancedResearchCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AdvancedResearchCreateCompletionParams params = AdvancedResearchCreateCompletionParams.builder()\n            .config(AdvancedResearchCreateCompletionParams.Config.builder().build())\n            .task("task")\n            .build();\n        AdvancedResearchCreateCompletionResponse response = client.client().advancedResearch().createCompletion(params);\n    }\n}',
-      },
-      python: {
-        method: 'client.advanced_research.create_completion',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.advanced_research.create_completion(\n    config={},\n    task="task",\n)\nprint(response.id)',
-      },
-      typescript: {
-        method: 'client.client.advancedResearch.createCompletion',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.advancedResearch.createCompletion({\n  config: {},\n  task: 'task',\n});\n\nconsole.log(response.id);",
       },
     },
   },
@@ -883,6 +883,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_completion\n\n`client.client.advancedResearch.batch.createCompletion(input_schemas: { config: { description?: string; director_agent_name?: string; director_max_loops?: number; director_max_tokens?: number; director_model_name?: string; exa_search_max_characters?: number; exa_search_num_results?: number; max_loops?: number; name?: string; worker_model_name?: string; }; task: string; img?: string; }[]): { id: string; characters_per_source: number; description: string; name: string; outputs: object; sources: number; timestamp: string; usage: object; }[]`\n\n**post** `/v1/advanced-research/batch/completions`\n\nExecute multiple advanced research sessions concurrently with independent configurations for high-throughput research workflows.\n\n### Parameters\n\n- `input_schemas: { config: { description?: string; director_agent_name?: string; director_max_loops?: number; director_max_tokens?: number; director_model_name?: string; exa_search_max_characters?: number; exa_search_num_results?: number; max_loops?: number; name?: string; worker_model_name?: string; }; task: string; img?: string; }[]`\n  The input schemas for the advanced research\n\n### Returns\n\n- `{ id: string; characters_per_source: number; description: string; name: string; outputs: object; sources: number; timestamp: string; usage: object; }[]`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.advancedResearch.batch.createCompletion({ input_schemas: [{\n  config: {},\n  task: 'task',\n}] });\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.advancedResearch.batch.createCompletion',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.advancedResearch.batch.createCompletion({\n  input_schemas: [\n    {\n      config: {},\n      task: 'task',\n    },\n  ],\n});\n\nconsole.log(response);",
+      },
+      python: {
+        method: 'client.advanced_research.batch.create_completion',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.advanced_research.batch.create_completion(\n    input_schemas=[{\n        "config": {},\n        "task": "task",\n    }],\n)\nprint(response)',
+      },
+      java: {
+        method: 'client().advancedResearch().batch().createCompletion',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.advancedresearch.batch.BatchCreateCompletionParams;\nimport com.swarms.api.models.client.advancedresearch.batch.BatchCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        BatchCreateCompletionParams params = BatchCreateCompletionParams.builder()\n            .addInputSchema(BatchCreateCompletionParams.InputSchema.builder()\n                .config(BatchCreateCompletionParams.InputSchema.Config.builder().build())\n                .task("task")\n                .build())\n            .build();\n        List<BatchCreateCompletionResponse> response = client.client().advancedResearch().batch().createCompletion(params);\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.AdvancedResearch.Batch.NewCompletion',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AdvancedResearch.Batch.NewCompletion(context.TODO(), swarms.ClientAdvancedResearchBatchNewCompletionParams{\n\t\tInputSchemas: []swarms.ClientAdvancedResearchBatchNewCompletionParamsInputSchema{{\n\t\t\tConfig: swarms.ClientAdvancedResearchBatchNewCompletionParamsInputSchemaConfig{},\n\t\t\tTask:   swarms.String("task"),\n\t\t}},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
+      },
       cli: {
         method: 'batch create_completion',
         example:
@@ -893,29 +913,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'BatchCreateCompletionParams parameters = new()\n{\n    InputSchemas =\n    [\n        new()\n        {\n            Config = new()\n            {\n                Description = "description",\n                DirectorAgentName = "director_agent_name",\n                DirectorMaxLoops = 0,\n                DirectorMaxTokens = 0,\n                DirectorModelName = "director_model_name",\n                ExaSearchMaxCharacters = 0,\n                ExaSearchNumResults = 0,\n                MaxLoops = 0,\n                Name = "name",\n                WorkerModelName = "worker_model_name",\n            },\n            Task = "task",\n            Img = "img",\n        },\n    ],\n};\n\nvar response = await client.Client.AdvancedResearch.Batch.CreateCompletion(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.AdvancedResearch.Batch.NewCompletion',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.AdvancedResearch.Batch.NewCompletion(context.TODO(), swarms.ClientAdvancedResearchBatchNewCompletionParams{\n\t\tInputSchemas: []swarms.ClientAdvancedResearchBatchNewCompletionParamsInputSchema{{\n\t\t\tConfig: swarms.ClientAdvancedResearchBatchNewCompletionParamsInputSchemaConfig{},\n\t\t\tTask:   swarms.String("task"),\n\t\t}},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response)\n}\n',
-      },
       http: {
         example:
           'curl https://api.swarms.world/v1/advanced-research/batch/completions \\\n    -H \'Content-Type: application/json\' \\\n    -H "x-api-key: $SWARMS_API_KEY" \\\n    -d \'{\n          "input_schemas": [\n            {\n              "config": {},\n              "task": "task"\n            }\n          ]\n        }\'',
-      },
-      java: {
-        method: 'client().advancedResearch().batch().createCompletion',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.advancedresearch.batch.BatchCreateCompletionParams;\nimport com.swarms.api.models.client.advancedresearch.batch.BatchCreateCompletionResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        BatchCreateCompletionParams params = BatchCreateCompletionParams.builder()\n            .addInputSchema(BatchCreateCompletionParams.InputSchema.builder()\n                .config(BatchCreateCompletionParams.InputSchema.Config.builder().build())\n                .task("task")\n                .build())\n            .build();\n        List<BatchCreateCompletionResponse> response = client.client().advancedResearch().batch().createCompletion(params);\n    }\n}',
-      },
-      python: {
-        method: 'client.advanced_research.batch.create_completion',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.advanced_research.batch.create_completion(\n    input_schemas=[{\n        "config": {},\n        "task": "task",\n    }],\n)\nprint(response)',
-      },
-      typescript: {
-        method: 'client.client.advancedResearch.batch.createCompletion',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.advancedResearch.batch.createCompletion({\n  input_schemas: [\n    {\n      config: {},\n      task: 'task',\n    },\n  ],\n});\n\nconsole.log(response);",
       },
     },
   },
@@ -932,6 +932,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_available\n\n`client.client.tools.listAvailable(): { status?: string; tools?: string[]; }`\n\n**get** `/v1/tools/available`\n\nRetrieve comprehensive information about all available tools and capabilities supported by the Swarms API.\n\n### Returns\n\n- `{ status?: string; tools?: string[]; }`\n\n  - `status?: string`\n  - `tools?: string[]`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.tools.listAvailable();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.tools.listAvailable',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.tools.listAvailable();\n\nconsole.log(response.status);",
+      },
+      python: {
+        method: 'client.tools.list_available',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.tools.list_available()\nprint(response.status)',
+      },
+      java: {
+        method: 'client().tools().listAvailable',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.tools.ToolListAvailableParams;\nimport com.swarms.api.models.client.tools.ToolListAvailableResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ToolListAvailableResponse response = client.client().tools().listAvailable();\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.Tools.ListAvailable',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.Tools.ListAvailable(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Status)\n}\n',
+      },
       cli: {
         method: 'tools list_available',
         example: "swarms client:tools list-available \\\n  --api-key 'My API Key'",
@@ -941,28 +961,8 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'ToolListAvailableParams parameters = new();\n\nvar response = await client.Client.Tools.ListAvailable(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.Tools.ListAvailable',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.Tools.ListAvailable(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Status)\n}\n',
-      },
       http: {
         example: 'curl https://api.swarms.world/v1/tools/available \\\n    -H "x-api-key: $SWARMS_API_KEY"',
-      },
-      java: {
-        method: 'client().tools().listAvailable',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.tools.ToolListAvailableParams;\nimport com.swarms.api.models.client.tools.ToolListAvailableResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        ToolListAvailableResponse response = client.client().tools().listAvailable();\n    }\n}',
-      },
-      python: {
-        method: 'client.tools.list_available',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.tools.list_available()\nprint(response.status)',
-      },
-      typescript: {
-        method: 'client.client.tools.listAvailable',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.tools.listAvailable();\n\nconsole.log(response.status);",
       },
     },
   },
@@ -980,6 +980,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_agent\n\n`client.client.marketplace.createAgent(number_of_items?: number): { prompts: object[]; total_count: number; status?: string; timestamp?: string; }`\n\n**post** `/v1/marketplace/agents`\n\nRetrieve free agents from the marketplace.\n\n### Parameters\n\n- `number_of_items?: number`\n  Number of items to return\n\n### Returns\n\n- `{ prompts: { id: string; created_at: string; user_id: string; category?: string | string[]; description?: string; links?: object[] | string[]; name?: string; prompt?: string; status?: string; tags?: string; use_cases?: object | object[]; }[]; total_count: number; status?: string; timestamp?: string; }`\n  Response schema for marketplace prompts endpoint.\n\n  - `prompts: { id: string; created_at: string; user_id: string; category?: string | string[]; description?: string; links?: object[] | string[]; name?: string; prompt?: string; status?: string; tags?: string; use_cases?: object | object[]; }[]`\n  - `total_count: number`\n  - `status?: string`\n  - `timestamp?: string`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.marketplace.createAgent();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.marketplace.createAgent',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.marketplace.createAgent();\n\nconsole.log(response.prompts);",
+      },
+      python: {
+        method: 'client.marketplace.create_agent',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.marketplace.create_agent()\nprint(response.prompts)',
+      },
+      java: {
+        method: 'client().marketplace().createAgent',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.marketplace.MarketplaceCreateAgentParams;\nimport com.swarms.api.models.client.marketplace.MarketplaceCreateAgentResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        MarketplaceCreateAgentResponse response = client.client().marketplace().createAgent();\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.Marketplace.NewAgent',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.Marketplace.NewAgent(context.TODO(), swarms.ClientMarketplaceNewAgentParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Prompts)\n}\n',
+      },
       cli: {
         method: 'marketplace create_agent',
         example: "swarms client:marketplace create-agent \\\n  --api-key 'My API Key'",
@@ -989,29 +1009,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'MarketplaceCreateAgentParams parameters = new();\n\nvar response = await client.Client.Marketplace.CreateAgent(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.Marketplace.NewAgent',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.Marketplace.NewAgent(context.TODO(), swarms.ClientMarketplaceNewAgentParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.Prompts)\n}\n',
-      },
       http: {
         example:
           "curl https://api.swarms.world/v1/marketplace/agents \\\n    -H 'Content-Type: application/json' \\\n    -H \"x-api-key: $SWARMS_API_KEY\" \\\n    -d '{}'",
-      },
-      java: {
-        method: 'client().marketplace().createAgent',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.marketplace.MarketplaceCreateAgentParams;\nimport com.swarms.api.models.client.marketplace.MarketplaceCreateAgentResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        MarketplaceCreateAgentResponse response = client.client().marketplace().createAgent();\n    }\n}',
-      },
-      python: {
-        method: 'client.marketplace.create_agent',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.marketplace.create_agent()\nprint(response.prompts)',
-      },
-      typescript: {
-        method: 'client.client.marketplace.createAgent',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.marketplace.createAgent();\n\nconsole.log(response.prompts);",
       },
     },
   },
@@ -1037,6 +1037,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## complete_workflow\n\n`client.client.batchedGridWorkflow.completeWorkflow(agent_completions?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: mcp_connection; mcp_configs?: object; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }[], description?: string, imgs?: string[], max_loops?: number, name?: string, tasks?: string[]): { description: string; job_id: string; name: string; outputs: object; status: string; timestamp: string; usage: object; }`\n\n**post** `/v1/batched-grid-workflow/completions`\n\nComplete a batched grid workflow with the specified input data. Enables you to run a grid workflow with multiple agents and tasks in a single request.\n\n### Parameters\n\n- `agent_completions?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: { authorization_token?: string; headers?: object; timeout?: number; tool_configurations?: object; transport?: string; type?: string; url?: string; }; mcp_configs?: { connections: object[]; }; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }[]`\n  The agent completions to be completed by the batched grid workflow.\n\n- `description?: string`\n  The description of the batched grid workflow.\n\n- `imgs?: string[]`\n  The images to be used by the batched grid workflow.\n\n- `max_loops?: number`\n  The maximum number of loops to be completed by the batched grid workflow.\n\n- `name?: string`\n  The name of the batched grid workflow.\n\n- `tasks?: string[]`\n  The tasks to be completed by the batched grid workflow.\n\n### Returns\n\n- `{ description: string; job_id: string; name: string; outputs: object; status: string; timestamp: string; usage: { cost_per_agent: number; input_tokens: number; output_tokens: number; token_cost: number; total_tokens: number; }; }`\n\n  - `description: string`\n  - `job_id: string`\n  - `name: string`\n  - `outputs: object`\n  - `status: string`\n  - `timestamp: string`\n  - `usage: { cost_per_agent: number; input_tokens: number; output_tokens: number; token_cost: number; total_tokens: number; }`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.batchedGridWorkflow.completeWorkflow();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.batchedGridWorkflow.completeWorkflow',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.batchedGridWorkflow.completeWorkflow();\n\nconsole.log(response.job_id);",
+      },
+      python: {
+        method: 'client.batched_grid_workflow.complete_workflow',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.batched_grid_workflow.complete_workflow()\nprint(response.job_id)',
+      },
+      java: {
+        method: 'client().batchedGridWorkflow().completeWorkflow',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.batchedgridworkflow.BatchedGridWorkflowCompleteWorkflowParams;\nimport com.swarms.api.models.client.batchedgridworkflow.BatchedGridWorkflowCompleteWorkflowResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        BatchedGridWorkflowCompleteWorkflowResponse response = client.client().batchedGridWorkflow().completeWorkflow();\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.BatchedGridWorkflow.CompleteWorkflow',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.BatchedGridWorkflow.CompleteWorkflow(context.TODO(), swarms.ClientBatchedGridWorkflowCompleteWorkflowParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
+      },
       cli: {
         method: 'batched_grid_workflow complete_workflow',
         example: "swarms client:batched-grid-workflow complete-workflow \\\n  --api-key 'My API Key'",
@@ -1046,29 +1066,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'BatchedGridWorkflowCompleteWorkflowParams parameters = new();\n\nvar response = await client.Client.BatchedGridWorkflow.CompleteWorkflow(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.BatchedGridWorkflow.CompleteWorkflow',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.BatchedGridWorkflow.CompleteWorkflow(context.TODO(), swarms.ClientBatchedGridWorkflowCompleteWorkflowParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
-      },
       http: {
         example:
           "curl https://api.swarms.world/v1/batched-grid-workflow/completions \\\n    -H 'Content-Type: application/json' \\\n    -H \"x-api-key: $SWARMS_API_KEY\" \\\n    -d '{}'",
-      },
-      java: {
-        method: 'client().batchedGridWorkflow().completeWorkflow',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.batchedgridworkflow.BatchedGridWorkflowCompleteWorkflowParams;\nimport com.swarms.api.models.client.batchedgridworkflow.BatchedGridWorkflowCompleteWorkflowResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        BatchedGridWorkflowCompleteWorkflowResponse response = client.client().batchedGridWorkflow().completeWorkflow();\n    }\n}',
-      },
-      python: {
-        method: 'client.batched_grid_workflow.complete_workflow',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.batched_grid_workflow.complete_workflow()\nprint(response.job_id)',
-      },
-      typescript: {
-        method: 'client.client.batchedGridWorkflow.completeWorkflow',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.batchedGridWorkflow.completeWorkflow();\n\nconsole.log(response.job_id);",
       },
     },
   },
@@ -1099,6 +1099,26 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## execute_workflow\n\n`client.client.graphWorkflow.executeWorkflow(agents?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: mcp_connection; mcp_configs?: object; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }[], auto_compile?: boolean, description?: string, edges?: { source: string; target: string; metadata?: object; } | object[], end_points?: string[], entry_points?: string[], img?: string, max_loops?: number, name?: string, task?: string, verbose?: boolean): { job_id: string; outputs: object; status: string; timestamp: string; usage: object; description?: string; name?: string; }`\n\n**post** `/v1/graph-workflow/completions`\n\nExecute a graph workflow with directed agent nodes and edges. Enables complex multi-agent collaboration with parallel execution, automatic compilation, and comprehensive workflow orchestration.\n\n### Parameters\n\n- `agents?: { agent_name: string; auto_generate_prompt?: boolean; description?: string; dynamic_temperature_enabled?: boolean; llm_args?: object; max_loops?: number; max_tokens?: number; mcp_config?: { authorization_token?: string; headers?: object; timeout?: number; tool_configurations?: object; transport?: string; type?: string; url?: string; }; mcp_configs?: { connections: object[]; }; mcp_url?: string; model_name?: string; reasoning_effort?: string; reasoning_enabled?: boolean; role?: string; streaming_on?: boolean; system_prompt?: string; temperature?: number; thinking_tokens?: number; tool_call_summary?: boolean; tools_list_dictionary?: object[]; }[]`\n  List of agent specifications to be used as nodes in the workflow graph.\n\n- `auto_compile?: boolean`\n  Whether to automatically compile the workflow for optimization.\n\n- `description?: string`\n  The description of the graph workflow.\n\n- `edges?: { source: string; target: string; metadata?: object; } | object[]`\n  List of edges connecting nodes. Can be EdgeSpec objects or dictionaries with 'source' and 'target' keys.\n\n- `end_points?: string[]`\n  List of node IDs that serve as ending points for the workflow.\n\n- `entry_points?: string[]`\n  List of node IDs that serve as starting points for the workflow.\n\n- `img?: string`\n  Optional image path for vision-enabled agents.\n\n- `max_loops?: number`\n  The maximum number of execution loops for the workflow.\n\n- `name?: string`\n  The name of the graph workflow.\n\n- `task?: string`\n  The task to be executed by the workflow.\n\n- `verbose?: boolean`\n  Whether to enable detailed logging.\n\n### Returns\n\n- `{ job_id: string; outputs: object; status: string; timestamp: string; usage: { cost_per_agent: number; input_tokens: number; output_tokens: number; token_cost: number; total_tokens: number; }; description?: string; name?: string; }`\n  Output schema for GraphWorkflow completion responses.\n\n  - `job_id: string`\n  - `outputs: object`\n  - `status: string`\n  - `timestamp: string`\n  - `usage: { cost_per_agent: number; input_tokens: number; output_tokens: number; token_cost: number; total_tokens: number; }`\n  - `description?: string`\n  - `name?: string`\n\n### Example\n\n```typescript\nimport SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient();\n\nconst response = await client.client.graphWorkflow.executeWorkflow();\n\nconsole.log(response);\n```",
     perLanguage: {
+      typescript: {
+        method: 'client.client.graphWorkflow.executeWorkflow',
+        example:
+          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.graphWorkflow.executeWorkflow();\n\nconsole.log(response.job_id);",
+      },
+      python: {
+        method: 'client.graph_workflow.execute_workflow',
+        example:
+          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.graph_workflow.execute_workflow()\nprint(response.job_id)',
+      },
+      java: {
+        method: 'client().graphWorkflow().executeWorkflow',
+        example:
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.graphworkflow.GraphWorkflowExecuteWorkflowParams;\nimport com.swarms.api.models.client.graphworkflow.GraphWorkflowExecuteWorkflowResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        GraphWorkflowExecuteWorkflowResponse response = client.client().graphWorkflow().executeWorkflow();\n    }\n}',
+      },
+      go: {
+        method: 'client.Client.GraphWorkflow.ExecuteWorkflow',
+        example:
+          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.GraphWorkflow.ExecuteWorkflow(context.TODO(), swarms.ClientGraphWorkflowExecuteWorkflowParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
+      },
       cli: {
         method: 'graph_workflow execute_workflow',
         example: "swarms client:graph-workflow execute-workflow \\\n  --api-key 'My API Key'",
@@ -1108,29 +1128,9 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'GraphWorkflowExecuteWorkflowParams parameters = new();\n\nvar response = await client.Client.GraphWorkflow.ExecuteWorkflow(parameters);\n\nConsole.WriteLine(response);',
       },
-      go: {
-        method: 'client.Client.GraphWorkflow.ExecuteWorkflow',
-        example:
-          'package main\n\nimport (\n\t"context"\n\t"fmt"\n\n\t"github.com/The-Swarm-Corporation/swarms-client-go"\n\t"github.com/The-Swarm-Corporation/swarms-client-go/option"\n)\n\nfunc main() {\n\tclient := swarms.NewClient(\n\t\toption.WithAPIKey("My API Key"),\n\t)\n\tresponse, err := client.Client.GraphWorkflow.ExecuteWorkflow(context.TODO(), swarms.ClientGraphWorkflowExecuteWorkflowParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf("%+v\\n", response.JobID)\n}\n',
-      },
       http: {
         example:
           "curl https://api.swarms.world/v1/graph-workflow/completions \\\n    -H 'Content-Type: application/json' \\\n    -H \"x-api-key: $SWARMS_API_KEY\" \\\n    -d '{}'",
-      },
-      java: {
-        method: 'client().graphWorkflow().executeWorkflow',
-        example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.client.graphworkflow.GraphWorkflowExecuteWorkflowParams;\nimport com.swarms.api.models.client.graphworkflow.GraphWorkflowExecuteWorkflowResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        GraphWorkflowExecuteWorkflowResponse response = client.client().graphWorkflow().executeWorkflow();\n    }\n}',
-      },
-      python: {
-        method: 'client.graph_workflow.execute_workflow',
-        example:
-          'import os\nfrom swarms_client import SwarmsClient\n\nclient = SwarmsClient(\n    api_key=os.environ.get("SWARMS_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.client.graph_workflow.execute_workflow()\nprint(response.job_id)',
-      },
-      typescript: {
-        method: 'client.client.graphWorkflow.executeWorkflow',
-        example:
-          "import SwarmsClient from 'swarms-ts';\n\nconst client = new SwarmsClient({\n  apiKey: process.env['SWARMS_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.client.graphWorkflow.executeWorkflow();\n\nconsole.log(response.job_id);",
       },
     },
   },
