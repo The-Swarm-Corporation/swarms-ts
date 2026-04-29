@@ -176,7 +176,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       java: {
         method: 'agent().run',
         example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.AgentRunParams;\nimport com.swarms.api.models.agent.AgentRunResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AgentCompletion params = AgentCompletion.builder().build();\n        AgentRunResponse response = client.agent().run(params);\n    }\n}',
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.AgentRunResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        AgentCompletion params = AgentCompletion.builder().build();\n        AgentRunResponse response = client.agent().run(params);\n    }\n}',
       },
       go: {
         method: 'client.Agent.Run',
@@ -274,7 +274,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       java: {
         method: 'agent().batch().run',
         example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.batch.BatchRunParams;\nimport com.swarms.api.models.agent.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<AgentCompletion> params = List.of(AgentCompletion.builder().build());\n        BatchRunResponse response = client.agent().batch().run(params);\n    }\n}',
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.agent.AgentCompletion;\nimport com.swarms.api.models.agent.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<AgentCompletion> params = List.of(AgentCompletion.builder().build());\n        BatchRunResponse response = client.agent().batch().run(params);\n    }\n}',
       },
       go: {
         method: 'client.Agent.Batch.Run',
@@ -432,7 +432,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       java: {
         method: 'swarms().run',
         example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmRunParams;\nimport com.swarms.api.models.swarms.SwarmRunResponse;\nimport com.swarms.api.models.swarms.SwarmSpec;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmSpec params = SwarmSpec.builder().build();\n        SwarmRunResponse response = client.swarms().run(params);\n    }\n}',
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmRunResponse;\nimport com.swarms.api.models.swarms.SwarmSpec;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        SwarmSpec params = SwarmSpec.builder().build();\n        SwarmRunResponse response = client.swarms().run(params);\n    }\n}',
       },
       go: {
         method: 'client.Swarms.Run',
@@ -529,7 +529,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       java: {
         method: 'swarms().batch().run',
         example:
-          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmSpec;\nimport com.swarms.api.models.swarms.batch.BatchRunParams;\nimport com.swarms.api.models.swarms.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<SwarmSpec> params = List.of(SwarmSpec.builder().build());\n        List<BatchRunResponse> response = client.swarms().batch().run(params);\n    }\n}',
+          'package com.swarms.api.example;\n\nimport com.swarms.api.client.SwarmsClientClient;\nimport com.swarms.api.client.okhttp.SwarmsClientOkHttpClient;\nimport com.swarms.api.models.swarms.SwarmSpec;\nimport com.swarms.api.models.swarms.batch.BatchRunResponse;\nimport java.util.List;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        SwarmsClientClient client = SwarmsClientOkHttpClient.fromEnv();\n\n        List<SwarmSpec> params = List.of(SwarmSpec.builder().build());\n        List<BatchRunResponse> response = client.swarms().batch().run(params);\n    }\n}',
       },
       go: {
         method: 'client.Swarms.Batch.Run',
