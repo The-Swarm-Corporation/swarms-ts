@@ -1,5 +1,59 @@
 # Changelog
 
+## 0.1.0-alpha.41 (2026-05-08)
+
+Full Changelog: [v0.1.0-alpha.40...v0.1.0-alpha.41](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.40...v0.1.0-alpha.41)
+
+### Features
+
+* support setting headers via env ([d5d1d79](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d5d1d797ce1443acfb1cfc8dcae9110ee5da7706))
+
+
+### Chores
+
+* avoid formatting file that gets changed during releases ([f61bc28](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f61bc287c930f90b5db59a485abece6ca97c1194))
+* **ci:** escape input path in publish-npm workflow ([27655c0](https://github.com/The-Swarm-Corporation/swarms-ts/commit/27655c03a2e61bb88775d9ccb56f3399405abf37))
+* **ci:** skip lint on metadata-only changes ([a70741b](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a70741bb378d9541904e174c8c17c67039653c17))
+* **format:** run eslint and prettier separately ([7b29116](https://github.com/The-Swarm-Corporation/swarms-ts/commit/7b2911663b3082a325194c07ec74c250b9ac53f5))
+* **internal:** bump @modelcontextprotocol/sdk, @hono/node-server, and minimatch ([be651e9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/be651e99f0fb1e27ece26eead32345af052676c2))
+* **internal:** codegen related update ([cf0edd2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/cf0edd24561e17de4a02ea81c75cf63cba0e9283))
+* **internal:** codegen related update ([cbad283](https://github.com/The-Swarm-Corporation/swarms-ts/commit/cbad2833ac603760876408b320591e76d7da997e))
+* **internal:** codegen related update ([4b0bb5e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/4b0bb5e18394837072c1da6a06329e3e218cb808))
+* **internal:** codegen related update ([25cacdf](https://github.com/The-Swarm-Corporation/swarms-ts/commit/25cacdf9d50ebbd9f25d53cd4a3fee5ad44ff871))
+* **internal:** codegen related update ([80f56b5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/80f56b5ca345e8d7f226cea367ef00e4b20a6508))
+* **internal:** codegen related update ([6116050](https://github.com/The-Swarm-Corporation/swarms-ts/commit/611605071e127fc8721df8ea344440b710cb8c4b))
+* **internal:** fix MCP docker image builds in yarn projects ([20bdeec](https://github.com/The-Swarm-Corporation/swarms-ts/commit/20bdeec519d607790f075ac9513cc9c72e508e78))
+* **internal:** fix MCP server import ordering ([1a3b4ba](https://github.com/The-Swarm-Corporation/swarms-ts/commit/1a3b4ba7afca78b1fbc1473555eb6d864c32fb13))
+* **internal:** fix MCP server TS errors that occur with required client options ([e1f69d1](https://github.com/The-Swarm-Corporation/swarms-ts/commit/e1f69d153c9d69e6fb7fac4058b1157487685998))
+* **internal:** improve local docs search for MCP servers ([b047f9f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b047f9f4a4e800eb6ed2e8479179cf210b9e6f46))
+* **internal:** improve local docs search for MCP servers ([f829377](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f829377198edeead23befa92c747e2c00000477a))
+* **internal:** make generated MCP servers compatible with Cloudflare worker environments ([f2234b2](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f2234b2442ae02c09f4b62aefdf3308c2cc0d874))
+* **internal:** more robust bootstrap script ([3050a8d](https://github.com/The-Swarm-Corporation/swarms-ts/commit/3050a8d10dbcf5f2de6834d982db5d206cbf8a4c))
+* **internal:** show error causes in MCP servers when running in local mode ([5aa66f6](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5aa66f6ce36c3dcc84609e2f89d5b7218ae896af))
+* **internal:** support custom-instructions-path flag in MCP servers ([52224f5](https://github.com/The-Swarm-Corporation/swarms-ts/commit/52224f538a1359233e681f4c7038ff82b4ee2586))
+* **internal:** support local docs search in MCP servers ([594d92f](https://github.com/The-Swarm-Corporation/swarms-ts/commit/594d92f2107b2f1c59112c146cd7560322c59cc7))
+* **internal:** support type annotations when running MCP in local execution mode ([5a4e797](https://github.com/The-Swarm-Corporation/swarms-ts/commit/5a4e797b7a1ca1e55ea3315dc1f3bb2584580687))
+* **internal:** support x-stainless-mcp-client-envs header in MCP servers ([cab821e](https://github.com/The-Swarm-Corporation/swarms-ts/commit/cab821ec7748fc1efd06f525edbedcf4c35838a0))
+* **internal:** support x-stainless-mcp-client-permissions headers in MCP servers ([b0a5794](https://github.com/The-Swarm-Corporation/swarms-ts/commit/b0a5794570f73e14c4bbefbce2632bcaf5a6303b))
+* **internal:** tweak CI branches ([f28795a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f28795aa6aaf117010c56e63f548804169acf9c9))
+* **internal:** update dependencies to address dependabot vulnerabilities ([eeb5775](https://github.com/The-Swarm-Corporation/swarms-ts/commit/eeb577575b6661ae4b3cb281182cd64159f18492))
+* **internal:** update docs ordering ([0133ea6](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0133ea6ddd477879b4f4989bac4b112bda1ade49))
+* **internal:** update gitignore ([fa16867](https://github.com/The-Swarm-Corporation/swarms-ts/commit/fa16867e1c5c52c693adf69921b0c7ee6fe77793))
+* **internal:** use link instead of file in MCP server package.json files ([71275d9](https://github.com/The-Swarm-Corporation/swarms-ts/commit/71275d9748caf3331e4b36272b2b02e6b7d93374))
+* **mcp-server:** add support for session id, forward client info ([f93195c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/f93195cbce3347c7104579e2ce778132a8af7847))
+* **mcp-server:** increase local docs search result count from 5 to 10 ([dee663a](https://github.com/The-Swarm-Corporation/swarms-ts/commit/dee663a18afd841375cf796b499c20880b098499))
+* **mcp-server:** log client info ([c6a0243](https://github.com/The-Swarm-Corporation/swarms-ts/commit/c6a0243a8a58e733d1477fd3faed6f3a8bbb8e8d))
+* redact api-key headers in debug logs ([214a070](https://github.com/The-Swarm-Corporation/swarms-ts/commit/214a070838af49c5e22fa95c86535cc50aa8c7d6))
+* restructure docs search code ([a6da011](https://github.com/The-Swarm-Corporation/swarms-ts/commit/a6da01156b2ea8c50ec2502d73a681c1a39ad8c6))
+* update CLI documentation ([07fe77c](https://github.com/The-Swarm-Corporation/swarms-ts/commit/07fe77c70bd2736664d94b7cfbd6e32bcb77f017))
+
+
+### Documentation
+
+* clarify forwards compat behavior ([d61d122](https://github.com/The-Swarm-Corporation/swarms-ts/commit/d61d122a3b42e2b3d1d9c68b8f05d992a78eb1f5))
+* update logging docs ([0580c20](https://github.com/The-Swarm-Corporation/swarms-ts/commit/0580c2072f6dffa471d3d7d963917390edbceb90))
+* update with proxy auth info ([138c286](https://github.com/The-Swarm-Corporation/swarms-ts/commit/138c2868c3e1110dcf3c898dcd1b80ca1b45a06e))
+
 ## 0.1.0-alpha.40 (2026-03-07)
 
 Full Changelog: [v0.1.0-alpha.39...v0.1.0-alpha.40](https://github.com/The-Swarm-Corporation/swarms-ts/compare/v0.1.0-alpha.39...v0.1.0-alpha.40)
